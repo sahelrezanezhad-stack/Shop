@@ -17,8 +17,7 @@ public class ProductsController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var products = await _productService.GetAllAsync();
-
+        var products = await _productService.GetAllEntitiesAsync();
         return View(products);
     }
     [HttpGet]
@@ -58,7 +57,7 @@ public class ProductsController : Controller
     [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
-        var product = await _productService.GetByIdAsync(id);
+        var product = await _productService.GetEntityByIdAsync(id);
 
         if (product == null)
         {
@@ -76,8 +75,7 @@ public class ProductsController : Controller
             return View(product);
         }
 
-        var existingProduct = await _productService.GetByIdAsync(product.Id);
-
+        var existingProduct = await _productService.GetEntityByIdAsync(product.Id);
         if (existingProduct == null)
         {
             return NotFound();
@@ -92,10 +90,23 @@ public class ProductsController : Controller
 
         return RedirectToAction(nameof(Index));
     }
-    [HttpPost]
+
+    [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
-        var product = await _productService.GetByIdAsync(id);
+        var product = await _productService.GetEntityByIdAsync(id);
+
+        if (product == null)
+        {
+            return NotFound();
+        }
+
+        return View(product);
+    }
+    [HttpPost]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var product = await _productService.GetEntityByIdAsync(id);
 
         if (product == null)
         {

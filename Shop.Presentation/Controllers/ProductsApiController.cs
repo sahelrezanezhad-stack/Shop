@@ -34,5 +34,20 @@ namespace Shop.Presentation.Controllers
 
             return Ok(products);
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductDto>> GetById(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var product = await _productService.GetByIdAsync(id);
+
+            if (product == null)
+                return NotFound();
+
+            return Ok(product);
+        }
+
     }
 }

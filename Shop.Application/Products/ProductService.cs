@@ -32,8 +32,32 @@ namespace Shop.Application.Products
                 CreatedAt = p.CreatedAt
             }).ToList();
         }
+        public async Task<List<Product>> GetAllEntitiesAsync()
+        {
+            return await _repository.GetAllAsync();
+        }
 
-        public async Task<Product?> GetByIdAsync(int id)
+        public async Task<ProductDto?> GetByIdAsync(int id)
+        {
+            if (id <= 0)
+                return null;
+
+            var product = await _repository.GetByIdAsync(id);
+
+            if (product == null)
+                return null;
+
+            return new ProductDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                StockQuantity = product.StockQuantity,
+                CreatedAt = product.CreatedAt
+            };
+        }
+        public async Task<Product?> GetEntityByIdAsync(int id)
         {
             return await _repository.GetByIdAsync(id);
         }
