@@ -5,7 +5,6 @@ using Shop.Infrastructure.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Shop.Infrastructure.Products
@@ -33,6 +32,11 @@ namespace Shop.Infrastructure.Products
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
+        public async Task<Product?> GetByIdForUpdateAsync(int id)
+        {
+            return await _context.Products
+                .FirstOrDefaultAsync(p => p.Id == id);
+        }
 
         public async Task AddAsync(Product product)
         {
@@ -42,7 +46,6 @@ namespace Shop.Infrastructure.Products
 
         public async Task UpdateAsync(Product product)
         {
-            _context.Products.Update(product);
             await _context.SaveChangesAsync();
         }
 
@@ -51,5 +54,15 @@ namespace Shop.Infrastructure.Products
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<Product>> SearchByNameAsync(string name)
+        {
+            return await _context.Products
+                .AsNoTracking()
+                .Where(p => p.Name.Contains(name))
+                .OrderByDescending(p => p.CreatedAt)
+                .ToListAsync();
+        }
+
     }
 }

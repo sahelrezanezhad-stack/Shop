@@ -1,6 +1,7 @@
 using Shop.Application.DependencyInjection;
 using Shop.Application.Products;
 using Shop.Infrastructure.DependencyInjection;
+using Shop.Presentation.Middleware;
 
 namespace Shop.Presentation
 {
@@ -28,9 +29,10 @@ namespace Shop.Presentation
 
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

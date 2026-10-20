@@ -11,11 +11,10 @@ namespace Shop.Application.Products
     public interface IProductService
     {
         Task<List<ProductDto>> GetAllAsync();
-        Task<List<Product>> GetAllEntitiesAsync();
         Task<ProductDto?> GetByIdAsync(int id);
-        Task<Product?> GetEntityByIdAsync(int id);
         Task<ProductDto> AddAsync(CreateProductDto dto);
-        Task UpdateAsync(Product product);
-        Task DeleteAsync(Product product);
+        Task UpdateAsync(UpdateProductDto dto);
+        Task DeleteAsync(int id);
+        Task<List<ProductDto>> SearchByNameAsync(string name);
     }
 }

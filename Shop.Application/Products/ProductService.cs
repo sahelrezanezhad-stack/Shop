@@ -32,10 +32,7 @@ namespace Shop.Application.Products
                 CreatedAt = p.CreatedAt
             }).ToList();
         }
-        public async Task<List<Product>> GetAllEntitiesAsync()
-        {
-            return await _repository.GetAllAsync();
-        }
+      
 
         public async Task<ProductDto?> GetByIdAsync(int id)
         {
@@ -57,10 +54,7 @@ namespace Shop.Application.Products
                 CreatedAt = product.CreatedAt
             };
         }
-        public async Task<Product?> GetEntityByIdAsync(int id)
-        {
-            return await _repository.GetByIdAsync(id);
-        }
+      
 
         public async Task<ProductDto> AddAsync(CreateProductDto dto)
         {
@@ -86,14 +80,43 @@ namespace Shop.Application.Products
             };
         }
 
-        public async Task UpdateAsync(Product product)
+        public async Task UpdateAsync(UpdateProductDto dto)
         {
+            var product = await _repository.GetByIdForUpdateAsync(dto.Id);
+
+            if (product == null)
+                throw new KeyNotFoundException("Product not found.");
+
+            product.Name = dto.Name;
+            product.Description = dto.Description;
+            product.Price = dto.Price;
+            product.StockQuantity = dto.StockQuantity;
+
             await _repository.UpdateAsync(product);
         }
 
-        public async Task DeleteAsync(Product product)
+        public async Task DeleteAsync(int id)
         {
+            var product = await _repository.GetByIdForUpdateAsync(id);
+
+            if (product == null)
+                throw new KeyNotFoundException("Product not found.");
+
             await _repository.DeleteAsync(product);
+        }
+        public async Task<List<ProductDto>> SearchByNameAsync(string name)
+        {
+            var products = await _repository.SearchByNameAsync(name);
+
+            return products.Select(p => new ProductDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Price = p.Price,
+                StockQuantity = p.StockQuantity,
+                CreatedAt = p.CreatedAt
+            }).ToList();
         }
     }
 }

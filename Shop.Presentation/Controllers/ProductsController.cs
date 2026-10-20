@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Products;
 using Shop.Application.Products.DTOs;
-using Shop.Domain.Entities;
 
 namespace Shop.Presentation.Controllers;
 
@@ -15,32 +14,32 @@ public class ProductsController : Controller
         _productService = productService;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string? search)
     {
-        var products = await _productService.GetAllEntitiesAsync();
+        var products = string.IsNullOrWhiteSpace(search)
+            ? await _productService.GetAllAsync()
+            : await _productService.SearchByNameAsync(search);
+
+        ViewBag.Search = search;
+
         return View(products);
     }
+
     [HttpGet]
     public IActionResult Create()
     {
-        return View();
+        return View(new CreateProductDto());
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Product product)
+    public async Task<IActionResult> Create(CreateProductDto dto)
     {
         if (!ModelState.IsValid)
         {
-            return View(product);
+            return View(dto);
         }
 
-        await _productService.AddAsync(new CreateProductDto
-        {
-            Name = product.Name,
-            Description = product.Description,
-            Price = product.Price,
-            StockQuantity = product.StockQuantity
-        });
+        await _productService.AddAsync(dto);
 
         return RedirectToAction(nameof(Index));
     }
@@ -57,36 +56,41 @@ public class ProductsController : Controller
     [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
-        var product = await _productService.GetEntityByIdAsync(id);
+        var product = await _productService.GetByIdAsync(id);
 
         if (product == null)
         {
             return NotFound();
         }
 
-        return View(product);
+        var dto = new UpdateProductDto
+        {
+            Id = product.Id,
+            Name = product.Name,
+            Description = product.Description,
+            Price = product.Price,
+            StockQuantity = product.StockQuantity
+        };
+
+        return View(dto);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Edit(Product product)
+    public async Task<IActionResult> Edit(UpdateProductDto dto)
     {
         if (!ModelState.IsValid)
         {
-            return View(product);
+            return View(dto);
         }
 
-        var existingProduct = await _productService.GetEntityByIdAsync(product.Id);
-        if (existingProduct == null)
+        try
+        {
+            await _productService.UpdateAsync(dto);
+        }
+        catch (KeyNotFoundException)
         {
             return NotFound();
         }
-
-        existingProduct.Name = product.Name;
-        existingProduct.Description = product.Description;
-        existingProduct.Price = product.Price;
-        existingProduct.StockQuantity = product.StockQuantity;
-
-        await _productService.UpdateAsync(existingProduct);
 
         return RedirectToAction(nameof(Index));
     }
@@ -94,7 +98,7 @@ public class ProductsController : Controller
     [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
-        var product = await _productService.GetEntityByIdAsync(id);
+        var product = await _productService.GetByIdAsync(id);
 
         if (product == null)
         {
@@ -106,23 +110,29 @@ public class ProductsController : Controller
     [HttpPost]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-        var product = await _productService.GetEntityByIdAsync(id);
-
-        if (product == null)
+        try
+        {
+            await _productService.DeleteAsync(id);
+        }
+        catch (KeyNotFoundException)
         {
             return NotFound();
         }
-
-        await _productService.DeleteAsync(product);
 
         return RedirectToAction(nameof(Index));
     }
 
     // API Endpoints
 
+
     [HttpPost("/api/products")]
     public async Task<IActionResult> CreateApi(CreateProductDto dto)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         var product = await _productService.AddAsync(dto);
 
         return StatusCode(201, new
@@ -131,6 +141,7 @@ public class ProductsController : Controller
             id = product.Id
         });
     }
+
 
     [HttpGet("/api/products")]
     public async Task<ActionResult<List<ProductDto>>> GetAllApi()
