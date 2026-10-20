@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Products
 {
-    public class ProductService
+    public class ProductService:IProductService
     {
         private readonly IProductRepository _repository;
 

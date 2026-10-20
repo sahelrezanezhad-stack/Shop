@@ -8,9 +8,9 @@ namespace Shop.Presentation.Controllers;
 
 public class ProductsController : Controller
 {
-    private readonly ProductService _productService;
+    private readonly IProductService _productService;
 
-    public ProductsController(ProductService productService)
+    public ProductsController(IProductService productService)
     {
         _productService = productService;
     }
@@ -117,5 +117,42 @@ public class ProductsController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    // API Endpoints
+
+    [HttpPost("/api/products")]
+    public async Task<IActionResult> CreateApi(CreateProductDto dto)
+    {
+        var product = await _productService.AddAsync(dto);
+
+        return StatusCode(201, new
+        {
+            message = "Product created successfully.",
+            id = product.Id
+        });
+    }
+
+    [HttpGet("/api/products")]
+    public async Task<ActionResult<List<ProductDto>>> GetAllApi()
+    {
+        var products = await _productService.GetAllAsync();
+
+        return Ok(products);
+    }
+
+    [HttpGet("/api/products/{id:int}")]
+    public async Task<ActionResult<ProductDto>> GetByIdApi(int id)
+    {
+        if (id <= 0)
+            return BadRequest();
+
+        var product = await _productService.GetByIdAsync(id);
+
+        if (product == null)
+            return NotFound();
+
+        return Ok(product);
+    }
+
 }
 
