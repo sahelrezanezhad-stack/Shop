@@ -28,8 +28,7 @@ namespace Shop.Infrastructure
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<Shop.Domain.Repositories.IProductRepository, ProductRepository>(); services.AddScoped<ICartRepository, CartRepository>();
             services.AddScoped<ISizeStockRepository, SizeStockRepository>();
             services.AddScoped<ICheckoutRepository, CheckoutRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
