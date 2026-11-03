@@ -1,0 +1,37 @@
+@model Shop.Presentation.Controllers.AccountDashboardView
+@{ ViewData["Title"] = "My Account"; Layout = "_StoreLayout"; }
+<main class="account-page"><a class="account-home" href="/">SALLY ✳</a>
+<section class="account-card account-wide">
+<div class="account-top"><div><span class="account-kicker">MY SALLY</span><h1>Hello, @Model.Name</h1><p class="account-muted">@Model.Email</p></div>
+<form action="/account/logout" method="post">@Html.AntiForgeryToken()<button class="account-logout" type="submit">LOG OUT</button></form></div>
+@if (TempData["notice"] is string notice) { <p class="account-note">@notice</p> }
+@if (TempData["error"] is string error) { <p class="account-error account-alert">@error</p> }
+<section class="account-subsection">
+<h2>Change email address</h2>
+<p class="account-muted">Enter a new email address and your current password. The new address must be verified before order emails can be sent to it.</p>
+<form action="/account/change-email" method="post" class="account-change-email">
+@Html.AntiForgeryToken()
+<label>New email address<input name="Email" type="email" autocomplete="email" required maxlength="256" /></label>
+<label>Current password<input name="CurrentPassword" type="password" autocomplete="current-password" required maxlength="128" /></label>
+<button type="submit" class="account-submit">UPDATE EMAIL</button>
+</form>
+</section>
+@if (!Model.EmailVerified) {
+<p class="account-note">Verify your email address to receive order updates. If you have not received a link, request a new one below.</p>
+<form action="/account/resend" method="post">@Html.AntiForgeryToken()<button type="submit" class="account-logout">RESEND VERIFICATION LINK</button></form>
+} else {
+<p class="account-verified">EMAIL VERIFIED</p>
+}
+<h2>My orders</h2>
+@if (Model.Orders.Count == 0) { <p class="account-muted">You have not placed any orders with this account yet.</p> }
+else {
+@foreach (var order in Model.Orders) {
+<article class="account-order">
+<div class="account-order-head"><strong>Order #@order.Id</strong><span>@order.DateUtc.ToLocalTime().ToString("MMM dd, yyyy")</span><span>@(order.Status == "PendingPayment" ? "Pending payment" : order.Status)</span></div>
+<p>@order.TotalToman.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("en-US")) TOMAN</p>
+@foreach (var item in order.Items) { <div class="account-order-line"><span>@item.Name</span><span>Size @item.Size · Qty @item.Quantity</span></div> }
+</article>
+}
+}
+<a class="account-shop" href="/">BACK TO COLLECTION</a>
+</section></main>

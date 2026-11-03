@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,6 +23,8 @@ namespace Shop.Domain.Entities
         public int StockQuantity { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public ICollection<ProductSizeStock> SizeStocks { get; set; } = new List<ProductSizeStock>();
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }

@@ -1,0 +1,1 @@
+SALLY 3D test fix: Open SALLY_3D_TEST_OPEN_THIS.html in Chrome, or run the original ASP.NET app and visit /black-puffer-3d-test.html. 3D GLB is embedded offline in wwwroot/sally-black-puffer-model-data.js; no /models/... HTTP fetch is required. Other project code unchanged.

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-30",
+  "kind": "user_supplied_ssms_screenshot_observation_and_source_review",
+  "database_displayed": "ShopDb",
+  "screenshots": [
+    "image(20261030-121318).png",
+    "image(20261030-121351).png"
+  ],
+  "observed_result_row_count": 11,
+  "observed_columns": ["Id", "Name", "ProductTotal", "SizeRows"],
+  "not_visible_columns": ["SizesTotal", "NegativeSizes"],
+  "products": [
+    {"id": 1, "name": "Gaming Laptop", "product_total": 10, "size_rows": 0, "approved_collection": false},
+    {"id": 1002, "name": "Gaming Graphics Card", "product_total": 8, "size_rows": 0, "approved_collection": false},
+    {"id": 2002, "name": "Gaming Mouse", "product_total": 15, "size_rows": 0, "approved_collection": false},
+    {"id": 3002, "name": "LABEL PATCH WORK JACKET", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3003, "name": "CAMEL SUEDE JACKET", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3004, "name": "TEXTURED BLACK PUFFER", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3005, "name": "WASHED GREY HOODIE", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3006, "name": "REVERSIBLE SHREDDED SEAM DROP NECK SHIRT", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3007, "name": "COUNTRYSIDE STORY KNIT", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3008, "name": "GREY UTILITY VEST", "product_total": 10, "size_rows": 0, "approved_collection": true},
+    {"id": 3009, "name": "GREY CREWNECK SWEATSHIRT", "product_total": 10, "size_rows": 0, "approved_collection": true}
+  ],
+  "source_review": {
+    "files": [
+      "Shop.Infrastructure/Inventory/SizeStockRepository.cs",
+      "Shop.Application/ShoppingCarts/CartService.cs",
+      "Shop.Presentation/Controllers/StorefrontController.cs",
+      "Shop.Infrastructure/Persistence/Migrations/20261028150000_AddCheckoutAndSizeInventory.cs"
+    ],
+    "missing_size_row_read_as": 0,
+    "cart_rejects_quantity_above_size_stock": true,
+    "existing_schema_migration_assigns_stock": false
+  },
+  "outcome": "blocked_by_unassigned_size_inventory",
+  "subsequent_user_clarification": {
+    "all_displayed_inventory_is_test_data": true,
+    "complete_source_zip_requested_for_replacement_and_build_testing": true,
+    "clarification_does_not_assert_successful_checkout": true
+  },
+  "pending": [
+    "Review and apply size fixture only to the separate test database",
+    "Run the real Debug build, security tests, SQL integration tests and SMTP sandbox tests"
+  ],
+  "boundaries": {
+    "database_directly_accessed_by_work": false,
+    "database_writes_executed_by_work": false,
+    "migrations_executed_by_work": false,
+    "checkout_executed_or_verified": false,
+    "complete_schema_verified": false,
+    "legacy_products_to_preserve": [1, 1002, 2002],
+    "test_stock_must_use_separate_test_database": true
+  }
+}

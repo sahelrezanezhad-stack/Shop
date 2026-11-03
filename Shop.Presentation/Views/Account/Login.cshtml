@@ -1,0 +1,13 @@
+@model Shop.Presentation.Accounts.SignInInput
+@{ ViewData["Title"] = "Log In"; Layout = "_StoreLayout"; }
+<main class="account-page"><a class="account-home" href="/">SALLY ✳</a><section class="account-card">
+<span class="account-kicker">WELCOME BACK</span><h1>Log in to SALLY</h1>
+<div asp-validation-summary="All" class="account-error"></div>
+@if (TempData["notice"] is string notice) { <p class="account-note" role="status">@notice</p> }
+<form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewData["returnUrl"]" method="post">
+@Html.AntiForgeryToken()
+<label>Email address<input asp-for="Email" type="email" autocomplete="username" required /></label>
+<label>Password<input asp-for="Password" type="password" autocomplete="current-password" required /></label>
+<button class="account-submit" type="submit">LOG IN</button>
+</form><p><a href="/account/forgot-password">Forgot your password?</a></p><p>New to SALLY? <a href="/account/register">Create an account</a></p>
+</section></main>

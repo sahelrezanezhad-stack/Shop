@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-31",
+  "scope": "Static browser preview of current Razor body and production rack.js/rack.css; ASP.NET Core backend is not running",
+  "change": "Restore approved photographed hangers and the existing black upper rod while preserving original garment PNGs",
+  "view_switches": [
+    {
+      "product": "label-jacket",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/label-jacket-front.png"
+    },
+    {
+      "product": "label-jacket",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/label-jacket-back.png"
+    },
+    {
+      "product": "label-jacket",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/label-jacket-side.png"
+    },
+    {
+      "product": "suede-jacket",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/suede-jacket-front.png"
+    },
+    {
+      "product": "suede-jacket",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/suede-jacket-back.png"
+    },
+    {
+      "product": "suede-jacket",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/suede-jacket-side.png"
+    },
+    {
+      "product": "black-puffer",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/black-puffer-front.png"
+    },
+    {
+      "product": "black-puffer",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/black-puffer-back.png"
+    },
+    {
+      "product": "black-puffer",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/black-puffer-side.png"
+    },
+    {
+      "product": "wash-hoodie",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/wash-hoodie-front.png"
+    },
+    {
+      "product": "wash-hoodie",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/wash-hoodie-back.png"
+    },
+    {
+      "product": "wash-hoodie",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/wash-hoodie-side.png"
+    },
+    {
+      "product": "floral-overshirt",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/floral-overshirt-front.png"
+    },
+    {
+      "product": "floral-overshirt",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/floral-overshirt-back.png"
+    },
+    {
+      "product": "floral-overshirt",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/floral-overshirt-side.png"
+    },
+    {
+      "product": "camp-knit",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/camp-knit-front.png"
+    },
+    {
+      "product": "camp-knit",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/camp-knit-back.png"
+    },
+    {
+      "product": "camp-knit",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/camp-knit-side.png"
+    },
+    {
+      "product": "utility-vest",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/utility-vest-front.png"
+    },
+    {
+      "product": "utility-vest",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/utility-vest-back.png"
+    },
+    {
+      "product": "utility-vest",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/utility-vest-side.png"
+    },
+    {
+      "product": "stone-sweat",
+      "view": "front",
+      "passed": true,
+      "active_hanger_source": "images/hanging/stone-sweat-front.png"
+    },
+    {
+      "product": "stone-sweat",
+      "view": "back",
+      "passed": true,
+      "active_hanger_source": "images/hanging/stone-sweat-back.png"
+    },
+    {
+      "product": "stone-sweat",
+      "view": "side",
+      "passed": true,
+      "active_hanger_source": "images/hanging/stone-sweat-side.png"
+    }
+  ],
+  "original_body_dimensions": {
+    "most": "720x936",
+    "black-puffer-back.png": "754x980; confirmed loaded after correcting an initial QA assumption that all widths were 720"
+  },
+  "gallery": {
+    "photographs_loaded": 24,
+    "expected_dimensions": "1024x1536",
+    "failed": 0
+  },
+  "desktop": {
+    "viewport": "1363x936",
+    "rod_display": "block",
+    "rod_height_css_px": 3,
+    "all_eight_idle_profiles_visible": true,
+    "synthetic_hanger_elements": 0,
+    "real_pointer_hover": {
+      "product": "wash-hoodie",
+      "preview": true,
+      "focused": false,
+      "view": "front",
+      "rack_x_css_px": -37.4825,
+      "rear_blur": false
+    },
+    "coordinate_click": {
+      "product": "wash-hoodie",
+      "focused": true,
+      "view": "front",
+      "rear_filter_includes": "blur(4px)"
+    },
+    "rack_script_console_errors": 0
+  },
+  "mobile": {
+    "test_surface": "390x844 iframe, not a physical touch device",
+    "document_width": 390,
+    "scroll_width": 390,
+    "rod_visible": true,
+    "initial_details_closed": true,
+    "hoodie_front_and_side_selected": true,
+    "controls_inside_viewport": true,
+    "coordinate_selection_first": "label-jacket",
+    "coordinate_selection_last": "stone-sweat"
+  },
+  "asset_preservation": {
+    "original_collection_png_count": 16,
+    "unchanged_hanging_photo_count": 24,
+    "original_migration_code_designer_count": 7,
+    "verified_before_packaging": true
+  },
+  "implementation_limits": [
+    "Photographic planes and SVG display clips, not a geometric 3D garment model",
+    "Human visual acceptance of clip outlines and placement is pending",
+    "Preview prices are sample values and do not verify the user ASP.NET runtime price display"
+  ],
+  "not_executed": [
+    "dotnet build or publish",
+    "C# or Razor compilation",
+    "SQL schema or transaction tests",
+    "Database writes, seeds, or migrations",
+    "SMTP tests",
+    "Physical touch-device tests"
+  ],
+  "release_ready": false
+}

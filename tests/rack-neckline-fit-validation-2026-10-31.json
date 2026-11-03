@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-31",
+  "scope": "Static browser preview of production JavaScript and CSS; no ASP.NET backend running in Work",
+  "user_feedback": "User rejected initial hanger/collar placement in jacket hover screenshot",
+  "implementation": {
+    "complete_photographed_shoulders": true,
+    "per_garment_neckline_apertures": 8,
+    "front_hook_outline_retained": true,
+    "hook_uniform_scale_retained": true,
+    "shoulder_width_fitted_independently": true,
+    "original_garment_pixels_not_rewritten": true,
+    "side_photographs_unchanged": true,
+    "back_hook_and_shoulders_use_same_uniform_scale": true,
+    "aperture_allows_negative_y_for_full_hook_curve": true
+  },
+  "view_switches": [
+    {
+      "product": "label-jacket",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "label-jacket",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "label-jacket",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "suede-jacket",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "suede-jacket",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "suede-jacket",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "black-puffer",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "black-puffer",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "black-puffer",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "wash-hoodie",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "wash-hoodie",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "wash-hoodie",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "floral-overshirt",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "floral-overshirt",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "floral-overshirt",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "camp-knit",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "camp-knit",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "camp-knit",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "utility-vest",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "utility-vest",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "utility-vest",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "product": "stone-sweat",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "product": "stone-sweat",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "product": "stone-sweat",
+      "view": "side",
+      "passed": true
+    }
+  ],
+  "front_visual_review": [
+    "label-jacket",
+    "suede-jacket",
+    "black-puffer",
+    "wash-hoodie",
+    "floral-overshirt",
+    "camp-knit",
+    "utility-vest",
+    "stone-sweat"
+  ],
+  "follow_up_checks": [
+    "Complete knit hook arc visible in front and back after extending the aperture",
+    "Stone sweatshirt image loaded and visually reviewed after one screenshot tool timeout",
+    "Real pointer hover selects label-jacket in its original rack slot with front view",
+    "390x844 iframe switches hoodie back/side/front; original hoodie PNG source retained; client width and scroll width both 375px",
+    "No rack.js console errors observed"
+  ],
+  "asset_preservation": {
+    "original_collection_png_count": 16,
+    "approved_hanging_photos": 24,
+    "comparison": "byte/hash comparison performed while packaging"
+  },
+  "limits": [
+    "Photographic planes with SVG occlusion, not a 3D cloth simulation",
+    "Final user acceptance of visual placement remains pending",
+    "Physical touch device not tested",
+    "C# compilation, SQL integration and SMTP not executed by Work"
+  ],
+  "prior_fixes_retained": [
+    "Compact landing composition",
+    "https first; SALLY_TEST last; profile values unchanged",
+    "Customer login success on https/7092 recorded as user report"
+  ],
+  "final_release": false
+}

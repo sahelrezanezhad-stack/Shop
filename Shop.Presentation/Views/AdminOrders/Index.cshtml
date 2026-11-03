@@ -1,0 +1,9 @@
+@model Shop.Application.Orders.ManagedOrderPage
+@{ ViewData["Title"] = "Orders"; Layout = "_AdminLayout"; }
+<span class="account-kicker">ORDER MANAGEMENT</span><h1>Orders</h1>
+<form action="/admin/orders" method="get" class="admin-inline"><label>Status<input name="status" value="@ViewData["status"]" maxlength="40" placeholder="All statuses"/></label><button class="btn" type="submit">Filter</button><a href="/admin/orders">Clear</a></form>
+<div class="table-wrap"><table><thead><tr><th>Order</th><th>Date (UTC)</th><th>Customer</th><th>Status</th><th>Total (TOMAN)</th><th></th></tr></thead><tbody>
+@foreach(var order in Model.Orders){<tr><td>#@order.Id</td><td>@order.CreatedUtc.ToString("yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture)</td><td>@order.CustomerName</td><td><span class="status">@order.Status</span></td><td>@order.TotalToman.ToString("N0")</td><td><a href="/admin/orders/@order.Id">View order →</a></td></tr>}
+@if(Model.Orders.Count==0){<tr><td colspan="6">No orders match this filter.</td></tr>}
+</tbody></table></div>
+<nav class="admin-pagination" aria-label="Order pages">@if(Model.Page>1){<a asp-controller="AdminOrders" asp-action="Index" asp-route-page="@(Model.Page-1)" asp-route-status="@ViewData["status"]">← Previous</a>}<span>Page @Model.Page of @Model.TotalPages</span>@if(Model.Page<Model.TotalPages){<a asp-controller="AdminOrders" asp-action="Index" asp-route-page="@(Model.Page+1)" asp-route-status="@ViewData["status"]">Next →</a>}</nav>

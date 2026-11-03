@@ -1,0 +1,1778 @@
+{
+  "package_id": "SALLY-SHOP-COMPLETE-SOURCE-TEST-20261101-INTEGRATED",
+  "date": "2026-10-31",
+  "delivery_kind": "complete_current_source_for_user_debug_build_and_testing",
+  "final_release": false,
+  "archive_root": "Shop/",
+  "packaged_file_count": 267,
+  "baseline": {
+    "filename": "SALLY_Build_Test(3).zip",
+    "sha256": "313d9d9b9ff33faa10489952230f8e8680948f340ca2bbd674a897d0abfd03e8",
+    "file_count": 188,
+    "missing_paths": [
+      "Shop.Application/Class1.cs",
+      "Shop.Application/DependencyInjection/DependencyInjection.cs",
+      "Shop.Application/Orders/CheckoutService.cs",
+      "Shop.Application/Products/IProductRepository.cs",
+      "Shop.Application/ShoppingCarts/ICartRepository.cs",
+      "Shop.Application/ShoppingCarts/ISizeStockRepository.cs",
+      "Shop.Domain/Class1.cs",
+      "Shop.Infrastructure/Class1.cs",
+      "Shop.Infrastructure/DependencyInjection/DependencyInjection.cs",
+      "Shop.Infrastructure/Inventory/SizeStockRepository.cs",
+      "Shop.Infrastructure/Orders/CheckoutRepository.cs",
+      "Shop.Infrastructure/Products/ProductRepository.cs",
+      "Shop.Infrastructure/ShoppingCarts/CartRepository.cs"
+    ],
+    "unchanged_file_count": 148,
+    "changed_file_count": 40,
+    "changed_paths": [
+      "00_START_HERE_FA.txt",
+      "PREVIEW.html",
+      "README.md",
+      "SALLY_FILE_CHECKSUMS.txt",
+      "Shop.Application/Products/DTOs/CreateProductDto.cs",
+      "Shop.Application/Products/DTOs/UpdateProductDto.cs",
+      "Shop.Application/Products/ProductService.cs",
+      "Shop.Application/ShoppingCarts/CartService.cs",
+      "Shop.Application/ShoppingCarts/ICartRepository.cs",
+      "Shop.Infrastructure/DependencyInjection/DependencyInjection.cs",
+      "Shop.Infrastructure/Orders/CheckoutRepository.cs",
+      "Shop.Infrastructure/Persistence/Migrations/ShopDbContextModelSnapshot.cs",
+      "Shop.Infrastructure/Persistence/ShopDbContext.cs",
+      "Shop.Infrastructure/Products/ProductRepository.cs",
+      "Shop.Infrastructure/ShoppingCarts/CartRepository.cs",
+      "Shop.Presentation/Accounts/SallyAccountController.cs",
+      "Shop.Presentation/Accounts/SallyAccountModels.cs",
+      "Shop.Presentation/Controllers/CartController.cs",
+      "Shop.Presentation/Controllers/CheckoutController.cs",
+      "Shop.Presentation/Controllers/ProductsController.cs",
+      "Shop.Presentation/Controllers/StorefrontController.cs",
+      "Shop.Presentation/Email/SallyEmailDispatcher.cs",
+      "Shop.Presentation/Email/SallyMailOptions.cs",
+      "Shop.Presentation/Middleware/ExceptionHandlingMiddleware.cs",
+      "Shop.Presentation/Program.cs",
+      "Shop.Presentation/Properties/launchSettings.json",
+      "Shop.Presentation/Views/Account/Index.cshtml",
+      "Shop.Presentation/Views/Account/Login.cshtml",
+      "Shop.Presentation/Views/Home/Index.cshtml",
+      "Shop.Presentation/Views/Products/Create.cshtml",
+      "Shop.Presentation/Views/Products/Delete.cshtml",
+      "Shop.Presentation/Views/Products/Edit.cshtml",
+      "Shop.Presentation/Views/Products/Index.cshtml",
+      "Shop.Presentation/appsettings.json",
+      "Shop.Presentation/wwwroot/css/rack.css",
+      "Shop.Presentation/wwwroot/js/rack.js",
+      "Shop.sln",
+      "scripts/seed-demo-size-stock-LOCAL-ONLY.sql",
+      "scripts/seed-sally-catalog.sql",
+      "scripts/set-demo-stock-ONLY-FOR-LOCAL-TEST.sql"
+    ],
+    "all_original_source_paths_included": false,
+    "original_collection_images_identical_count": 16,
+    "original_migration_code_and_designer_files_identical_count": 7,
+    "model_snapshot_is_metadata_updated_and_not_counted_as_unchanged_migration": true,
+    "relocated_paths": {
+      "Shop.Application/Products/IProductRepository.cs": "Shop.Domain/Repositories/IProductRepository.cs",
+      "Shop.Application/ShoppingCarts/ICartRepository.cs": "Shop.Domain/Repositories/ICartRepository.cs",
+      "Shop.Application/ShoppingCarts/ISizeStockRepository.cs": "Shop.Domain/Repositories/ISizeStockRepository.cs",
+      "Shop.Application/Orders/CheckoutService.cs": "Shop.Application/Orders/Commands/CheckoutService.cs",
+      "Shop.Application/DependencyInjection/DependencyInjection.cs": "Shop.Application/DependencyInjection.cs",
+      "Shop.Infrastructure/DependencyInjection/DependencyInjection.cs": "Shop.Infrastructure/DependencyInjection.cs",
+      "Shop.Infrastructure/Products/ProductRepository.cs": "Shop.Infrastructure/Repositories/ProductRepository.cs",
+      "Shop.Infrastructure/ShoppingCarts/CartRepository.cs": "Shop.Infrastructure/Repositories/CartRepository.cs",
+      "Shop.Infrastructure/Inventory/SizeStockRepository.cs": "Shop.Infrastructure/Repositories/SizeStockRepository.cs",
+      "Shop.Infrastructure/Orders/CheckoutRepository.cs": "Shop.Infrastructure/Repositories/CheckoutRepository.cs"
+    },
+    "intentionally_removed_unused_placeholders": [
+      "Shop.Domain/Class1.cs",
+      "Shop.Application/Class1.cs",
+      "Shop.Infrastructure/Class1.cs"
+    ]
+  },
+  "additional_hanging_photos": {
+    "count": 24,
+    "all_match_provenance_sha256": true,
+    "provenance_file": "SALLY_IMAGE_SOURCES.json"
+  },
+  "solution_projects": [
+    "Shop.Domain",
+    "Shop.Application",
+    "Shop.Infrastructure",
+    "Shop.Presentation",
+    "Shop.Security.Tests",
+    "Sally.AdminHash"
+  ],
+  "prepackage_checks": {
+    "javascript_syntax": "passed_node_check",
+    "json_and_project_xml": "parsed",
+    "solution_project_paths_and_configurations": "validated_6_projects",
+    "git_diff_whitespace": "passed",
+    "test_launch_profile_database": "SALLY_Test_20261030",
+    "sql_fixture_default": "preview_only_apply_0",
+    "migration_files_modified_or_added": false,
+    "automatic_migrations_or_seed_added": false,
+    "landing_desktop_and_mobile_browser": "passed_in_static_preview",
+    "hero_source_bytes": "verified_unchanged",
+    "rack_hanger_desktop_mobile_browser": "passed_static_preview_24_view_switches_24_gallery_photos_pointer_hover_click_mobile_edge_selection",
+    "original_and_approved_photos": "all_16_original_pngs_and_24_hanging_pngs_byte_preserved",
+    "launch_profile_values": "unchanged_order_only_https_first_SALLY_TEST_last",
+    "landing_spacing": "static_browser_1363x936_1280x640_mobile390x844",
+    "neckline_fit": "24_view_switches_8_front_collars_knit_hook_front_back_real_hover_mobile_hoodie_3_views",
+    "dotnet_build": "not_run_no_sdk",
+    "xunit": "not_run_no_sdk",
+    "csharp_syntax": "tree_sitter_parsed_all_sources_and_tests",
+    "hanger_lowering": "all_8_front_hook_contacts_and_shoulder_joins_algebraically_checked; suede_and_hoodie_visually_checked",
+    "vest_collar": "static_browser_rack_and_focused_front; natural_width_1; 14_unit_offset; collar_aperture_corrected; user_acceptance_pending"
+  },
+  "runtime_tests_not_executed_here": [
+    "dotnet_restore_and_debug_build",
+    "csharp_and_razor_compilation",
+    "dotnet_security_tests",
+    "sql_server_schema_and_transaction_integration_tests",
+    "smtp_sandbox_delivery"
+  ],
+  "no_existing_database_writes_executed_by_work": true,
+  "no_publish_or_final_build": true,
+  "database_backup_included": false,
+  "no_generated_build_binaries_or_local_credentials_included": true,
+  "start_guide": "00_START_HERE_FA.txt",
+  "full_test_guide": "SALLY_TEST_PACKAGE_FA.md",
+  "file_hash_list_excludes": [
+    "SALLY_PACKAGE_MANIFEST.json",
+    "SALLY_FILE_CHECKSUMS.txt"
+  ],
+  "checksum_file_covers_every_packaged_file_except_itself": "SALLY_FILE_CHECKSUMS.txt",
+  "all_source_paths": [
+    ".gitattributes",
+    ".gitignore",
+    "00_START_HERE_FA.txt",
+    "00_WORKSPACE_STATUS_FA.md",
+    "PREVIEW.html",
+    "RACK_MOTION_LAB.html",
+    "README-MOTION-LAB.md",
+    "README-RACK-DAY1.md",
+    "README-RACK-REVISION-B.md",
+    "README-SALLY-BLACK-PUFFER-TEST.md",
+    "README-SALLY-HANGER-STUDY.md",
+    "README-SALLY-LATEST.md",
+    "README-SALLY-MOTION-FIX.md",
+    "README-SALLY-RAIL-UPDATE.md",
+    "README-SALLY-UPDATE.md",
+    "README.md",
+    "README_3D_OFFLINE_TEST_FA.txt",
+    "README_404_FIX.txt",
+    "SALLY_ACCOUNT_HANGFIRE_GUIDE_FA.md",
+    "SALLY_ADMIN_SETUP_FA.md",
+    "SALLY_CHANGELOG_2026-10-29.md",
+    "SALLY_DAY2_CART_GUIDE_FA.md",
+    "SALLY_DAY3_ORDER_GUIDE_FA.md",
+    "SALLY_DAY_1_2_README_FA.md",
+    "SALLY_FILE_CHECKSUMS.txt",
+    "SALLY_IMAGE_SOURCES.json",
+    "SALLY_LANDING_IMAGE_SOURCE.json",
+    "SALLY_PACKAGE_MANIFEST.json",
+    "SALLY_PROGRESS_DAY4_FA.md",
+    "SALLY_RELEASE_NOTES_FA.md",
+    "SALLY_TEST_PACKAGE_FA.md",
+    "SALLY_UPDATE_HOVER_RACK_FA.md",
+    "SALLY_UPDATE_PRICES_VISUAL_FA.md",
+    "SALLY_V4_HOVER_CLICK_NOTES_FA.md",
+    "SALLY_V4_IMPLEMENTATION_FA.md",
+    "Shop.Application/DependencyInjection.cs",
+    "Shop.Application/Inventory/Commands/InventoryCommands.cs",
+    "Shop.Application/Inventory/InventoryManagementService.cs",
+    "Shop.Application/Inventory/Queries/InventoryQueries.cs",
+    "Shop.Application/Orders/Commands/CheckoutService.cs",
+    "Shop.Application/Orders/Commands/OrderCommands.cs",
+    "Shop.Application/Orders/IOrderManagementService.cs",
+    "Shop.Application/Orders/OrderManagementService.cs",
+    "Shop.Application/Orders/OrderModels.cs",
+    "Shop.Application/Orders/Queries/OrderQueries.cs",
+    "Shop.Application/Products/Commands/ProductCommands.cs",
+    "Shop.Application/Products/DTOs/CreateProductDto.cs",
+    "Shop.Application/Products/DTOs/ProductDto.cs",
+    "Shop.Application/Products/DTOs/UpdateProductDto.cs",
+    "Shop.Application/Products/IProductService.cs",
+    "Shop.Application/Products/ProductService.cs",
+    "Shop.Application/Products/Queries/ProductQueries.cs",
+    "Shop.Application/Shop.Application.csproj",
+    "Shop.Application/ShoppingCarts/CartDtos.cs",
+    "Shop.Application/ShoppingCarts/CartService.cs",
+    "Shop.Application/ShoppingCarts/Commands/CartCommands.cs",
+    "Shop.Application/ShoppingCarts/ICartService.cs",
+    "Shop.Application/ShoppingCarts/IInventoryManagementService.cs",
+    "Shop.Application/ShoppingCarts/Queries/CartQueries.cs",
+    "Shop.Application/ShoppingCarts/SallyCatalog.cs",
+    "Shop.Domain/Entities/Customer.cs",
+    "Shop.Domain/Entities/Order.cs",
+    "Shop.Domain/Entities/OrderItem.cs",
+    "Shop.Domain/Entities/Product.cs",
+    "Shop.Domain/Entities/ProductSizeStock.cs",
+    "Shop.Domain/Entities/SallyAccount.cs",
+    "Shop.Domain/Entities/SallyEmailOutbox.cs",
+    "Shop.Domain/Entities/ShoppingCart.cs",
+    "Shop.Domain/Entities/ShoppingCartLine.cs",
+    "Shop.Domain/Orders/CheckoutModels.cs",
+    "Shop.Domain/Repositories/ICartRepository.cs",
+    "Shop.Domain/Repositories/ICheckoutRepository.cs",
+    "Shop.Domain/Repositories/IInventoryRepository.cs",
+    "Shop.Domain/Repositories/IOrderRepository.cs",
+    "Shop.Domain/Repositories/IProductRepository.cs",
+    "Shop.Domain/Repositories/ISizeStockRepository.cs",
+    "Shop.Domain/Shop.Domain.csproj",
+    "Shop.Infrastructure/DependencyInjection.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261013185122_InitialCreate.Designer.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261013185122_InitialCreate.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261013190421_ConfigureDecimalPrecision.Designer.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261013190421_ConfigureDecimalPrecision.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261028120000_AddShoppingCarts.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261028150000_AddCheckoutAndSizeInventory.cs",
+    "Shop.Infrastructure/Persistence/Migrations/20261028170000_AddSallyAccountsAndEmailOutbox.cs",
+    "Shop.Infrastructure/Persistence/Migrations/ShopDbContextModelSnapshot.cs",
+    "Shop.Infrastructure/Persistence/ShopDbContext.cs",
+    "Shop.Infrastructure/Repositories/CartRepository.cs",
+    "Shop.Infrastructure/Repositories/CheckoutRepository.cs",
+    "Shop.Infrastructure/Repositories/InventoryRepository.cs",
+    "Shop.Infrastructure/Repositories/OrderRepository.cs",
+    "Shop.Infrastructure/Repositories/ProductRepository.cs",
+    "Shop.Infrastructure/Repositories/SizeStockRepository.cs",
+    "Shop.Infrastructure/Shop.Infrastructure.csproj",
+    "Shop.Presentation/Accounts/SallyAccountController.cs",
+    "Shop.Presentation/Accounts/SallyAccountModels.cs",
+    "Shop.Presentation/Controllers/AdminController.cs",
+    "Shop.Presentation/Controllers/AdminInventoryController.cs",
+    "Shop.Presentation/Controllers/AdminOrdersController.cs",
+    "Shop.Presentation/Controllers/CartController.cs",
+    "Shop.Presentation/Controllers/CheckoutController.cs",
+    "Shop.Presentation/Controllers/HomeController.cs",
+    "Shop.Presentation/Controllers/ProductsController.cs",
+    "Shop.Presentation/Controllers/StorefrontController.cs",
+    "Shop.Presentation/Email/SallyEmailDispatcher.cs",
+    "Shop.Presentation/Email/SallyEmailWorker.cs",
+    "Shop.Presentation/Email/SallyMailOptions.cs",
+    "Shop.Presentation/Middleware/ExceptionHandlingMiddleware.cs",
+    "Shop.Presentation/Models/ErrorViewModel.cs",
+    "Shop.Presentation/Program.cs",
+    "Shop.Presentation/Properties/launchSettings.json",
+    "Shop.Presentation/Security/SallyPasswordResetTokens.cs",
+    "Shop.Presentation/Security/SallySecurity.cs",
+    "Shop.Presentation/Shop.Presentation.csproj",
+    "Shop.Presentation/Views/Account/ForgotPassword.cshtml",
+    "Shop.Presentation/Views/Account/Index.cshtml",
+    "Shop.Presentation/Views/Account/Login.cshtml",
+    "Shop.Presentation/Views/Account/Register.cshtml",
+    "Shop.Presentation/Views/Account/ResetPassword.cshtml",
+    "Shop.Presentation/Views/Admin/Index.cshtml",
+    "Shop.Presentation/Views/Admin/Login.cshtml",
+    "Shop.Presentation/Views/AdminInventory/Index.cshtml",
+    "Shop.Presentation/Views/AdminOrders/Detail.cshtml",
+    "Shop.Presentation/Views/AdminOrders/Index.cshtml",
+    "Shop.Presentation/Views/Home/Index.cshtml",
+    "Shop.Presentation/Views/Home/Privacy.cshtml",
+    "Shop.Presentation/Views/Products/Create.cshtml",
+    "Shop.Presentation/Views/Products/Delete.cshtml",
+    "Shop.Presentation/Views/Products/Edit.cshtml",
+    "Shop.Presentation/Views/Products/Index.cshtml",
+    "Shop.Presentation/Views/Shared/Error.cshtml",
+    "Shop.Presentation/Views/Shared/_AdminLayout.cshtml",
+    "Shop.Presentation/Views/Shared/_Layout.cshtml",
+    "Shop.Presentation/Views/Shared/_Layout.cshtml.css",
+    "Shop.Presentation/Views/Shared/_StoreLayout.cshtml",
+    "Shop.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml",
+    "Shop.Presentation/Views/_ViewImports.cshtml",
+    "Shop.Presentation/Views/_ViewStart.cshtml",
+    "Shop.Presentation/appsettings.Development.json",
+    "Shop.Presentation/appsettings.json",
+    "Shop.Presentation/wwwroot/css/account.css",
+    "Shop.Presentation/wwwroot/css/admin.css",
+    "Shop.Presentation/wwwroot/css/rack.css",
+    "Shop.Presentation/wwwroot/css/site.css",
+    "Shop.Presentation/wwwroot/favicon.ico",
+    "Shop.Presentation/wwwroot/images/collection/black-puffer-back.png",
+    "Shop.Presentation/wwwroot/images/collection/black-puffer-front.png",
+    "Shop.Presentation/wwwroot/images/collection/camp-knit-back.png",
+    "Shop.Presentation/wwwroot/images/collection/camp-knit.png",
+    "Shop.Presentation/wwwroot/images/collection/floral-overshirt-back.png",
+    "Shop.Presentation/wwwroot/images/collection/floral-overshirt.png",
+    "Shop.Presentation/wwwroot/images/collection/label-jacket-back.png",
+    "Shop.Presentation/wwwroot/images/collection/label-jacket-front.png",
+    "Shop.Presentation/wwwroot/images/collection/stone-sweat-back.png",
+    "Shop.Presentation/wwwroot/images/collection/stone-sweat-front.png",
+    "Shop.Presentation/wwwroot/images/collection/suede-jacket-back.png",
+    "Shop.Presentation/wwwroot/images/collection/suede-jacket.png",
+    "Shop.Presentation/wwwroot/images/collection/vest-back.png",
+    "Shop.Presentation/wwwroot/images/collection/vest-front.png",
+    "Shop.Presentation/wwwroot/images/collection/wash-hoodie-back.png",
+    "Shop.Presentation/wwwroot/images/collection/wash-hoodie.png",
+    "Shop.Presentation/wwwroot/images/hanging/black-puffer-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/black-puffer-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/black-puffer-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/camp-knit-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/camp-knit-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/camp-knit-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/label-jacket-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/label-jacket-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/label-jacket-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/stone-sweat-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/stone-sweat-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/stone-sweat-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/suede-jacket-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/suede-jacket-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/suede-jacket-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/utility-vest-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/utility-vest-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/utility-vest-side.png",
+    "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-back.png",
+    "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-front.png",
+    "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-side.png",
+    "Shop.Presentation/wwwroot/images/landing/cream-model.jpg",
+    "Shop.Presentation/wwwroot/js/rack.js",
+    "Shop.Presentation/wwwroot/js/site.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/LICENSE",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+    "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+    "Shop.Presentation/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+    "Shop.Presentation/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+    "Shop.Presentation/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+    "Shop.Presentation/wwwroot/lib/jquery-validation/LICENSE.md",
+    "Shop.Presentation/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+    "Shop.Presentation/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+    "Shop.Presentation/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+    "Shop.Presentation/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+    "Shop.Presentation/wwwroot/lib/jquery/LICENSE.txt",
+    "Shop.Presentation/wwwroot/lib/jquery/dist/jquery.js",
+    "Shop.Presentation/wwwroot/lib/jquery/dist/jquery.min.js",
+    "Shop.Presentation/wwwroot/lib/jquery/dist/jquery.min.map",
+    "Shop.sln",
+    "scripts/audit-current-database-READ-ONLY.sql",
+    "scripts/check-sally-orders-email-and-stock.sql",
+    "scripts/seed-demo-size-stock-LOCAL-ONLY.sql",
+    "scripts/seed-sally-catalog.sql",
+    "scripts/set-demo-stock-ONLY-FOR-LOCAL-TEST.sql",
+    "tests/README_FA.md",
+    "tests/Shop.Security.Tests/AuthorizationTests.cs",
+    "tests/Shop.Security.Tests/ManagementCommandTests.cs",
+    "tests/Shop.Security.Tests/PasswordResetTests.cs",
+    "tests/Shop.Security.Tests/Shop.Security.Tests.csproj",
+    "tests/browser-validation-2026-10-30.json",
+    "tests/database-inventory-observation-2026-10-30.json",
+    "tests/landing-and-user-runtime-validation-2026-10-31.json",
+    "tests/landing-spacing-and-login-profile-2026-10-31.json",
+    "tests/layout-hanger-validation-2026-11-01.md",
+    "tests/rack-hanger-restoration-2026-10-31.json",
+    "tests/rack-neckline-fit-validation-2026-10-31.json",
+    "tests/rack-profile-validation-2026-10-30.json",
+    "tests/refactor-validation-2026-11-01.md",
+    "tools/Sally.AdminHash/Program.cs",
+    "tools/Sally.AdminHash/Sally.AdminHash.csproj"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 2518,
+      "sha256": "45a7cbb7d9942ba7ffce0b20bc8dbe2d1196533bc6e4bd245871d77fb1eedfdc"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 6223,
+      "sha256": "deab72c393f334c50b9f30ce730eca452ea0ac28f6544cdc2012017f6c9a902c"
+    },
+    {
+      "path": "00_START_HERE_FA.txt",
+      "size_bytes": 5059,
+      "sha256": "52f880ab40b81c14701dea2c6f15f7f3f743ac8551276fb3945591479ab36b3b"
+    },
+    {
+      "path": "00_WORKSPACE_STATUS_FA.md",
+      "size_bytes": 29900,
+      "sha256": "514b2ea94497785dd6b12f0350cb7ec7a1e08120d04a04bed9b77952b762f106"
+    },
+    {
+      "path": "PREVIEW.html",
+      "size_bytes": 10098,
+      "sha256": "7b653424574ecb6b8f2c5800a7cea902a8d31d9e1a525f20d252de9ef0dc5525"
+    },
+    {
+      "path": "RACK_MOTION_LAB.html",
+      "size_bytes": 7853,
+      "sha256": "ee2e99cdb086673bc088df5d2221292011c056d413584e57004058621118be26"
+    },
+    {
+      "path": "README-MOTION-LAB.md",
+      "size_bytes": 512,
+      "sha256": "fc64cadbc3e19ff11f7a6fb466fe3bc6fcdfe8abd2c299048b4b26cbde2362eb"
+    },
+    {
+      "path": "README-RACK-DAY1.md",
+      "size_bytes": 1357,
+      "sha256": "99c4d0a324f482dde01cb74b6897d18da45f5c3eeeb147fd64de1bfc408a25a5"
+    },
+    {
+      "path": "README-RACK-REVISION-B.md",
+      "size_bytes": 878,
+      "sha256": "4d5533a9d5e41ba5ee97c7da6257d1e11b95927ab0857ecad8243ebcdda8ca49"
+    },
+    {
+      "path": "README-SALLY-BLACK-PUFFER-TEST.md",
+      "size_bytes": 406,
+      "sha256": "91710201d35e9420c4310ae11192610a6c941dfb817c20529166733a5cb21b61"
+    },
+    {
+      "path": "README-SALLY-HANGER-STUDY.md",
+      "size_bytes": 567,
+      "sha256": "6921f31c6ff8c9aefaf96a88bfe7d8bb78d986ff09a6abc1a1c05642fa027ed6"
+    },
+    {
+      "path": "README-SALLY-LATEST.md",
+      "size_bytes": 270,
+      "sha256": "20bc9953a677031bae8447af960dcc9dbb61cc91517fc7ad419c6d00869e5049"
+    },
+    {
+      "path": "README-SALLY-MOTION-FIX.md",
+      "size_bytes": 784,
+      "sha256": "1ac68f38650ecb693df0c66ef8288b58d8c803fa3595dbe77de980dde0f29d3f"
+    },
+    {
+      "path": "README-SALLY-RAIL-UPDATE.md",
+      "size_bytes": 428,
+      "sha256": "809e31565026682b118c5c7d84572c975af895b69d4bdb071421ba9d5b7c7267"
+    },
+    {
+      "path": "README-SALLY-UPDATE.md",
+      "size_bytes": 342,
+      "sha256": "1946c5be2ba49e6ed1690e2bcb99a47265acc6844b617ae24371d9203877320a"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 1445,
+      "sha256": "12d2dfbfbd36accb6835bad9cf31bcbc00d1ed18c5b28f1aa6e5db86cc3ee616"
+    },
+    {
+      "path": "README_3D_OFFLINE_TEST_FA.txt",
+      "size_bytes": 671,
+      "sha256": "7c20093b90a1718fd034c9ef9e4cf0c52f3b116d45b104e34193c79ade364def"
+    },
+    {
+      "path": "README_404_FIX.txt",
+      "size_bytes": 275,
+      "sha256": "64c38d06ffa62f12159f88f51ab7165b374d315cf57ffe7674aff585dc278f66"
+    },
+    {
+      "path": "SALLY_ACCOUNT_HANGFIRE_GUIDE_FA.md",
+      "size_bytes": 9997,
+      "sha256": "c8c7e0c61727013e5b796fb2d0c6ceb12aedb74b3ec5ffa11ccf5e8128ab5df5"
+    },
+    {
+      "path": "SALLY_ADMIN_SETUP_FA.md",
+      "size_bytes": 2908,
+      "sha256": "826be797e7f269ea005b519641bc5559ec0c2f676b979cfc6a8e9bbf99091d3a"
+    },
+    {
+      "path": "SALLY_CHANGELOG_2026-10-29.md",
+      "size_bytes": 2074,
+      "sha256": "253fe5de5a973d4249c7c6320bb2bc9d318ab28abbbb1927558aeb9cbf2f96d3"
+    },
+    {
+      "path": "SALLY_DAY2_CART_GUIDE_FA.md",
+      "size_bytes": 5688,
+      "sha256": "7576da2a54333d23d3b496accaf7f7d8011a3ab1316f686ce5714720cde51c98"
+    },
+    {
+      "path": "SALLY_DAY3_ORDER_GUIDE_FA.md",
+      "size_bytes": 6461,
+      "sha256": "b59dbdc22018048567ce06d77e4d013e1fe87a49d278835cef78231967b6f9f2"
+    },
+    {
+      "path": "SALLY_DAY_1_2_README_FA.md",
+      "size_bytes": 2947,
+      "sha256": "db4ee4ddac2ec0284790e2649c7c77e2f43951619fc7e7aa6e35b9055050dd78"
+    },
+    {
+      "path": "SALLY_IMAGE_SOURCES.json",
+      "size_bytes": 6797,
+      "sha256": "0beefd520650f99448ffdafdb07a131523d7ffae28308a0ca9cc931f7c523a23"
+    },
+    {
+      "path": "SALLY_LANDING_IMAGE_SOURCE.json",
+      "size_bytes": 855,
+      "sha256": "7533fa1ae432d6b78fa22a58fe04964e3741b2a9ea8891f303fd3ba8fd1bbffa"
+    },
+    {
+      "path": "SALLY_PROGRESS_DAY4_FA.md",
+      "size_bytes": 13458,
+      "sha256": "8300596967ff77c4d316caa29975a245b4fbfa63f93e3eb93a29d6743ea8bc10"
+    },
+    {
+      "path": "SALLY_RELEASE_NOTES_FA.md",
+      "size_bytes": 2795,
+      "sha256": "d718e881e68c4bc4031bb249dd5f5eb4a3737c6ffbf5158edcc29424a6c092ef"
+    },
+    {
+      "path": "SALLY_TEST_PACKAGE_FA.md",
+      "size_bytes": 15500,
+      "sha256": "97b78676cb7c63d6145b511060036486438f6a2a9397a75553cb54a12e142172"
+    },
+    {
+      "path": "SALLY_UPDATE_HOVER_RACK_FA.md",
+      "size_bytes": 1789,
+      "sha256": "2a1b953db637330d01e25f31bf5ffe4d6e65b781b92e7d3a1b592d62da326d39"
+    },
+    {
+      "path": "SALLY_UPDATE_PRICES_VISUAL_FA.md",
+      "size_bytes": 1416,
+      "sha256": "ef4cf46853651a3dc3b4099d227a3d7078a6ce5f298269705de3c21547ebb8f1"
+    },
+    {
+      "path": "SALLY_V4_HOVER_CLICK_NOTES_FA.md",
+      "size_bytes": 1728,
+      "sha256": "59d02138668b11428e89f3bc4741583649c3074caddd98598400a344d7c89b03"
+    },
+    {
+      "path": "SALLY_V4_IMPLEMENTATION_FA.md",
+      "size_bytes": 2400,
+      "sha256": "bcc814991b6a1aed189c6ba1656315bf6b60e3856c1baf397da287dd16a6fc15"
+    },
+    {
+      "path": "Shop.Application/DependencyInjection.cs",
+      "size_bytes": 1667,
+      "sha256": "9a3d91ad9f82bb9fb22da21a1cbc792800d22741d0e7bf164469094f005e4e26"
+    },
+    {
+      "path": "Shop.Application/Inventory/Commands/InventoryCommands.cs",
+      "size_bytes": 2503,
+      "sha256": "afdfc2b77d2bd6653f5229b84713e8f8fa51284cbf1a088dc725608458485924"
+    },
+    {
+      "path": "Shop.Application/Inventory/InventoryManagementService.cs",
+      "size_bytes": 616,
+      "sha256": "433b49764fa7f064f3ef92835fd03620acea8a7ef1910e6d572d9c71b8d796a5"
+    },
+    {
+      "path": "Shop.Application/Inventory/Queries/InventoryQueries.cs",
+      "size_bytes": 807,
+      "sha256": "3a262a0180cb3e4ba6a7d6fc2015cb37fc6ce6fd89c2bc1fd5b61db4c300097d"
+    },
+    {
+      "path": "Shop.Application/Orders/Commands/CheckoutService.cs",
+      "size_bytes": 2235,
+      "sha256": "8afafeb353948be6055f11399ae79021af3603c2045893f03952631deb744a66"
+    },
+    {
+      "path": "Shop.Application/Orders/Commands/OrderCommands.cs",
+      "size_bytes": 1557,
+      "sha256": "e575811b2c6ba5e967fb50c2f7de122a892eabac9e094980ff35b243e9603d82"
+    },
+    {
+      "path": "Shop.Application/Orders/IOrderManagementService.cs",
+      "size_bytes": 843,
+      "sha256": "2458b26d1e35b8d4f7f11cab23b4aa96f40577e252ee88ab5f9d4fbd746e5647"
+    },
+    {
+      "path": "Shop.Application/Orders/OrderManagementService.cs",
+      "size_bytes": 588,
+      "sha256": "77a7b4c4475b5336b7864ba9da2538239995003d83a24c5d91dfc58822e603ca"
+    },
+    {
+      "path": "Shop.Application/Orders/OrderModels.cs",
+      "size_bytes": 364,
+      "sha256": "27b4797cbaf5066bd1d41dd538fa5fd3527673b4816a9971a61bacc625a73afb"
+    },
+    {
+      "path": "Shop.Application/Orders/Queries/OrderQueries.cs",
+      "size_bytes": 1340,
+      "sha256": "e32d7acf4005e02b18c963331b45ce58722ae714ac65edab885af6dd7ab387b3"
+    },
+    {
+      "path": "Shop.Application/Products/Commands/ProductCommands.cs",
+      "size_bytes": 2879,
+      "sha256": "3002b9ac3f034306bfdf3af7c7a5711fda76ba9ffe6c11ad8afafc4290466b65"
+    },
+    {
+      "path": "Shop.Application/Products/DTOs/CreateProductDto.cs",
+      "size_bytes": 479,
+      "sha256": "938306d1dd7c3668a239c3b68ab115aef10521c6d17c9d5d587e3a4b5dbcd43f"
+    },
+    {
+      "path": "Shop.Application/Products/DTOs/ProductDto.cs",
+      "size_bytes": 490,
+      "sha256": "9c323099210f391556b20d9869fc88d0a5e2faa6180807c4555ed63592f7547d"
+    },
+    {
+      "path": "Shop.Application/Products/DTOs/UpdateProductDto.cs",
+      "size_bytes": 591,
+      "sha256": "d280717dab4ba2606d70800a8b22f817b24035a22062466cd249d7a683f9d264"
+    },
+    {
+      "path": "Shop.Application/Products/IProductService.cs",
+      "size_bytes": 571,
+      "sha256": "bfb0dc0645830801fa7bfc318584f8d12ba51a99fa9f72217c7385d159153b20"
+    },
+    {
+      "path": "Shop.Application/Products/ProductService.cs",
+      "size_bytes": 842,
+      "sha256": "da525710dd609bb04c2f2372306751588080fc6b044e6a1524981fedc3cd025d"
+    },
+    {
+      "path": "Shop.Application/Products/Queries/ProductQueries.cs",
+      "size_bytes": 2049,
+      "sha256": "b0dc37ae690ea73a2df1a721566c8c64d983a94179bfa8d7294224e088066420"
+    },
+    {
+      "path": "Shop.Application/Shop.Application.csproj",
+      "size_bytes": 443,
+      "sha256": "6550dec65b44231cd5021df08fb2fc76fe9844f4d099cff3dd71fb505b1fe9d5"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/CartDtos.cs",
+      "size_bytes": 685,
+      "sha256": "4fb9582ba326825cf9633a55934c6bbe6df86c39aeb8f3e905184626d4be04d0"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/CartService.cs",
+      "size_bytes": 865,
+      "sha256": "5863deeafef0058b2c36c80a0d43a6c80b5f552f51c9be958cb3fabba01986f3"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/Commands/CartCommands.cs",
+      "size_bytes": 5244,
+      "sha256": "46c6033114b2acc7535b63ee21438e92d6b85caba9941b7642980c63457aa56b"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/ICartService.cs",
+      "size_bytes": 467,
+      "sha256": "e1c36bd128b0948d454d576b70ec9ddd4912344b587979f28c376e97a63b622f"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/IInventoryManagementService.cs",
+      "size_bytes": 639,
+      "sha256": "cf2eacd8ae7ff3aca8ce488109deb5764d9c512fa01aee967b8aeec47f8db922"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/Queries/CartQueries.cs",
+      "size_bytes": 1344,
+      "sha256": "ad885a063d1690c16c58503ab937d32c1cb0c2611281aebbc4c9212673bb5470"
+    },
+    {
+      "path": "Shop.Application/ShoppingCarts/SallyCatalog.cs",
+      "size_bytes": 1310,
+      "sha256": "d5f79118df3913a7fcb91a8568a07f0dd1a48fd2f1ad20121724edd79a5003da"
+    },
+    {
+      "path": "Shop.Domain/Entities/Customer.cs",
+      "size_bytes": 608,
+      "sha256": "9dde5f3dc0527b3b9a86d60a53349ad7af3f4cc3b785ff8692611140ab1f17e4"
+    },
+    {
+      "path": "Shop.Domain/Entities/Order.cs",
+      "size_bytes": 985,
+      "sha256": "0c5a317f04dfc5845c1e66bd22e85c96b4a3d8448c76ded736e3182c7bed44c1"
+    },
+    {
+      "path": "Shop.Domain/Entities/OrderItem.cs",
+      "size_bytes": 568,
+      "sha256": "68d2358b2af6f2b4d21e924ab3f23fe7ca290410f35ee104bc0a7e6f078b28a3"
+    },
+    {
+      "path": "Shop.Domain/Entities/Product.cs",
+      "size_bytes": 815,
+      "sha256": "3b954dcf0afe933c4031b84cce274f27d6aee6b500f2339d1b48c97470ea2039"
+    },
+    {
+      "path": "Shop.Domain/Entities/ProductSizeStock.cs",
+      "size_bytes": 371,
+      "sha256": "64b535d9cc71a0efb2dcd8c2d521242dd01dc19d669dad336b1a1731e74a0fab"
+    },
+    {
+      "path": "Shop.Domain/Entities/SallyAccount.cs",
+      "size_bytes": 633,
+      "sha256": "6497089bd63eab4ddbdf4dbdd67112cec8094c8587db5494ed78a94d6a4ce488"
+    },
+    {
+      "path": "Shop.Domain/Entities/SallyEmailOutbox.cs",
+      "size_bytes": 573,
+      "sha256": "dcd01cc1d01974c90b216438e0beeb4f1c197cee6b8c3b1ca9d22b78814a30ab"
+    },
+    {
+      "path": "Shop.Domain/Entities/ShoppingCart.cs",
+      "size_bytes": 327,
+      "sha256": "07aa898f92ecf17c9857dfc27c229fe0c98d3140a1978fcc979096f8ef864727"
+    },
+    {
+      "path": "Shop.Domain/Entities/ShoppingCartLine.cs",
+      "size_bytes": 390,
+      "sha256": "c92b726e60729dd332a900a2201bd4c5ccef89cc0a74c89c03130960edbd0768"
+    },
+    {
+      "path": "Shop.Domain/Orders/CheckoutModels.cs",
+      "size_bytes": 775,
+      "sha256": "76af3964c255e57583b1fe2a027c07201ebd763dfb2ea55d9d348382f9435b72"
+    },
+    {
+      "path": "Shop.Domain/Repositories/ICartRepository.cs",
+      "size_bytes": 648,
+      "sha256": "c739971122d6a8dec9c0dc5860386756f5f07d7147b705d416f91d8f666dda03"
+    },
+    {
+      "path": "Shop.Domain/Repositories/ICheckoutRepository.cs",
+      "size_bytes": 314,
+      "sha256": "38835440c122bb2f2f1463e6476d39161b2d5f2794521b79ce0dd8cd0217ddaa"
+    },
+    {
+      "path": "Shop.Domain/Repositories/IInventoryRepository.cs",
+      "size_bytes": 283,
+      "sha256": "98cf0ca9573ff50aaee78b335061d489cef1e21e9fa7d436bc0f65d7c8ecaacc"
+    },
+    {
+      "path": "Shop.Domain/Repositories/IOrderRepository.cs",
+      "size_bytes": 558,
+      "sha256": "98e5ed7219cda879b8d67d8bbba227e5c0f1eafe7ea08be2165e5bb059fb5223"
+    },
+    {
+      "path": "Shop.Domain/Repositories/IProductRepository.cs",
+      "size_bytes": 564,
+      "sha256": "0e1a9458ce637323d9e17e6dc4d71d85e7f057f13ddb8830655a0b631b5c9663"
+    },
+    {
+      "path": "Shop.Domain/Repositories/ISizeStockRepository.cs",
+      "size_bytes": 334,
+      "sha256": "0bf59356cf707d9c8160fea484a47c0bdc13bb2a86a301b1cdd60bd036c8358f"
+    },
+    {
+      "path": "Shop.Domain/Shop.Domain.csproj",
+      "size_bytes": 209,
+      "sha256": "b540adba501c839ec1d75143e106dfb9dd5593d9ff7cdd036af82c25c9387053"
+    },
+    {
+      "path": "Shop.Infrastructure/DependencyInjection.cs",
+      "size_bytes": 1364,
+      "sha256": "ab4019a02cf7d642bd4a429acdd1d010291d4534dcccf31eb4e3408d289af686"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261013185122_InitialCreate.Designer.cs",
+      "size_bytes": 6484,
+      "sha256": "1aa92b6569d7d407ae8dd10caf0eaff7fa3cae5dabaaad020ca8e1b22eebff7e"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261013185122_InitialCreate.cs",
+      "size_bytes": 5535,
+      "sha256": "25bb469f2de30cbd66200a75d76c357d78f264a57991f4c6a06f02050cdf56bb"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261013190421_ConfigureDecimalPrecision.Designer.cs",
+      "size_bytes": 6643,
+      "sha256": "d4947a79a7c097a885265f9c62c8d9c0b88b3bd34c5a5a5d44d0e7b71831938f"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261013190421_ConfigureDecimalPrecision.cs",
+      "size_bytes": 465,
+      "sha256": "50980363c3f76fee598a7be4360c6b472af86a6cc8676ac240b54de4ca3d831f"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261028120000_AddShoppingCarts.cs",
+      "size_bytes": 2559,
+      "sha256": "042462c608cbe787398d201a6c13fc4df0e132aa247603be5b552dac391631fe"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261028150000_AddCheckoutAndSizeInventory.cs",
+      "size_bytes": 3035,
+      "sha256": "c1d5750370b4180e791af2bc36300e2b7541fbf2cee76de4831a64c8c2e2f802"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/20261028170000_AddSallyAccountsAndEmailOutbox.cs",
+      "size_bytes": 3479,
+      "sha256": "255eb1474db873fa21cbbc48ece4db62d98bc9ab7b68767f4b095b8588ca4c1d"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/Migrations/ShopDbContextModelSnapshot.cs",
+      "size_bytes": 12941,
+      "sha256": "17bdc5fe4122f0bc439935f61a26c93d2b1f0fdaab2707f74fcaf0a9ddf9a911"
+    },
+    {
+      "path": "Shop.Infrastructure/Persistence/ShopDbContext.cs",
+      "size_bytes": 5136,
+      "sha256": "8f13fe22e7c6cf09a364b3fde2e132e9f40aff6ba6a20bece6ff4d911407d1ed"
+    },
+    {
+      "path": "Shop.Infrastructure/Repositories/CartRepository.cs",
+      "size_bytes": 1955,
+      "sha256": "a11928d2ddd379f7f43a40578b13346a34fd09cbe0a90dceef7409032907f1b2"
+    },
+    {
+      "path": "Shop.Infrastructure/Repositories/CheckoutRepository.cs",
+      "size_bytes": 5788,
+      "sha256": "b9eab0b5bc7bf8a730a292dbc451045b6c11583f3e40adec8586cc543e8c18ff"
+    },
+    {
+      "path": "Shop.Infrastructure/Repositories/InventoryRepository.cs",
+      "size_bytes": 1153,
+      "sha256": "7447ecabd56c9b339efa2fca40d09422cd3b73000e1cad185f7dc1df2f9a5506"
+    },
+    {
+      "path": "Shop.Infrastructure/Repositories/OrderRepository.cs",
+      "size_bytes": 3404,
+      "sha256": "1c65a3ac9eadb806271af109d2cbb2325a73115c6ec4a90b46f6c1fd0c4d1bf0"
+    },
+    {
+      "path": "Shop.Infrastructure/Repositories/ProductRepository.cs",
+      "size_bytes": 1952,
+      "sha256": "e6f691ed5888c096f07856b6b16acf47d6602881e6c6e7b055465ebb0f9ef1a2"
+    },
+    {
+      "path": "Shop.Infrastructure/Repositories/SizeStockRepository.cs",
+      "size_bytes": 856,
+      "sha256": "fab339d3063bd373cba523a54897d3f509b423b040bfdb524afc184ece6fd517"
+    },
+    {
+      "path": "Shop.Infrastructure/Shop.Infrastructure.csproj",
+      "size_bytes": 1013,
+      "sha256": "49317fa49e6ae7180882cbadb59275069d87808b6256ebc2d07cdc1268efae75"
+    },
+    {
+      "path": "Shop.Presentation/Accounts/SallyAccountController.cs",
+      "size_bytes": 17261,
+      "sha256": "0c9d4e59b123b45f6cfacd8302248ac134146d9517774838321b7e59b5873f31"
+    },
+    {
+      "path": "Shop.Presentation/Accounts/SallyAccountModels.cs",
+      "size_bytes": 1628,
+      "sha256": "6198e74ecf7a21710e4002f26f5e1d1a1cc4ac97be0abd17224385355bab6530"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/AdminController.cs",
+      "size_bytes": 3731,
+      "sha256": "91848eccc2f8260d47d724c2207782a0c64ee41ce279e277220a6dda177498f4"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/AdminInventoryController.cs",
+      "size_bytes": 1732,
+      "sha256": "1d8b60821550439212b8f1473e6b3b2bdc30b9748786d6fec2c6d6e6067546f2"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/AdminOrdersController.cs",
+      "size_bytes": 1291,
+      "sha256": "7504bf1102cec9df626ef9a05f8b6d2aec91e0b4908afa572f14c8f795b1bb31"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/CartController.cs",
+      "size_bytes": 3257,
+      "sha256": "8aef23394e0b2dc77e1e9387febb185349e3ea3696c3150e18c575c5bf68dd1e"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/CheckoutController.cs",
+      "size_bytes": 2256,
+      "sha256": "72f1164f9f8dc467751482106139ef6fef0c479ce90575c7385ea275d8508832"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/HomeController.cs",
+      "size_bytes": 799,
+      "sha256": "7978892c499893228a58454bd83ad3c6ae7e24570a438432738ed619d13082f5"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/ProductsController.cs",
+      "size_bytes": 4120,
+      "sha256": "2d882e8bc41fe37f9bdba02e2a0fe7c5826d6d7c48ce08a6f4a38f7e2e47e0b9"
+    },
+    {
+      "path": "Shop.Presentation/Controllers/StorefrontController.cs",
+      "size_bytes": 5754,
+      "sha256": "a4a9f09607089c15ad05debbf79397dbf9ff48f9b5b89b669e6a8ef44e9ba58e"
+    },
+    {
+      "path": "Shop.Presentation/Email/SallyEmailDispatcher.cs",
+      "size_bytes": 10679,
+      "sha256": "11dc2583bbd2a89382bc07aa490f88622af5ff5fbb640c2743d70db2581a7afd"
+    },
+    {
+      "path": "Shop.Presentation/Email/SallyEmailWorker.cs",
+      "size_bytes": 1256,
+      "sha256": "b3c93d9ae8d01f9188e8b344065e34e27a1d838239fc69cfcfbd220874e7e623"
+    },
+    {
+      "path": "Shop.Presentation/Email/SallyMailOptions.cs",
+      "size_bytes": 901,
+      "sha256": "15fc08c8e99c5e3bc918a880b2080e7c280f9f2a117fbf71cdbaad78840926b0"
+    },
+    {
+      "path": "Shop.Presentation/Middleware/ExceptionHandlingMiddleware.cs",
+      "size_bytes": 1472,
+      "sha256": "3cd8a34ac160ce09a0168797e0f69f39ec1b5cda513d9c74edadd065a04c7a30"
+    },
+    {
+      "path": "Shop.Presentation/Models/ErrorViewModel.cs",
+      "size_bytes": 202,
+      "sha256": "a781e68b3cfaff902432aa0e51a735206af692f94b0a45ab602f9d4d155301df"
+    },
+    {
+      "path": "Shop.Presentation/Program.cs",
+      "size_bytes": 7071,
+      "sha256": "e0fda17cd9e878e48143b4868292f37576dc9706ab5be0d674a061f52cbb0d44"
+    },
+    {
+      "path": "Shop.Presentation/Properties/launchSettings.json",
+      "size_bytes": 1493,
+      "sha256": "c9db4c7c849610d2146b3f8bf611de703ad0069da86063e73d743ad1914e218f"
+    },
+    {
+      "path": "Shop.Presentation/Security/SallyPasswordResetTokens.cs",
+      "size_bytes": 1167,
+      "sha256": "f65659ee421143b416ae5f7b2297a32e41ddd74795de43433d22ebf4fae6ee53"
+    },
+    {
+      "path": "Shop.Presentation/Security/SallySecurity.cs",
+      "size_bytes": 3365,
+      "sha256": "036efe5d5db4dfccf4d2a92fd2b550b1472a6cb8f3d20d2e484c656b671118e6"
+    },
+    {
+      "path": "Shop.Presentation/Shop.Presentation.csproj",
+      "size_bytes": 966,
+      "sha256": "531125971591f1a591256fa8069db84c5953a12e52b280da4d55b833e5f15c2d"
+    },
+    {
+      "path": "Shop.Presentation/Views/Account/ForgotPassword.cshtml",
+      "size_bytes": 876,
+      "sha256": "4cb0e1c7aaf0c95f2f4aaf028c58e7fe0a97d0c40458e8e5fa24ac07650c8eb7"
+    },
+    {
+      "path": "Shop.Presentation/Views/Account/Index.cshtml",
+      "size_bytes": 2532,
+      "sha256": "4601eae9910623ff093d0ab59bcbaf96e1b779c8389b37170103aea1a3fc46f4"
+    },
+    {
+      "path": "Shop.Presentation/Views/Account/Login.cshtml",
+      "size_bytes": 1010,
+      "sha256": "a611882be2d914ed069e34e3970a8104892ea555da9cd9e791ad8a7f55583156"
+    },
+    {
+      "path": "Shop.Presentation/Views/Account/Register.cshtml",
+      "size_bytes": 1293,
+      "sha256": "ce62af1b382e0c5795064e10a12da4c7e6f1ac577ae4f4f557fbae368b3f0931"
+    },
+    {
+      "path": "Shop.Presentation/Views/Account/ResetPassword.cshtml",
+      "size_bytes": 975,
+      "sha256": "06340ca783a10f5fa49bd7e0db1fafb197223be79613dffcf6130d6d276d2413"
+    },
+    {
+      "path": "Shop.Presentation/Views/Admin/Index.cshtml",
+      "size_bytes": 725,
+      "sha256": "785a47a13c20cc0a2c76683ed85b8b5aa95f70d48e4f4d082cde1b47385caa4c"
+    },
+    {
+      "path": "Shop.Presentation/Views/Admin/Login.cshtml",
+      "size_bytes": 864,
+      "sha256": "6fbf46a847aa58ec40bc3b750aea7a2bede1dfee23c6653a10ef9bd65386289f"
+    },
+    {
+      "path": "Shop.Presentation/Views/AdminInventory/Index.cshtml",
+      "size_bytes": 1230,
+      "sha256": "a5849820d4c0496c8271658ec7f0f4ba7e74ae4500f3f5b5ac196ec18428ad91"
+    },
+    {
+      "path": "Shop.Presentation/Views/AdminOrders/Detail.cshtml",
+      "size_bytes": 1165,
+      "sha256": "f46071f94a1035ade264c5268a7f4dc88d0f714a342c219ad95814485e02bee8"
+    },
+    {
+      "path": "Shop.Presentation/Views/AdminOrders/Index.cshtml",
+      "size_bytes": 1502,
+      "sha256": "42b0f0fb70e1bf0abc7024a269fced1a4f780144041ff7f8a9d5ca43b265d0aa"
+    },
+    {
+      "path": "Shop.Presentation/Views/Home/Index.cshtml",
+      "size_bytes": 9869,
+      "sha256": "2f614ba36df9cc51c50c59c32fdda8f7eed568d19ca0f7ad350380479b904e9e"
+    },
+    {
+      "path": "Shop.Presentation/Views/Home/Privacy.cshtml",
+      "size_bytes": 138,
+      "sha256": "4a274324cebc4d4ba7018860c3c52d1a7f79d02412be6f57c4a04eb4e47b772a"
+    },
+    {
+      "path": "Shop.Presentation/Views/Products/Create.cshtml",
+      "size_bytes": 1326,
+      "sha256": "d222d24d24e88829ce4b6ed3574adb8248911bdc2802fdbb55306109db3e22fd"
+    },
+    {
+      "path": "Shop.Presentation/Views/Products/Delete.cshtml",
+      "size_bytes": 289,
+      "sha256": "3b96010bfd9df2e2783e25313484e7a2afd18af1ffa9d365fe70c330502bf908"
+    },
+    {
+      "path": "Shop.Presentation/Views/Products/Edit.cshtml",
+      "size_bytes": 1345,
+      "sha256": "e699642d94b435b523229503e6239273c8ff51e518f91ed117dd33c7744513ff"
+    },
+    {
+      "path": "Shop.Presentation/Views/Products/Index.cshtml",
+      "size_bytes": 1741,
+      "sha256": "b03f20c922ce89148bbe3465cf9f463ed8502a50725c34f959802059b8b607d8"
+    },
+    {
+      "path": "Shop.Presentation/Views/Shared/Error.cshtml",
+      "size_bytes": 859,
+      "sha256": "3c6d2ecdb88e20eecc9a4717bfe26b047ecdbafc0d64b7114bc58b436aaf1e42"
+    },
+    {
+      "path": "Shop.Presentation/Views/Shared/_AdminLayout.cshtml",
+      "size_bytes": 954,
+      "sha256": "2cd4ffefa884a58d8df49c249362a0b8f6776b42673e48cac2960b518701c863"
+    },
+    {
+      "path": "Shop.Presentation/Views/Shared/_Layout.cshtml",
+      "size_bytes": 2330,
+      "sha256": "e763b09db5a801ed4af9bc810bbe25d5db23ecc1651f562287481bf7377224b6"
+    },
+    {
+      "path": "Shop.Presentation/Views/Shared/_Layout.cshtml.css",
+      "size_bytes": 877,
+      "sha256": "1fe98c23430e23af20e98ab9e62fe39c7b6eaef1e3d9d4b59f3e85b31843077c"
+    },
+    {
+      "path": "Shop.Presentation/Views/Shared/_StoreLayout.cshtml",
+      "size_bytes": 718,
+      "sha256": "58374d267a3b7d2cda606abfd9a5823adf7ab5ba27951ce7b180cdf7d2906062"
+    },
+    {
+      "path": "Shop.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "size_bytes": 174,
+      "sha256": "fb1778070041325577c8463415f2d445aad6ccf35685bd71cddea0a0bb02b9c6"
+    },
+    {
+      "path": "Shop.Presentation/Views/_ViewImports.cshtml",
+      "size_bytes": 113,
+      "sha256": "addef5c9024708ecaf2909368c8af15e77c7659b67011fed3dfb1bf7e571479c"
+    },
+    {
+      "path": "Shop.Presentation/Views/_ViewStart.cshtml",
+      "size_bytes": 32,
+      "sha256": "f6dceb9e6258ad80525250b5faf8454ab7688b0f5d58a253529149f42d4ec50c"
+    },
+    {
+      "path": "Shop.Presentation/appsettings.Development.json",
+      "size_bytes": 119,
+      "sha256": "817db0bf2ecca78364c41dbaf7949bf2504cf47a1c3d0d54f3be8178fefc030b"
+    },
+    {
+      "path": "Shop.Presentation/appsettings.json",
+      "size_bytes": 644,
+      "sha256": "7a2973c857dddcbb87585c1ca4b627367034187c32caa0f2430386cb3e53d8ae"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/css/account.css",
+      "size_bytes": 2807,
+      "sha256": "5c171e35e584dd8c9933a4d1365e7c94c04c02e7c77464ee9e0317147d0bb4b2"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/css/admin.css",
+      "size_bytes": 3432,
+      "sha256": "7be2ad3ede7dc8016bcba563a48024487606b8af20db6e10ae76cfb35ea9ac55"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/css/rack.css",
+      "size_bytes": 53338,
+      "sha256": "06ff2652d855e24c36ebb42efac6a7ae8ca996eb59d6ee95ffa15d38ea7e4641"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/css/site.css",
+      "size_bytes": 341,
+      "sha256": "af6d8cef139a85c3217960a4a15a1fd8db7ba509a3ee631214a4de8be49f990d"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/favicon.ico",
+      "size_bytes": 5430,
+      "sha256": "26dc5ff4bfb9213291735808465e156d4a4691135f3815e3613761243e1f69c3"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/black-puffer-back.png",
+      "size_bytes": 353315,
+      "sha256": "b700e8d58da859176d32d5df587c1e615f6474fd9f1f1409ae677a5c5261c6f4"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/black-puffer-front.png",
+      "size_bytes": 230576,
+      "sha256": "2e4a6ba0eff196decb6d1418e2c28febaa507b6fc8d5726b89bcb39fbf9f21c5"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/camp-knit-back.png",
+      "size_bytes": 705798,
+      "sha256": "03cbd7908f2e6c1cad761f433030375a11c6e5cdf97fd638cb287be0f2ba19bd"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/camp-knit.png",
+      "size_bytes": 744442,
+      "sha256": "e1c1fb2dda5e13b3c9e639ad739b64646b044f5211d2698c16393440acaf9c66"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/floral-overshirt-back.png",
+      "size_bytes": 543618,
+      "sha256": "3b3e58089b05f0cb7581dc0925235d381d6322891de27474d19fbd21a9201f14"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/floral-overshirt.png",
+      "size_bytes": 548873,
+      "sha256": "12129d61dda20b6ba15c08897095ad33f0b06847c6dca93f5319b89b46b5012a"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/label-jacket-back.png",
+      "size_bytes": 279700,
+      "sha256": "4684b70215229aedb85e6208b6f33ad7ed322aa1bdfbeea386264fd487be0ccd"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/label-jacket-front.png",
+      "size_bytes": 365789,
+      "sha256": "533735df7bfece736b51708b3d69bce912d549a671a5fcb0bba86ffa9c42822b"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/stone-sweat-back.png",
+      "size_bytes": 378345,
+      "sha256": "95bedf8961b5ae7016d0829e6cc92c9b5fc07bc083df023724017cf672d722c6"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/stone-sweat-front.png",
+      "size_bytes": 378520,
+      "sha256": "4d284f2b4d63c224f9a127c80bfb4f38a137d7444cfaf11b600fff2a6f22a7dd"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/suede-jacket-back.png",
+      "size_bytes": 398716,
+      "sha256": "be0e51b73923c008ee3a6121dfe20b4417887ee3471648e2ea1d36ec6b862ab1"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/suede-jacket.png",
+      "size_bytes": 401901,
+      "sha256": "3123785735d388904958e5219ea4abbd467772677fe13cb8431754fc6df4d824"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/vest-back.png",
+      "size_bytes": 173580,
+      "sha256": "e323132ed5d4cf256ff08384821c134cc534a5cc002a7c15fca66bdeb06aea1f"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/vest-front.png",
+      "size_bytes": 202171,
+      "sha256": "3ee5d5c2c6479f5515e58f6b0697104c9ae09e66739098e99ee6aa759f7d5b3c"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/wash-hoodie-back.png",
+      "size_bytes": 390222,
+      "sha256": "da5cac962d61b8cc596d7541ef679a32fbbea36b025d655a505c300dd4280e35"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/collection/wash-hoodie.png",
+      "size_bytes": 427675,
+      "sha256": "75a0b7b500cef095cf52ca26b07766fd9b4ab05243efc7a49652583c41364c2e"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/black-puffer-back.png",
+      "size_bytes": 2007620,
+      "sha256": "47ba0002d9a367b4c661fecf28c3bfe50a29e56c42c84e00fa649b0922412edd"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/black-puffer-front.png",
+      "size_bytes": 2013474,
+      "sha256": "57bdaa463ce88b54ba9bc99f1e5575517989d3acf616697b3d0d85fde827777a"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/black-puffer-side.png",
+      "size_bytes": 1989833,
+      "sha256": "84363695a5c8285ec4b9c189f1a7016418fb2abeb6dc07e079d27d1dd4194c5a"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/camp-knit-back.png",
+      "size_bytes": 2662945,
+      "sha256": "2d730fd977eace83339cc040e237c5931b3da9a4f7a79a35dc798f28a857aa33"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/camp-knit-front.png",
+      "size_bytes": 2660542,
+      "sha256": "fb4e887b32ba356c7f8bd6d6cccddb8f8e3c71bae499b3a7d6d603919f3bcaac"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/camp-knit-side.png",
+      "size_bytes": 1947924,
+      "sha256": "be34569c87808107c943dfaf454236602c8a27f237711fb56eb77ac5dc803165"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-back.png",
+      "size_bytes": 2216138,
+      "sha256": "20932ada3aa52347142cdf95a4d65dc63d537143e3092f7dced7483bc94f2370"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-front.png",
+      "size_bytes": 2171606,
+      "sha256": "3af6c82dca6ac7cb04aa000aaa7403fe3335ec2148e70075d0b3253e62f29425"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-side.png",
+      "size_bytes": 1911588,
+      "sha256": "6effa12bd47d6a5d42d7b58d0dba50495db163b07155341bd5a96eab846a3298"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/label-jacket-back.png",
+      "size_bytes": 2253798,
+      "sha256": "d48a2303d9fb608e2809b319f92d663ca3a14c6358ddeec900a731515c6810ea"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/label-jacket-front.png",
+      "size_bytes": 2242226,
+      "sha256": "654510c2dda3a5666192e9104e9a306e10543204fb9e217790e8df9c73f70e96"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/label-jacket-side.png",
+      "size_bytes": 1912232,
+      "sha256": "34c2dd59cea06b13045b759a5d184db7c8bcf73a65f63051b8a7a289bb6c11ad"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/stone-sweat-back.png",
+      "size_bytes": 2460457,
+      "sha256": "88b2a8545d79c079aeb899ec7de8f342b24e94b200d4f8159c7a881fb24e1c69"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/stone-sweat-front.png",
+      "size_bytes": 2404903,
+      "sha256": "d54c242b523084d84f9ff6ae4b2505a7b042834a5487dbc01001691572859df8"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/stone-sweat-side.png",
+      "size_bytes": 1921171,
+      "sha256": "7a497d52666190bbe30bbe199cc576f2ded4b669d906cd088d5f12365e80928f"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/suede-jacket-back.png",
+      "size_bytes": 2207282,
+      "sha256": "77a90d51d564e05aa742d3d891122026a82b2b2c047526373a71bbbac6e45126"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/suede-jacket-front.png",
+      "size_bytes": 2290283,
+      "sha256": "96e7b49a27d2ebc408963bf40450dcfb9262ede4dcde7bf929efb6852017abe1"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/suede-jacket-side.png",
+      "size_bytes": 1843683,
+      "sha256": "c7fda0d0c9ae4481f42ac7f8b24b19f752f1bead97558c67771ae71dde95ab11"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/utility-vest-back.png",
+      "size_bytes": 1936421,
+      "sha256": "dfac8fad08625eea23b385548714659daf52f4d9b8ecfe791cb2bca315280e20"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/utility-vest-front.png",
+      "size_bytes": 2013939,
+      "sha256": "ed77efeff03ff5e82d429a66e46b589716a5cd2eb549f1f814398b3aaa71fd8e"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/utility-vest-side.png",
+      "size_bytes": 1757183,
+      "sha256": "912a8232c17a5f18be5ec91a6fd785ed75ab86855ccdd8357de1f9d29e76c406"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-back.png",
+      "size_bytes": 2543593,
+      "sha256": "71565495f35a1781a18b6c6c098ffcf61058362d68b588c7db1c509c4df77857"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-front.png",
+      "size_bytes": 2613495,
+      "sha256": "157e403becd393027f40b1c27002c0946d5ce22901a87974c8d591439d78dac6"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-side.png",
+      "size_bytes": 2071653,
+      "sha256": "3382ec756d0a50658a3456f65cfe52d54debeca7121e3db0e3cab5dd9c3119c5"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/images/landing/cream-model.jpg",
+      "size_bytes": 873714,
+      "sha256": "da784f68de90271efa055eb3e3c79d08367f72ba3dee7691fdd2731a1ae7e193"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/js/rack.js",
+      "size_bytes": 125726,
+      "sha256": "fa9c4dac5b5f5c94c7b36e192b51bf09fe8c54a6ea8e89140d5d40f30639fdee"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/js/site.js",
+      "size_bytes": 227,
+      "sha256": "cbf36077c5b6d54a6e094844a866d428312a16735f4e301f6f6e068492465323"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/LICENSE",
+      "size_bytes": 1131,
+      "sha256": "5b30317c9c35bb6f05101c501de866cc6852ab9b655dcf5941733f6644c3ebd0"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "size_bytes": 70538,
+      "sha256": "26d92d822b9001df805deac29cf32b1c20f3d61e40b641f9b686efa6e1bbc59e"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "size_bytes": 196535,
+      "sha256": "40ef1c31b5642e292d517d5c1de5d25127b99d7317520c8bf5c8f09cccb13ea7"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "size_bytes": 51319,
+      "sha256": "cac053fc96311fd81c327c314f8f8c078b0fc4ec7f24c83dc22efb140d774fd0"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "size_bytes": 117439,
+      "sha256": "ef60bfa83086bbe3b059e540d376dff4a7b44fca08a330ae6f495f26487386f1"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "size_bytes": 70612,
+      "sha256": "def5099194a928bff31bbc7a18dbc38ecd13c58528f7332de9d01cf21a7d095a"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "size_bytes": 196539,
+      "sha256": "aaf037f4e32512ce778da7b0a9516613c0d042b8a8e3b6d9b654ecf96bba53c8"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "size_bytes": 51394,
+      "sha256": "3ba95bda45daac6815c38fd10c3e36c983e1648c1112d85385014a1a60fede3d"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "size_bytes": 117516,
+      "sha256": "3434998c888c3d12283bbff0efe8c779ff2b7ad3f8ae241af0f323e015511a89"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "size_bytes": 5850,
+      "sha256": "e336d6af440d161a54c06927e16746597b7cd0a9e1445bf4a97919c959e16a36"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "size_bytes": 105138,
+      "sha256": "1591b42b16cda884d48b8418ed0bcf1514bf4dc727b4c7c559f49374737fa70b"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "size_bytes": 4646,
+      "sha256": "cf4380a51f3c504a1c6174d71d4ed47b271a8a26fd5db0d499e97d1b1d206f1e"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "size_bytes": 35330,
+      "sha256": "d816d1b04ffe7335f5b9f9833c6a67122782f6ee88de6e4128d0d25f5a1bde58"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "size_bytes": 5827,
+      "sha256": "f0d5f0de4178f4591054f31d8e7183aa85d7454d13c33b0b7c219b2bd53c8279"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "size_bytes": 105151,
+      "sha256": "fc47561cdeade5760fa650bcf2f8b119fac1bdf1228b5f6402cb1bfb4601554f"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "size_bytes": 4718,
+      "sha256": "6b92a5832b19e1f417c38af322f5c31c4ac50cf7874522dc70fee45fa1eebd24"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "size_bytes": 41570,
+      "sha256": "18c0e4e6903974590e8a69010167848d867eee58073d2d236259faa7f589558b"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "size_bytes": 71584,
+      "sha256": "35b159c592e605534bcdbffb07459d15f6fafbc8d71c65fa5d8d7dd2ec206de7"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "size_bytes": 192271,
+      "sha256": "e1622a3e87ffbeb5d83bf8de2787c33902946162307bae15dddfbdfea363bb6d"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "size_bytes": 53479,
+      "sha256": "e7e13198c922688de47984112e13626c9e595e736e5916f0ad73806684d73058"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "size_bytes": 111875,
+      "sha256": "a75768a78b2579f6612f8cc6da96bafb61d4ace63551402b1895e67adf0c77d7"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "size_bytes": 71451,
+      "sha256": "a5e0061fc1aefd92fd5676d419230debd262e4cc706ef39be778035d4d9c3da4"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "size_bytes": 192214,
+      "sha256": "a6e0e02b0be5140a2b77d47c1bca1ff4fd825582095054a821b8c32c4b0a107d"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "size_bytes": 53407,
+      "sha256": "5a2e59b854872dfc7a7651208ef5b7058f530bfd4da9d0638fe5c589f492a8de"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "size_bytes": 111710,
+      "sha256": "d3691ae329a8139c8479c2d49dc2c6dff4a8b9340c9d324e92d5fef7a3edffcf"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "size_bytes": 204136,
+      "sha256": "c657b1aa3f7f937ba86d5c067dc899723fde0dda2868d81c7f83852ed2d4ca03"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "size_bytes": 536547,
+      "sha256": "0d1bd6af481a9e08f9ff94370d19fab6dce97160f39773a91e80300333434794"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "size_bytes": 162720,
+      "sha256": "cfc391e34328c09f0680ae8ff3d63e86224ae7e71c973147ccb84540b2fdd9b8"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "size_bytes": 449111,
+      "sha256": "801c20dad980d028b6bb9e20305d63342564bbabf39daae42d2e83efa86d34d4"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "size_bytes": 203803,
+      "sha256": "499da629a0f803e6fe1c8bedb7097e4ef2c59d5cbca3cfd7e348fe10a570caf6"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "size_bytes": 536461,
+      "sha256": "545be68bf652c101668d2e8faf2f41f335de67f180d7af135cbcb290384d3191"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "size_bytes": 162825,
+      "sha256": "db6c11e904e27687a24595e9eb391143231251bfc507e02fd758ea999245eae5"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "size_bytes": 661035,
+      "sha256": "8fbbaa2b95684d3e2b50732bf75d50114e526bde25477ba1f44dbc5c1325ceb3"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "size_bytes": 208492,
+      "sha256": "bd04dfe1ddd6262f6f99640d0389099e3a1e7601213055c50c4317aad1ed8339"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "size_bytes": 425643,
+      "sha256": "80ee2e8717c6b8ad0e3634651eec1f82119f1174f96b39b5a075a74c41464df9"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "size_bytes": 78468,
+      "sha256": "2aebc2552d7dadf4e3a0b80cc830c274e91146584dad8e29b04338b9ecedb363"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "size_bytes": 327261,
+      "sha256": "c48041c433ef5a193cfc975a1446687a369d7da28551f645c114b50f8264baba"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "size_bytes": 139019,
+      "sha256": "12e0d750960a9df66e3bc7522cdd1fe6255b55ab33dfa0113ae014dcd277241a"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "size_bytes": 288320,
+      "sha256": "0a5942fec6cbbf22c4f5c4258e61519484dfa9d6519c1bf6cac5f92c9b65fdd8"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "size_bytes": 72016,
+      "sha256": "2a3e22ad058fc1f49be4d15ea2cfe1d08ae8239fe7220d07b408d0fb0e2fe931"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "size_bytes": 222508,
+      "sha256": "b0fab359c492f5a45ada0a564d5350cde99a8e7f21ac58e05cf8f78fd408b50a"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "size_bytes": 148168,
+      "sha256": "e884ad4507ab05c8584b0e89d8659339618e9c346b59799a1b4afa9c2c0de6ce"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "size_bytes": 289522,
+      "sha256": "424979999519eb869805a39144c3fd8df0f5933f09e85c2257633ce890c991d4"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "size_bytes": 59511,
+      "sha256": "7382e5e9e48883a128b6193ca4258017c684f76dc4bed535d69aa3072f8d8cd3"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "size_bytes": 217145,
+      "sha256": "ba2fc5408fb2d0852c63c3db8bcd1bf2cdc67842fe3ecbdd68b4ce3686e99fcf"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "size_bytes": 1116,
+      "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "size_bytes": 19385,
+      "sha256": "c0941a2745f29c11367eae827b15d78712aeedfb2d56641ced5d8c1cd4e8f964"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "size_bytes": 5824,
+      "sha256": "6096bb5bc12241d429924f778861238e72d25164694496d27f37d4461d64c73e"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation/LICENSE.md",
+      "size_bytes": 1095,
+      "sha256": "f398878cab338b869638bdac1aeae76bf3ac11b2b89da6e0b68bc1a645733440"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "size_bytes": 51466,
+      "sha256": "d0778c5b24146d36deed21a74986e38fdf87540d2128398452d6d8a1329ef819"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "size_bytes": 22174,
+      "sha256": "f74465ceecfca4864ae20f68d88ee718afbd9f9714f516ddb781adc513b96ab0"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "size_bytes": 51171,
+      "sha256": "9b497cd560cf886ec2706ec20ec4ee673bdc1afc859ab418e432c8c71dda446c"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "size_bytes": 24601,
+      "sha256": "270524b0d27afd1d3b6622d1a176c678daed94564c143297e217a63e21ce9820"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery/LICENSE.txt",
+      "size_bytes": 1097,
+      "sha256": "911d138518f2d3bfa1ab8a74f277dd92337ea48f781a3dab2b99721346ee2135"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery/dist/jquery.js",
+      "size_bytes": 288580,
+      "sha256": "1fe2bb5390a75e5d61e72c107cab528fc3c29a837d69aab7d200e1dbb5dcd239"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery/dist/jquery.min.js",
+      "size_bytes": 89501,
+      "sha256": "ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e"
+    },
+    {
+      "path": "Shop.Presentation/wwwroot/lib/jquery/dist/jquery.min.map",
+      "size_bytes": 137972,
+      "sha256": "399548fb0e7b146c12f5ba18099a47d594a970fee96212eee0ab4852f3e56782"
+    },
+    {
+      "path": "Shop.sln",
+      "size_bytes": 3623,
+      "sha256": "e65d263bfecd098ae85b3852a8fb24328bed12f6d9e221243a98a6bc7d519dac"
+    },
+    {
+      "path": "scripts/audit-current-database-READ-ONLY.sql",
+      "size_bytes": 3673,
+      "sha256": "5fe06aef40a3d1fb9103ac246f64b6d83a3e0ff6f2d6d5f462cec3dd079ab830"
+    },
+    {
+      "path": "scripts/check-sally-orders-email-and-stock.sql",
+      "size_bytes": 1107,
+      "sha256": "4a5be798ca3ad843f686a56b988166adf460a0813f8be512e528d8dc83447fb1"
+    },
+    {
+      "path": "scripts/seed-demo-size-stock-LOCAL-ONLY.sql",
+      "size_bytes": 4895,
+      "sha256": "13b45596f471ea8d7eec6815bc6953a8d847512dcbda8bdd23c7745f06c3c3fe"
+    },
+    {
+      "path": "scripts/seed-sally-catalog.sql",
+      "size_bytes": 2383,
+      "sha256": "de63bec6370806288d16b03e81f160c3e0e0c9722c8be9e50a968d531e77d6ae"
+    },
+    {
+      "path": "scripts/set-demo-stock-ONLY-FOR-LOCAL-TEST.sql",
+      "size_bytes": 384,
+      "sha256": "d66b5966e6b8db2f37964efadb01eb694a5211d171e74a2b6d7d29c2dba448c9"
+    },
+    {
+      "path": "tests/README_FA.md",
+      "size_bytes": 4002,
+      "sha256": "2628e7a98003162c74886abcf655ce3595ccf8dca42d1428d6fb3b78a4dc1b83"
+    },
+    {
+      "path": "tests/Shop.Security.Tests/AuthorizationTests.cs",
+      "size_bytes": 6072,
+      "sha256": "ecedeb0173fe0b6b2d9513ccca95427e12d40a54bbf1cbbef97cc99b14203994"
+    },
+    {
+      "path": "tests/Shop.Security.Tests/ManagementCommandTests.cs",
+      "size_bytes": 4284,
+      "sha256": "236186599d30a3b3f5789935525fb9e16c46d853467fe226d81777abc91d4f01"
+    },
+    {
+      "path": "tests/Shop.Security.Tests/PasswordResetTests.cs",
+      "size_bytes": 1858,
+      "sha256": "d424974739c3a92d24059e160d15b6cc8b3971e474f3a71b758e32637343bda2"
+    },
+    {
+      "path": "tests/Shop.Security.Tests/Shop.Security.Tests.csproj",
+      "size_bytes": 822,
+      "sha256": "e38f1d8a9298a42d54e22a0f6def4ad1e7e8b65cdb830fad64a2b6fcc7307c40"
+    },
+    {
+      "path": "tests/browser-validation-2026-10-30.json",
+      "size_bytes": 1352,
+      "sha256": "2469a1542b11082fea7cea3982563a832991e6cf4a836a0c580879a70bbfb324"
+    },
+    {
+      "path": "tests/database-inventory-observation-2026-10-30.json",
+      "size_bytes": 2972,
+      "sha256": "d9523336a4eca16f47e30222e55fb2008041a322b1e751e77774387abf550b9f"
+    },
+    {
+      "path": "tests/landing-and-user-runtime-validation-2026-10-31.json",
+      "size_bytes": 2410,
+      "sha256": "59c84d88eea9cb3eade910a01e657c59a1a3321f3f080b939f18f656a2df0965"
+    },
+    {
+      "path": "tests/landing-spacing-and-login-profile-2026-10-31.json",
+      "size_bytes": 2628,
+      "sha256": "577b7bbc2c511621d96f2884cde6383d040226d69a61166645a63dc75401205a"
+    },
+    {
+      "path": "tests/layout-hanger-validation-2026-11-01.md",
+      "size_bytes": 1954,
+      "sha256": "324e35fb1132d0a139321fe66a9315f73f325c718da354d7e0a0c48f5b8d617c"
+    },
+    {
+      "path": "tests/rack-hanger-restoration-2026-10-31.json",
+      "size_bytes": 6103,
+      "sha256": "074162413b992d58207411c73b9f45253e0695a60f0d9e9840f2b3267a9e2618"
+    },
+    {
+      "path": "tests/rack-neckline-fit-validation-2026-10-31.json",
+      "size_bytes": 4170,
+      "sha256": "b88e583e165261a62bf612551b638e9cb1d9090dc4cf598d3cbc344fc7ab166c"
+    },
+    {
+      "path": "tests/rack-profile-validation-2026-10-30.json",
+      "size_bytes": 3193,
+      "sha256": "a846275c63638118116cf802b10e62c49554dd7d6801d38a77e6d5eeb82c440b"
+    },
+    {
+      "path": "tests/refactor-validation-2026-11-01.md",
+      "size_bytes": 2186,
+      "sha256": "f53def82a1fa20e56bb860ddc2de74b1fa7e5e0732c8a42dea25b0d6e72520b8"
+    },
+    {
+      "path": "tools/Sally.AdminHash/Program.cs",
+      "size_bytes": 1254,
+      "sha256": "d3b36dc52aa65d02d72a8bd1ab935a572b0e930f72d9d1acb7aa2376ede13c3f"
+    },
+    {
+      "path": "tools/Sally.AdminHash/Sally.AdminHash.csproj",
+      "size_bytes": 297,
+      "sha256": "48a7c15073ab8f8f0ff174e2916bf865acc9887a6a50d1a08e55e965d23675d6"
+    }
+  ],
+  "previous_package_date": "2026-10-30",
+  "changes_since_previous_test_package": [
+    "Separate commands and queries for products, cart, inventory and order administration",
+    "Domain repository contracts and Infrastructure/Repositories implementations",
+    "Move DependencyInjection to layer roots and remove three unused Class1 placeholders",
+    "Add XS selection; invariant Gregorian UTC order dates; checkout scroll containment",
+    "Balance landing photo and text; preserve full model photograph",
+    "Lower front hanger shoulders inside necklines while retaining rail contact",
+    "Restore natural utility vest hanger size and occlude shoulder tips behind the real collar boundary"
+  ],
+  "landing_photo_provenance": "SALLY_LANDING_IMAGE_SOURCE.json",
+  "new_validation_record": "tests/rack-neckline-fit-validation-2026-10-31.json",
+  "pending_visual_corrections": [
+    "User visual acceptance of the balanced landing and lowered hanger shoulders",
+    "Physical touch-device verification",
+    "Colour variants require approved real reference assets"
+  ],
+  "third_party_hero_commercial_permission_verified": false,
+  "validation_records": [
+    "tests/landing-and-user-runtime-validation-2026-10-31.json",
+    "tests/rack-hanger-restoration-2026-10-31.json",
+    "tests/landing-spacing-and-login-profile-2026-10-31.json",
+    "tests/rack-neckline-fit-validation-2026-10-31.json",
+    "tests/refactor-validation-2026-11-01.md",
+    "tests/layout-hanger-validation-2026-11-01.md"
+  ],
+  "user_runtime_observations": {
+    "scope": "previous test ZIP before current refactor",
+    "checkout": "order1 quantity2 lowered product3002 M and total from10to8",
+    "cancellation": "restored both to10, unchanged after refresh",
+    "inventory": "product3003 M10 saved and persisted",
+    "product_edit": "product3003 description saved with price and stock preserved",
+    "admin_logout": "orders URL redirected to admin sign-in",
+    "smtp": "unconfigured; email delivery not tested"
+  },
+  "hanger_render_method": "Own approved photograph; complete shoulder display clip; per-neckline occlusion; original garment PNG unchanged"
+}

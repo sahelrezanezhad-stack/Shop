@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "scope": "Static frontend QA only; no .NET backend running",
+  "passed": [
+    "Landing is visible before collection selection",
+    "Discover opens by click and by actual drag in 390px iframe",
+    "Collection opens only after Enter the collection",
+    "24 hanging photographs load at 1024x1536 through the gallery",
+    "Mobile hoodie side gallery fits the iframe with visible angle buttons",
+    "Mobile details remain closed after selecting a garment",
+    "Mobile document scrollWidth equals clientWidth (375px usable width in 390px iframe)",
+    "Without preview flag, unavailable APIs leave add-to-bag disabled and checkout hidden",
+    "Unavailable APIs display unavailable bag rather than a demo bag",
+    "Node JavaScript syntax check",
+    "Project XML and JSON parsing",
+    "Original hoodie image bytes equal supplied ZIP entry",
+    "All 24 copied image SHA256 values equal downloaded originals",
+    "All seven existing migration code/designer files are byte-identical to supplied ZIP entries",
+    "git diff --check"
+  ],
+  "not_executed": [
+    "C# or Razor compilation",
+    ".NET test suite",
+    "SQL Server transactions and concurrency tests",
+    "Actual account and admin sign-in",
+    "Database schema comparison",
+    "SMTP delivery",
+    "Production build/publish"
+  ],
+  "release_ready": false
+}

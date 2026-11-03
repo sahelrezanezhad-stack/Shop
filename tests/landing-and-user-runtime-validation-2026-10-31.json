@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-31",
+  "user_runtime_evidence": {
+    "previous_test_package_build": "user_reported_success_without_build_log",
+    "catalog_api": "user_supplied_successful_eight_product_json_after_https_run",
+    "product_ids": [3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009],
+    "prices_toman": [289000000, 365000000, 449000000, 159000000, 319000000, 229000000, 114000000, 187000000],
+    "all_displayed_product_totals": 10,
+    "all_returned_size_quantities": 0,
+    "frontend_price_after_profile_change_confirmed": false,
+    "exact_previous_api_failure_cause_confirmed_by_server_log": false,
+    "anonymous_administration_test_9_completed": false
+  },
+  "landing_change": {
+    "selected_image": "cream outfit model, the middle image that first rendered for the user",
+    "asset": "Shop.Presentation/wwwroot/images/landing/cream-model.jpg",
+    "natural_dimensions": [2333, 3500],
+    "original_image_bytes_preserved": true,
+    "display_fit": "contain",
+    "replaces": "decorative S and orbit artwork",
+    "decorative_issue_year_and_statistics_removed": true
+  },
+  "browser_checks_executed_here": {
+    "environment": "static HTML rendered from Razor body, explicit preview mode, no ASP.NET Core backend",
+    "desktop_viewport": [1363, 936],
+    "desktop_hero_loaded": true,
+    "desktop_horizontal_overflow": false,
+    "desktop_discover_click": "passed",
+    "desktop_discover_escape_close": "passed",
+    "desktop_discover_pointer_drag": "passed",
+    "desktop_explicit_collection_entry": "passed_with_eight_garments",
+    "mobile_iframe_viewport": [390, 844],
+    "mobile_hero_loaded": true,
+    "mobile_hero_fully_available_by_normal_page_scroll": true,
+    "mobile_horizontal_overflow": false,
+    "mobile_discover_pointer_drag_after_scroll": "passed",
+    "mobile_explicit_collection_entry": "passed_with_eight_garments"
+  },
+  "not_completed": [
+    "User acceptance of the new landing layout",
+    "Restoration of approved photographic hangers and rack",
+    "Physical touch device testing",
+    "Debug compilation of this updated Razor view",
+    "Automated security tests",
+    "SQL Server checkout, cancellation and concurrency tests",
+    "SMTP sandbox tests",
+    "Commercial usage permission review for the selected third-party model photograph"
+  ],
+  "database_writes_or_migrations_executed_by_work": false,
+  "public_deployment_performed": false,
+  "final_release": false
+}

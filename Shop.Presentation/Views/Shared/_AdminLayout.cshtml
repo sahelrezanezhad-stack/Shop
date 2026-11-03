@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>@ViewData["Title"] | SALLY Admin</title><link rel="stylesheet" href="~/css/admin.css" asp-append-version="true"/></head><body>
+<header class="admin-header"><a class="admin-brand" href="/admin">SALLY <span>ADMIN</span></a><nav aria-label="Administration"><a href="/admin">Overview</a><a href="/Products">Products</a><a href="/admin/inventory">Inventory</a><a href="/admin/orders">Orders</a></nav><form action="/admin/logout" method="post">@Html.AntiForgeryToken()<button type="submit">Sign out</button></form></header>
+<main class="admin-main">@if (TempData["notice"] is string notice) { <p class="admin-notice" role="status">@notice</p> } @if (TempData["error"] is string error) { <p class="admin-error" role="alert">@error</p> } @RenderBody()</main>
+@await RenderSectionAsync("Scripts", required: false)</body></html>

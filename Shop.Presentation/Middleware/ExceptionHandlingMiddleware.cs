@@ -21,9 +21,15 @@ namespace Shop.Presentation.Middleware
             {
                 await _next(context);
             }
+            catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested)
+            {
+                // The caller disconnected; no error payload can be delivered reliably.
+            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An unhandled exception occurred.");
+
+                if (context.Response.HasStarted) throw;
 
                 context.Response.Clear();
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;

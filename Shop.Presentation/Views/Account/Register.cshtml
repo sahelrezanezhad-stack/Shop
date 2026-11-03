@@ -1,0 +1,14 @@
+@model Shop.Presentation.Accounts.SignUpInput
+@{ ViewData["Title"] = "Create Account"; Layout = "_StoreLayout"; }
+<main class="account-page"><a class="account-home" href="/">SALLY ✳</a><section class="account-card">
+<span class="account-kicker">JOIN THE CLUB</span><h1>Create your account</h1>
+<div asp-validation-summary="ModelOnly" class="account-error"></div>
+<form asp-controller="Account" asp-action="Register" method="post">
+@Html.AntiForgeryToken()
+<label>Full name<input asp-for="DisplayName" autocomplete="name" required maxlength="120" /></label><span asp-validation-for="DisplayName"></span>
+<label>Email address<input asp-for="Email" type="email" autocomplete="email" required maxlength="256" /></label><span asp-validation-for="Email"></span>
+<label>Password (at least 10 characters)<input asp-for="Password" type="password" autocomplete="new-password" minlength="10" required /></label><span asp-validation-for="Password"></span>
+<label>Confirm password<input asp-for="ConfirmPassword" type="password" autocomplete="new-password" minlength="10" required /></label><span asp-validation-for="ConfirmPassword"></span>
+<button class="account-submit" type="submit">CREATE ACCOUNT</button>
+</form><p>Already have an account? <a href="/account/login">Log in</a></p>
+</section></main>

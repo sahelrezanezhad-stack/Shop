@@ -1,0 +1,11 @@
+@model Shop.Presentation.Accounts.SignInInput
+@{ ViewData["Title"] = "Administrator sign in"; Layout = "_StoreLayout"; }
+<main class="account-page"><a class="account-home" href="/">SALLY ✳</a><section class="account-card">
+<span class="account-kicker">STORE ADMINISTRATION</span><h1>Administrator sign in</h1>
+<div asp-validation-summary="All" class="account-error"></div>
+<form asp-controller="Admin" asp-action="Login" asp-route-returnUrl="@ViewData["returnUrl"]" method="post">
+<label>Email address<input asp-for="Email" type="email" autocomplete="username" required maxlength="256" /></label>
+<label>Password<input asp-for="Password" type="password" autocomplete="current-password" required maxlength="128" /></label>
+<button class="account-submit" type="submit">SIGN IN</button>
+</form><p><a href="/account/login">Customer sign in</a></p>
+</section></main>

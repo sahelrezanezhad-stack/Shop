@@ -1,5 +1,7 @@
-﻿@model Shop.Application.Products.DTOs.CreateProductDto
+@{ Layout = "_AdminLayout"; ViewData["Title"] = "Products"; }
+@model Shop.Application.Products.DTOs.CreateProductDto
 
+<div asp-validation-summary="All" class="admin-error"></div>
 <h1>Add New Product</h1>
 
 <form asp-controller="Products" asp-action="Create" method="post">
@@ -15,14 +17,14 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="Price"></label>
+        <label asp-for="Price">Price (TOMAN)</label>
         <input asp-for="Price" class="form-control" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="StockQuantity"></label>
-        <input asp-for="StockQuantity" class="form-control" />
+        <input asp-for="StockQuantity" class="form-control" value="0" readonly /><p class="admin-muted">New products start without stock. Approved collection products use size inventory.</p>
         <span asp-validation-for="StockQuantity" class="text-danger"></span>
     </div>
 

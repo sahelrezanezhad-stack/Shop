@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-31",
+  "scope": "CSS layout and development launch-profile ordering; static browser QA plus separately labelled user runtime report",
+  "user_login_reports": {
+    "failed_url": "https://localhost:7143/account/login?returnUrl=%2Faccount",
+    "configured_profile": "SALLY_TEST",
+    "configured_database": "SALLY_Test_20261030",
+    "test_database_existence": "user_does_not_know",
+    "sql_exception_log_received": false,
+    "follow_up": "User selected https profile, ran port 7092, and reported successful login",
+    "success_evidence": "user_report_not_Work_runtime_test",
+    "exact_original_server_exception": "unconfirmed"
+  },
+  "launch_settings": {
+    "first_profile": "https",
+    "last_profile": "SALLY_TEST",
+    "all_profile_values_unchanged": true,
+    "existing_ide_selection_may_need_manual_change": true,
+    "automatic_database_fallback_added": false
+  },
+  "password_autofill": {
+    "username_hint_already_present": true,
+    "current_password_hint_already_present": true,
+    "form_changed": false,
+    "browser_saved_password_autofill_verified": false,
+    "credentials_requested_or_read": false
+  },
+  "browser_layouts": [
+    {
+      "viewport": [
+        1363,
+        936
+      ],
+      "photo_width_natural": 2333,
+      "photo_height_natural": 3500,
+      "object_fit": "contain",
+      "photo_element_left_before": 741.03125,
+      "photo_element_left_after": 601.719970703125,
+      "horizontal_overflow": false
+    },
+    {
+      "iframe": [
+        390,
+        844
+      ],
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "photo_object_fit": "contain",
+      "model_transform": "none",
+      "full_photo_visible_with_normal_vertical_scroll": true
+    },
+    {
+      "iframe": [
+        900,
+        900
+      ],
+      "document_scroll_width": 900,
+      "horizontal_overflow": false
+    },
+    {
+      "iframe": [
+        1920,
+        1080
+      ],
+      "document_scroll_width": 1920,
+      "horizontal_overflow": false
+    }
+  ],
+  "browser_interaction": {
+    "discover_click": true,
+    "discover_drag_after_handle_transition_settled": true,
+    "collection_entered_desktop": true,
+    "collection_entered_mobile": true,
+    "garment_count": 8,
+    "black_rod_retained": true
+  },
+  "not_executed_by_Work": [
+    "ASP.NET Core login runtime",
+    "C# or Razor compilation",
+    "dotnet tests",
+    "SQL Server schema or transaction tests",
+    "SQL writes, seeds or migrations",
+    "SMTP delivery",
+    "physical touch-device test"
+  ],
+  "all_original_garment_and_approved_photograph_bytes_preserved": true,
+  "final_release": false
+}

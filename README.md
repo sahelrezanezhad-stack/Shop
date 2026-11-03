@@ -1,3 +1,5 @@
+این تحویل، کل سورس یکپارچه Shop برای بیلد Debug و تست است. راهنمای فعلی: [SALLY_TEST_PACKAGE_FA.md](SALLY_TEST_PACKAGE_FA.md). نسخه نهایی انتشار نیست؛ وضعیت آزمون‌ها در [00_WORKSPACE_STATUS_FA.md](00_WORKSPACE_STATUS_FA.md) آمده است. راهنماهای قدیمی مجوز اجرای خودکار Migration یا Seed نیستند.
+
 # Shop
 
 An ASP.NET Core MVC project built with Clean Architecture.
@@ -22,4 +24,4 @@ The project follows Clean Architecture principles, keeping the Domain independen
 
 ## Getting Started
 
-Open `Shop.sln` in Visual Studio and run `Shop.Presentation` as the startup project.
+Open `Shop.sln` in Visual Studio and build the Debug configuration first. The solution includes the four application projects, security tests, and the local administrator password-hash tool. For SQL integration tests, follow `SALLY_TEST_PACKAGE_FA.md` and use the `SALLY_TEST` launch profile after preparing its separate test database. No database migration or seed runs at startup.

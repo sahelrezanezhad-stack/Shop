@@ -1,0 +1,17 @@
+{
+  "selected_on": "2026-10-31",
+  "selection": "The cream-outfit H&M model that was visible in the middle option and in the user screenshot",
+  "source_image_url": "https://image.hm.com/assets/hm/ad/ae/adaee7a7e1c298180bc9e1a087bb3f183a45d43f.jpg",
+  "source_page_url": "https://www2.hm.com/en_in/men/shop-by-product/jeans.html?colorWithNames=beige_f5f5dc",
+  "asset": "Shop.Presentation/wwwroot/images/landing/cream-model.jpg",
+  "sha256": "da784f68de90271efa055eb3e3c79d08367f72ba3dee7691fdd2731a1ae7e193",
+  "dimensions": [
+    2333,
+    3500
+  ],
+  "source_bytes_preserved": true,
+  "image_edits_applied": false,
+  "display": "object-fit:contain; full photograph including cap and footwear; local static file",
+  "usage": "User-selected image in local development preview; no publication performed",
+  "commercial_usage_permission_verified": false
+}

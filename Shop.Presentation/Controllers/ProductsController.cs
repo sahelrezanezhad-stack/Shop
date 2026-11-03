@@ -2,9 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Products;
 using Shop.Application.Products.DTOs;
+using Microsoft.AspNetCore.Authorization;
+using Shop.Presentation.Security;
 
 namespace Shop.Presentation.Controllers;
 
+[Authorize(Policy = SallySecurity.AdminPolicy)]
+[AutoValidateAntiforgeryToken]
+[ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public class ProductsController : Controller
 {
     private readonly IProductService _productService;
@@ -39,7 +44,8 @@ public class ProductsController : Controller
             return View(dto);
         }
 
-        await _productService.AddAsync(dto);
+        try { await _productService.AddAsync(dto); }
+        catch(InvalidOperationException ex){ModelState.AddModelError("",ex.Message);return View(dto);}
 
         return RedirectToAction(nameof(Index));
     }
@@ -91,6 +97,7 @@ public class ProductsController : Controller
         {
             return NotFound();
         }
+        catch(InvalidOperationException ex){ModelState.AddModelError("",ex.Message);return View(dto);}
 
         return RedirectToAction(nameof(Index));
     }
@@ -108,32 +115,27 @@ public class ProductsController : Controller
         return View(product);
     }
     [HttpPost]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public IActionResult DeleteConfirmed(int id)
     {
-        try
-        {
-            await _productService.DeleteAsync(id);
-        }
-        catch (KeyNotFoundException)
-        {
-            return NotFound();
-        }
-
-        return RedirectToAction(nameof(Index));
+        // Legacy Product -> OrderItem may cascade in the existing SQL schema.
+        // Do not delete historical order data or silently alter that foreign key.
+        return Conflict("Product deletion is disabled to preserve order history. Set size inventory to zero to stop sales.");
     }
 
     // API Endpoints
 
 
     [HttpPost("/api/products")]
-    public async Task<IActionResult> CreateApi(CreateProductDto dto)
+    public async Task<IActionResult> CreateApi([FromBody] CreateProductDto dto)
     {
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
         }
 
-        var product = await _productService.AddAsync(dto);
+        ProductDto product;
+        try { product = await _productService.AddAsync(dto); }
+        catch(InvalidOperationException ex){return BadRequest(new { message=ex.Message });}
 
         return StatusCode(201, new
         {

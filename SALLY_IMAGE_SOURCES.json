@@ -1,0 +1,170 @@
+[
+  {
+    "slug": "label-jacket",
+    "view": "front",
+    "original_name": "Faded olive work jacket on hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/label-jacket-front.png",
+    "sha256": "654510c2dda3a5666192e9104e9a306e10543204fb9e217790e8df9c73f70e96"
+  },
+  {
+    "slug": "label-jacket",
+    "view": "side",
+    "original_name": "Side-profile faded olive patchwork jacket.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/label-jacket-side.png",
+    "sha256": "34c2dd59cea06b13045b759a5d184db7c8bcf73a65f63051b8a7a289bb6c11ad"
+  },
+  {
+    "slug": "label-jacket",
+    "view": "back",
+    "original_name": "Distressed olive work jacket, back view.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/label-jacket-back.png",
+    "sha256": "d48a2303d9fb608e2809b319f92d663ca3a14c6358ddeec900a731515c6810ea"
+  },
+  {
+    "slug": "suede-jacket",
+    "view": "front",
+    "original_name": "Camel suede bomber jacket on black hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/suede-jacket-front.png",
+    "sha256": "96e7b49a27d2ebc408963bf40450dcfb9262ede4dcde7bf929efb6852017abe1"
+  },
+  {
+    "slug": "suede-jacket",
+    "view": "side",
+    "original_name": "Side-profile camel suede jacket.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/suede-jacket-side.png",
+    "sha256": "c7fda0d0c9ae4481f42ac7f8b24b19f752f1bead97558c67771ae71dde95ab11"
+  },
+  {
+    "slug": "suede-jacket",
+    "view": "back",
+    "original_name": "Camel suede bomber jacket back view.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/suede-jacket-back.png",
+    "sha256": "77a90d51d564e05aa742d3d891122026a82b2b2c047526373a71bbbac6e45126"
+  },
+  {
+    "slug": "black-puffer",
+    "view": "front",
+    "original_name": "Front-facing black puffer jacket on hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/black-puffer-front.png",
+    "sha256": "57bdaa463ce88b54ba9bc99f1e5575517989d3acf616697b3d0d85fde827777a"
+  },
+  {
+    "slug": "black-puffer",
+    "view": "side",
+    "original_name": "Textured black puffer side profile.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/black-puffer-side.png",
+    "sha256": "84363695a5c8285ec4b9c189f1a7016418fb2abeb6dc07e079d27d1dd4194c5a"
+  },
+  {
+    "slug": "black-puffer",
+    "view": "back",
+    "original_name": "Black puffer jacket, rear view.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/black-puffer-back.png",
+    "sha256": "47ba0002d9a367b4c661fecf28c3bfe50a29e56c42c84e00fa649b0922412edd"
+  },
+  {
+    "slug": "wash-hoodie",
+    "view": "front",
+    "original_name": "Hanging washed grey hoodie with white splashes.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-front.png",
+    "sha256": "157e403becd393027f40b1c27002c0946d5ce22901a87974c8d591439d78dac6"
+  },
+  {
+    "slug": "wash-hoodie",
+    "view": "side",
+    "original_name": "Side-profile washed grey hoodie.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-side.png",
+    "sha256": "3382ec756d0a50658a3456f65cfe52d54debeca7121e3db0e3cab5dd9c3119c5"
+  },
+  {
+    "slug": "wash-hoodie",
+    "view": "back",
+    "original_name": "Washed Grey Hoodie, Rear View.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/wash-hoodie-back.png",
+    "sha256": "71565495f35a1781a18b6c6c098ffcf61058362d68b588c7db1c509c4df77857"
+  },
+  {
+    "slug": "floral-overshirt",
+    "view": "front",
+    "original_name": "Front-view floral plaid shirt on hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-front.png",
+    "sha256": "3af6c82dca6ac7cb04aa000aaa7403fe3335ec2148e70075d0b3253e62f29425"
+  },
+  {
+    "slug": "floral-overshirt",
+    "view": "side",
+    "original_name": "Hanging side-profile floral plaid shirt.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-side.png",
+    "sha256": "6effa12bd47d6a5d42d7b58d0dba50495db163b07155341bd5a96eab846a3298"
+  },
+  {
+    "slug": "floral-overshirt",
+    "view": "back",
+    "original_name": "Floral plaid shirt, back view.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/floral-overshirt-back.png",
+    "sha256": "20932ada3aa52347142cdf95a4d65dc63d537143e3092f7dced7483bc94f2370"
+  },
+  {
+    "slug": "camp-knit",
+    "view": "front",
+    "original_name": "Ivory woodland story sweater on hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/camp-knit-front.png",
+    "sha256": "fb4e887b32ba356c7f8bd6d6cccddb8f8e3c71bae499b3a7d6d603919f3bcaac"
+  },
+  {
+    "slug": "camp-knit",
+    "view": "side",
+    "original_name": "Side-profile ivory woodland story sweater.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/camp-knit-side.png",
+    "sha256": "be34569c87808107c943dfaf454236602c8a27f237711fb56eb77ac5dc803165"
+  },
+  {
+    "slug": "camp-knit",
+    "view": "back",
+    "original_name": "Ivory woodland sweater, straight-on back view.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/camp-knit-back.png",
+    "sha256": "2d730fd977eace83339cc040e237c5931b3da9a4f7a79a35dc798f28a857aa33"
+  },
+  {
+    "slug": "utility-vest",
+    "view": "front",
+    "original_name": "Muted utility vest on a black hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/utility-vest-front.png",
+    "sha256": "ed77efeff03ff5e82d429a66e46b589716a5cd2eb549f1f814398b3aaa71fd8e"
+  },
+  {
+    "slug": "utility-vest",
+    "view": "side",
+    "original_name": "Grey utility vest in side profile.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/utility-vest-side.png",
+    "sha256": "912a8232c17a5f18be5ec91a6fd785ed75ab86855ccdd8357de1f9d29e76c406"
+  },
+  {
+    "slug": "utility-vest",
+    "view": "back",
+    "original_name": "Muted Utility Vest on Black Hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/utility-vest-back.png",
+    "sha256": "dfac8fad08625eea23b385548714659daf52f4d9b8ecfe791cb2bca315280e20"
+  },
+  {
+    "slug": "stone-sweat",
+    "view": "front",
+    "original_name": "Taupe crewneck sweatshirt on black hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/stone-sweat-front.png",
+    "sha256": "d54c242b523084d84f9ff6ae4b2505a7b042834a5487dbc01001691572859df8"
+  },
+  {
+    "slug": "stone-sweat",
+    "view": "side",
+    "original_name": "Side-profile taupe sweatshirt on hanger.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/stone-sweat-side.png",
+    "sha256": "7a497d52666190bbe30bbe199cc576f2ded4b669d906cd088d5f12365e80928f"
+  },
+  {
+    "slug": "stone-sweat",
+    "view": "back",
+    "original_name": "Washed taupe sweatshirt, rear view.png",
+    "asset": "Shop.Presentation/wwwroot/images/hanging/stone-sweat-back.png",
+    "sha256": "88b2a8545d79c079aeb899ec7de8f342b24e94b200d4f8159c7a881fb24e1c69"
+  }
+]

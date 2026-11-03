@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#eeeee9" />
+  <title>@ViewData["Title"] | SALLY</title>
+  <meta name="description" content="SALLY — a distinctive streetwear collection with an interactive shopping experience." />
+  <link rel="stylesheet" href="~/css/rack.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
+</head>
+<body class="store-shell">
+  @RenderBody()
+  <script src="~/js/rack.js" asp-append-version="true" defer></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,4 +1,6 @@
-﻿@model Shop.Application.Products.DTOs.UpdateProductDto
+@{ Layout = "_AdminLayout"; ViewData["Title"] = "Products"; }
+@model Shop.Application.Products.DTOs.UpdateProductDto
+<div asp-validation-summary="All" class="admin-error"></div>
 <h1>Edit Product</h1>
 
 <form asp-controller="Products" asp-action="Edit" method="post">
@@ -17,14 +19,14 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="Price"></label>
+        <label asp-for="Price">Price (TOMAN)</label>
         <input asp-for="Price" class="form-control" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="StockQuantity"></label>
-        <input asp-for="StockQuantity" class="form-control" />
+        <input asp-for="StockQuantity" class="form-control" readonly /><p class="admin-muted">Update available sizes in <a href="/admin/inventory">size inventory</a>.</p>
         <span asp-validation-for="StockQuantity" class="text-danger"></span>
     </div>
 

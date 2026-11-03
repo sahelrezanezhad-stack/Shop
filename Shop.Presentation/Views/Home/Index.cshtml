@@ -1,8 +1,131 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Wear something different.";
+    Layout = "_StoreLayout";
 }
+<div class="rack-app is-landing" id="rackApp" data-assets="@Url.Content("~/images/collection/")" data-photos="@Url.Content("~/images/hanging/")">
+  <header class="topbar" aria-label="Main navigation">
+    <div class="topbar-note" dir="ltr"><a class="sally-account-link" href="/account">@(User.Identity?.IsAuthenticated == true ? "MY ACCOUNT" : "SIGN IN")</a></div>
+    <a class="brand" href="/" aria-label="SALLY home">SALLY<span class="brand-flower">✳</span></a>
+    <button class="bag-trigger" type="button" id="bagTrigger" aria-label="Open shopping bag">
+      BAG <span class="bag-count" id="bagCount">00</span> <span class="bag-plus">↗</span>
+    </button>
+  </header>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+  <section class="landing-screen" id="landingScreen" aria-label="SALLY introduction">
+    <div class="landing-grid" aria-hidden="true"></div>
+    <div class="landing-copy">
+      <div class="landing-topline">
+        <span>INDEPENDENT STYLE / CURATED PIECES</span>
+      </div>
+      <div class="landing-title-wrap">
+        <p class="landing-overline">A DIFFERENT POINT OF VIEW</p>
+        <h1>WEAR SOMETHING<br /><em>DIFFERENT.</em></h1>
+        <p class="landing-description">A considered edit of distinctive pieces, expressive textures and everyday individuality.</p>
+      </div>
+      <div class="landing-bottomline">
+        <span>LESS ORDINARY. MORE YOU.</span>
+        <span class="landing-drag-hint">PULL THE TAB TO DISCOVER <b>→</b></span>
+      </div>
+    </div>
+    <figure class="landing-model">
+      <img src="~/images/landing/cream-model.jpg" asp-append-version="true" alt="Standing model wearing a cream outfit and a cap" width="2333" height="3500" fetchpriority="high" decoding="async" />
+    </figure>
+    <button class="discover-handle" id="discoverHandle" type="button" aria-label="Drag or press to discover SALLY" aria-expanded="false">
+      <span class="discover-handle-arrow">→</span>
+      <span class="discover-handle-text">DRAG TO DISCOVER</span>
+    </button>
+    <div class="discover-scrim" id="discoverScrim"></div>
+    <aside class="discover-panel" id="discoverPanel" aria-label="About SALLY" aria-hidden="true">
+      <div class="discover-panel-top">
+        <span>ABOUT SALLY</span>
+        <button id="discoverClose" type="button" aria-label="Close introduction">✕</button>
+      </div>
+      <div class="discover-panel-content">
+        <p class="discover-panel-kicker">OUR POINT OF VIEW</p>
+        <h2>Style is personal.<br /><em>Make it yours.</em></h2>
+        <p class="discover-panel-description">SALLY brings together pieces with character — considered silhouettes, tactile details and a point of view that feels entirely your own.</p>
+      </div>
+      <button class="discover-collection-btn" id="discoverCollectionBtn" type="button">ENTER THE COLLECTION <span>↗</span></button>
+      <div class="discover-panel-foot">WEAR SOMETHING DIFFERENT.</div>
+    </aside>
+    <div class="landing-footer"><span>© SALLY</span><span>DESIGNED TO STAND OUT, NOT FIT IN.</span></div>
+  </section>
+
+  <main class="mainstage" id="mainstage">
+    <div class="intro" id="intro"></div>
+    <div class="scene-head" dir="ltr"></div>
+    <section class="rack-scene" id="rackScene" aria-label="Interactive clothing rack">
+      <div class="rail-shadow"></div><div class="rail"></div>
+      <div class="rack-items" id="rackItems"></div>
+      <div class="rack-guides" aria-hidden="true"><span class="guide-left">↙</span><span class="guide-right">↘</span></div>
+      <button class="return-rack" id="returnRack" type="button" aria-label="Return to clothing rack">← BACK TO RACK</button>
+    </section>
+
+    <section class="product-info" id="productInfo" aria-live="polite">
+      <div class="product-topline"><span id="productCounter">01 / 08</span><span class="divider-glyph">✳</span><span>THE COLLECTION</span></div>
+      <h1 class="product-name product-slogan" id="productName">Wear something different.</h1>
+      <div class="product-meta" id="productMeta">CURATED COLLECTION</div>
+      <div class="product-price" id="productPrice" dir="ltr" aria-live="polite"></div>
+      <div class="product-controls" id="productControls">
+        <div class="view-switch" role="group" aria-label="Product view">
+          <button type="button" class="is-active" id="frontBtn" aria-pressed="true">FRONT</button>
+          <button type="button" id="backBtn" aria-pressed="false">BACK</button>
+          <button type="button" id="sideBtn" aria-pressed="false">SIDE</button>
+        </div>
+        <div class="tone-select" id="toneSelect" aria-label="Product color"></div>
+        <div class="size-select" id="sizeSelect" role="group" aria-label="Clothing size">
+          <button type="button" data-size="XS" hidden>XS</button><button type="button" data-size="S">S</button><button type="button" class="is-selected" data-size="M">M</button><button type="button" data-size="L">L</button><button type="button" data-size="XL">XL</button>
+        </div>
+        <button type="button" class="details-open" id="detailOpen">DETAILS ↗</button>
+        <button type="button" class="details-open" id="photoOpen" aria-haspopup="dialog">ALL PHOTOS ↗</button>
+        <button class="add-to-bag" type="button" id="addToBag">ADD TO BAG <span>↗</span></button>
+      </div>
+      <p class="photo-notice" id="photoNotice"></p>
+    </section>
+    <aside class="detail-panel" id="detailPanel" aria-label="Selected product details" aria-hidden="true">
+      <div class="detail-head"><span>PRODUCT INFORMATION</span><button id="detailClose" type="button" aria-label="Close details">✕</button></div>
+      <h2 id="detailTitle"></h2><p class="detail-brand" id="detailBrand" hidden></p>
+      <div class="detail-price" id="detailPrice" dir="ltr"></div>
+      <div class="detail-separator"></div>
+      <strong>DESCRIPTION</strong><p class="detail-description" id="detailDescription" dir="ltr"></p>
+      <div class="detail-separator"></div>
+      <div class="detail-attribute"><span>COLOR</span><strong id="detailColor"></strong></div>
+      <div class="detail-attribute"><span>MATERIAL</span><strong id="detailMaterial"></strong></div>
+      <div class="detail-attribute"><span>SIZES</span><strong id="detailSizes"></strong></div><div class="detail-attribute"><span>VIEWS</span><strong id="detailView"></strong></div>
+    </aside>
+    <div class="scene-navigation" aria-label="Product navigation"><button class="nav-prev" id="navPrev" aria-label="Previous garment">←</button><span id="navProgress">01 — 08</span><button class="nav-next" id="navNext" aria-label="Next garment">→</button></div>
+    <div class="side-caption" dir="ltr">DESIGNED TO STAND OUT, NOT FIT IN. © SALLY</div>
+  </main>
+  <footer class="ticker" aria-label="Collection announcement"><div class="ticker-track" dir="ltr"><span>LESS ORDINARY ✳ MORE YOU ✳ NEW DROPS ✳ SALLY COLLECTION ✳ WEAR WHAT YOU LOVE ✳</span><span aria-hidden="true">LESS ORDINARY ✳ MORE YOU ✳ NEW DROPS ✳ SALLY COLLECTION ✳ WEAR WHAT YOU LOVE ✳</span></div></footer>
+  <aside class="bag-drawer" id="bagDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-top"><strong>YOUR BAG</strong><button type="button" id="closeBag" aria-label="Close shopping bag">✕</button></div>
+    <p class="drawer-note" id="drawerNote">Demo checkout is available. Online payment is not enabled.</p>
+    <div class="bag-lines" id="bagLines"></div>
+    <div class="bag-subtotal" id="bagSubtotal" dir="ltr"></div>
+
+    <button class="start-checkout" id="startCheckout" type="button" hidden>CHECKOUT <span>↗</span></button>
+    <section class="checkout-section" id="checkoutSection" hidden aria-label="Checkout details">
+      <h3>CHECKOUT</h3>
+      <p>This is a test order. Online payment is not enabled.</p>
+      <form id="checkoutForm">
+        <label>Full name <input name="fullName" required minlength="3" maxlength="100" autocomplete="name" /></label>
+        <label>Phone number <input name="phone" required inputmode="tel" autocomplete="tel" /></label>
+        <label>Email address (optional) <input name="email" type="email" maxlength="180" autocomplete="email" /></label>
+        <label>City <input name="city" required minlength="2" maxlength="100" autocomplete="address-level2" /></label>
+        <label>Delivery address <textarea name="address" required minlength="8" maxlength="300" rows="3" autocomplete="street-address"></textarea></label>
+        <label>Postal code (optional) <input name="postalCode" maxlength="20" autocomplete="postal-code" /></label>
+        <div class="checkout-actions"><button type="submit" id="checkoutSubmit">PLACE ORDER — NO PAYMENT</button><button type="button" id="checkoutCancel">BACK TO BAG</button></div>
+      </form>
+      <div class="checkout-result" id="checkoutResult" hidden aria-live="polite"></div>
+      <p class="checkout-error" id="checkoutError" role="alert"></p>
+    </section>
+    <button class="bag-back" type="button" id="backToShop">CONTINUE EXPLORING ↗</button>
+  </aside>
+  <div class="drawer-scrim" id="drawerScrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="photos-dialog" id="photosDialog" aria-labelledby="photosTitle">
+    <div class="photos-head"><div><span>THE DETAILS, EVERY ANGLE</span><h2 id="photosTitle"></h2></div><button type="button" id="photosClose" aria-label="Close product photographs">✕</button></div>
+    <div class="photos-stage"><img id="photosImage" alt="" width="1024" height="1536" /></div>
+    <div class="photos-switch" role="group" aria-label="Photograph angle"><button type="button" data-photo-view="front">FRONT</button><button type="button" data-photo-view="side">SIDE</button><button type="button" data-photo-view="back">BACK</button></div>
+  </dialog>
 </div>

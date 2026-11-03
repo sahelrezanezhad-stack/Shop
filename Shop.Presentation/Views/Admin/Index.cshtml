@@ -1,0 +1,5 @@
+@model Shop.Presentation.Controllers.AdminOverview
+@{ ViewData["Title"] = "Store administration"; Layout = "_AdminLayout"; }
+<span class="account-kicker">STORE OVERVIEW</span><h1>Store administration</h1>
+<div class="admin-metrics"><article><strong>@Model.Products</strong><span>Products</span></article><article><strong>@Model.Orders</strong><span>Orders</span></article><article><strong>@Model.PendingOrders</strong><span>Awaiting payment</span></article><article><strong>@Model.PendingEmails</strong><span>Pending emails</span></article></div>
+<div class="admin-actions"><a href="/Products">Manage products →</a><a href="/admin/orders">Manage orders →</a><a href="/admin/inventory">Manage size inventory →</a></div>

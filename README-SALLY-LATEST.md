@@ -1,0 +1,1 @@
+SALLY revision: black actual hanger rod (not site header line), no legs/bottom pole. RACK_MOTION_LAB.html full motion now continues SIDE -> TURN -> FRONT, holding FRONT at end. Motion study is still 2D-photo-based, not a photoreal 3D model. Shop architecture unchanged.

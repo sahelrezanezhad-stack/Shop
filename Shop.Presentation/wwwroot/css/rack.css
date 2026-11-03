@@ -1,0 +1,445 @@
+:root{--ink:#1b1b18;--paper:#eeeee9;--electric:#bfff17;--sub:#8c8d88;--rail-y:16%;color-scheme:light}
+*{box-sizing:border-box}html{height:100%;font-family:Arial,'DM Sans',sans-serif}body{margin:0;background:var(--paper);color:var(--ink);overflow-x:hidden}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #819d12;outline-offset:3px}button,button:active{touch-action:manipulation}.rack-app{min-height:100dvh;position:relative;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(ellipse at 52% 41%,#f5f5f0 0%,#eeeee9 60%,#e8e8e3 100%)}
+.topbar{position:relative;z-index:12;height:79px;padding:0 clamp(24px,4.5vw,82px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #dddcd5;direction:ltr}.topbar-note{font-size:9px;font-weight:800;letter-spacing:.11em;color:#44443f}.topbar-sub{color:#9b9b94;margin-left:8px}.status-dot{display:inline-block;width:6px;height:6px;background:var(--electric);border:1px solid #618f00;border-radius:50%;margin-right:7px}.brand{color:var(--ink);position:absolute;left:50%;transform:translateX(-50%);text-decoration:none;font-size:26px;font-weight:900;letter-spacing:-.125em;font-style:italic;line-height:1}.brand span:first-child{color:#798a32}.brand-flower{color:#85b200;font-size:14px;font-style:normal;display:inline-block;transform:translate(7px,-11px) rotate(18deg);letter-spacing:0}.bag-trigger{border:0;background:none;color:var(--ink);font-size:10px;letter-spacing:.12em;font-weight:800;padding:14px 0;display:flex;align-items:center;gap:12px}.bag-count{background:var(--ink);color:white;border-radius:999px;min-width:27px;min-height:27px;display:grid;place-items:center;padding:4px;letter-spacing:0}.bag-plus{font-size:21px;font-weight:400}
+.mainstage{flex:1;min-height:685px;position:relative;display:flex;flex-direction:column}.intro{position:absolute;z-index:5;top:33px;right:clamp(24px,4.5vw,82px);text-align:right}.eyebrow{font-size:10px;letter-spacing:.15em;font-weight:800;direction:ltr;display:block;color:#606057}.intro p{font-size:12px;color:#898981;margin:7px 0}.scene-head{position:absolute;left:clamp(24px,4.5vw,82px);right:clamp(24px,4.5vw,82px);top:120px;z-index:3;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.18em;font-weight:800;color:#a1a19c;pointer-events:none}
+.rack-scene{height:clamp(440px,64vh,670px);min-height:440px;position:relative;isolation:isolate;margin-top:60px}.rail,.rail-shadow{position:absolute;top:var(--rail-y);height:5px;left:4%;width:92%;pointer-events:none}.rail{z-index:2;background:linear-gradient(180deg,#a5a59f,#e0dfd7 30%,#b4b4ad 55%,#92948d 100%);box-shadow:0 1px 1px #fff inset,0 3px 6px #00000012}.rail::before,.rail::after{content:"";position:absolute;top:-1px;width:3px;height:42px;background:linear-gradient(to right,#b9b9b3,#e8e8df,#989992)}.rail::before{left:0}.rail::after{right:0}.rail-shadow{top:calc(var(--rail-y) + 6px);height:1px;filter:blur(3px);background:#4444;z-index:0}.rack-items{position:absolute;inset:0;perspective:1250px;overflow:hidden;direction:ltr}.garment{--distance:0;--abs:0;position:absolute;left:50%;top:calc(var(--rail-y) - 11px);width:clamp(215px,22.8vw,325px);height:clamp(330px,45vw,470px);padding:0;border:0;background:transparent;transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) scale(var(--rack-scale));transition:transform 900ms cubic-bezier(.2,.78,.19,1),opacity 650ms ease,filter 650ms ease;opacity:var(--rack-opacity);filter:drop-shadow(15px 18px 12px #28241f20);display:flex;align-items:flex-start;justify-content:center;will-change:transform}.garment:hover{filter:drop-shadow(12px 17px 10px #16150f3b);transform:translateX(calc(-50% + var(--rack-x))) translateY(-8px) scale(var(--rack-scale));}.garment img{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;object-position:center top;user-select:none;pointer-events:none;margin-top:34px}.hanger-wrap{position:absolute;z-index:1;left:50%;width:41%;top:0;transform:translateX(-50%)}.hanger{display:block;width:100%;overflow:visible;filter:drop-shadow(1px 3px 2px #0002)}.garment-index{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-weight:800;font-size:10px;letter-spacing:.1em;color:#aaa9a0;opacity:1}.rack-guides{position:absolute;left:5%;right:5%;bottom:13%;z-index:3;display:flex;justify-content:space-between;pointer-events:none;color:#a3a39c;font-size:28px}.return-rack{opacity:0;pointer-events:none;position:absolute;left:clamp(24px,5vw,82px);top:25px;border:0;background:none;color:#64645c;font-size:11px;letter-spacing:.12em;font-weight:800;transition:opacity 350ms;z-index:8;padding:10px}
+.is-focused .garment{opacity:var(--focus-opacity);filter:blur(var(--focus-blur)) saturate(var(--focus-saturation)) drop-shadow(10px 20px 12px #0001);transform:translateX(calc(-50% + var(--focus-x))) translateY(var(--focus-y)) scale(var(--focus-scale));pointer-events:none}.is-focused .garment.is-selected{opacity:1;filter:drop-shadow(16px 27px 14px #0000001c);pointer-events:auto;transform:translateX(-50%) translateY(-26px) scale(1.29)}.is-focused .garment:hover{transform:translateX(-50%) translateY(-29px) scale(1.31)}.is-focused .garment-index{opacity:0}.is-focused .return-rack{opacity:1;pointer-events:auto}.is-focused .rack-guides{opacity:0}
+.product-info{position:relative;z-index:5;text-align:center;margin:-10px auto 0;min-height:172px;padding:0 24px;max-width:860px;width:100%;transition:transform .4s ease}.product-topline{display:flex;justify-content:center;align-items:center;gap:14px;color:#888880;font-size:9px;font-weight:800;letter-spacing:.17em;direction:ltr}.divider-glyph{color:#94a623;font-size:13px}.product-name{direction:ltr;text-align:center;font-size:clamp(22px,2.8vw,35px);letter-spacing:-.06em;text-transform:uppercase;font-weight:900;line-height:1.08;margin:12px auto 7px}.product-meta{direction:ltr;color:#86867f;font-size:10px;font-weight:700;letter-spacing:.12em}.product-controls{height:0;overflow:hidden;opacity:0;pointer-events:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px;transition:height 350ms,opacity 350ms;margin-top:0;direction:ltr}.product-info.is-open .product-controls{height:74px;opacity:1;pointer-events:auto;margin-top:10px}.view-switch{display:flex;border:1px solid #a0a098;border-radius:24px;padding:3px;gap:3px}.view-switch button{border:0;border-radius:20px;background:none;color:#818179;min-width:63px;padding:8px 12px;line-height:1;font-size:9px;font-weight:900;letter-spacing:.1em}.view-switch button.is-active{background:#24241f;color:#fff}.tone-select{display:flex;align-items:center;gap:9px}.tone-label,.tone-name{font-size:9px;letter-spacing:.12em;color:#55554d;font-weight:800}.tone-name{color:#93938c}.tone-dot{background:var(--tone);height:19px;width:19px;border-radius:50%;outline:1px solid #c0c0bb;outline-offset:3px}.size-select{display:flex;align-items:center;gap:4px}.size-select button{background:transparent;border:1px solid #c3c3bc;border-radius:50%;height:29px;width:29px;color:#66665e;font-size:9px;font-weight:800}.size-select button.is-selected{background:#24241f;border-color:#24241f;color:#fff}.add-to-bag{border:0;padding:12px 17px;border-radius:2px;background:#23241f;color:white;font-size:9px;letter-spacing:.12em;font-weight:900;display:flex;gap:16px;align-items:center}.add-to-bag:hover{background:#4d5a1e}.add-to-bag span{font-size:14px}.photo-notice{font-size:10px;color:#9a9a91;margin:10px 0 0;transition:opacity 200ms}.scene-navigation{z-index:6;display:flex;align-items:center;gap:18px;margin:10px auto 31px;direction:ltr}.scene-navigation button{border:1px solid #c2c1b8;border-radius:50%;width:34px;height:34px;background:transparent;color:#57574e;display:grid;place-items:center;font-size:16px}.scene-navigation button:hover{background:#fff}.scene-navigation span{font-size:9px;font-weight:800;letter-spacing:.1em;color:#8b8b82}.side-caption{position:absolute;bottom:26px;left:clamp(24px,4.5vw,82px);font-size:9px;color:#aaa99d;letter-spacing:.08em;font-weight:700}
+.ticker{background:var(--electric);height:32px;width:100%;display:flex;align-items:center;overflow:hidden;color:#222a0d;position:relative;z-index:10}.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:move 24s linear infinite;font-size:9px;font-weight:900;letter-spacing:.08em}.ticker-track span{display:inline-block;padding-right:3rem}@keyframes move{to{transform:translateX(-50%)}}
+.bag-drawer{position:fixed;z-index:31;right:0;top:0;height:100dvh;width:min(420px,100vw);transform:translateX(110%);transition:transform .45s cubic-bezier(.2,.78,.19,1);background:#f5f4f0;padding:26px;display:flex;flex-direction:column;box-shadow:-4px 0 30px #0002}.bag-is-open .bag-drawer{transform:translateX(0)}.drawer-top{display:flex;justify-content:space-between;align-items:center;font-size:25px;letter-spacing:-.04em;direction:ltr}.drawer-top button{border:0;background:none;font-size:20px}.drawer-note{font-size:11px;color:#848477;margin:22px 0;padding-bottom:22px;border-bottom:1px solid #ddd}.bag-lines{flex:1;overflow:auto}.bag-empty{text-align:center;font-weight:900;font-size:20px;line-height:1.4;margin:85px auto;color:#b0b0a9;direction:ltr}.bag-line{display:grid;grid-template-columns:74px 1fr 24px;gap:12px;direction:ltr;align-items:center;border-bottom:1px solid #ddd;padding:13px 0}.bag-line img{max-width:70px;max-height:82px;object-fit:contain}.bag-line div{display:flex;flex-direction:column;gap:8px}.bag-line strong{font-size:12px}.bag-line span{color:#888;font-size:10px}.bag-line button{border:0;background:none}.bag-back{background:var(--ink);color:white;border:0;padding:18px;font-size:11px;font-weight:800;letter-spacing:.1em;direction:ltr}.drawer-scrim{position:fixed;inset:0;background:#1118;z-index:30;opacity:0;pointer-events:none;transition:opacity .4s}.bag-is-open .drawer-scrim{opacity:1;pointer-events:auto}.toast{position:fixed;bottom:65px;left:50%;transform:translate(-50%,18px);background:#23241f;color:white;padding:11px 18px;font-size:12px;opacity:0;pointer-events:none;z-index:40;transition:opacity .25s,transform .25s;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:960px){.topbar{height:66px}.intro{top:25px}.scene-head{top:95px}.rack-scene{height:clamp(390px,63vh,560px);margin-top:50px}.garment{width:clamp(180px,30vw,270px);height:clamp(300px,53vw,410px);transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) scale(var(--rack-scale))}.garment:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(-7px) scale(var(--rack-scale))}.is-focused .garment{transform:translateX(calc(-50% + var(--focus-x))) translateY(var(--focus-y)) scale(var(--focus-scale))}.is-focused .garment.is-selected{transform:translateX(-50%) translateY(-20px) scale(1.2)}.product-info.is-open .product-controls{height:auto;min-height:72px;padding:10px 0}.mainstage{min-height:660px}}
+@media(max-width:600px){:root{--rail-y:17%}.topbar{padding:0 19px;height:64px}.brand{font-size:22px}.topbar-note{font-size:0}.status-dot{width:8px;height:8px}.topbar-sub{display:none}.bag-trigger{font-size:9px;gap:5px}.bag-plus{display:none}.intro{top:24px;right:20px;left:20px;text-align:center}.eyebrow{font-size:8px}.intro p{font-size:11px}.scene-head{top:100px;left:22px;right:22px}.scene-head span{font-size:8px}.rack-scene{height:clamp(375px,56vh,525px);min-height:370px;margin-top:61px}.rail,.rail-shadow{width:120%;left:-10%}.garment{width:min(57vw,248px);height:min(78vw,350px);top:calc(var(--rail-y) - 11px);transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) scale(var(--rack-scale))}.garment:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(-4px) scale(var(--rack-scale))}.is-focused .garment{transform:translateX(calc(-50% + var(--focus-x))) translateY(12px) scale(var(--focus-scale));opacity:var(--focus-opacity)}.is-focused .garment.is-selected,.is-focused .garment:hover{transform:translateX(-50%) translateY(-8px) scale(1.12)}.garment img{margin-top:24px}.hanger-wrap{width:43%}.rack-guides{bottom:22%}.return-rack{top:13px;left:15px;font-size:9px}.product-info{margin:-9px auto 0;min-height:130px;padding:0 12px}.product-name{font-size:clamp(20px,5vw,28px);margin:10px 0 8px}.product-meta{font-size:8px}.product-info.is-open .product-controls{gap:10px;margin-top:10px;max-width:365px;margin-left:auto;margin-right:auto}.view-switch button{min-width:55px;padding:8px}.tone-label,.tone-name{font-size:8px}.tone-select{gap:6px}.size-select{gap:3px}.size-select button{height:27px;width:27px}.add-to-bag{padding:10px 14px}.photo-notice{font-size:10px;line-height:1.5;margin:9px auto;max-width:320px}.scene-navigation{margin:12px auto 30px}.side-caption{display:none}.mainstage{min-height:620px}.ticker{height:29px}}
+@media(prefers-reduced-motion:reduce){.garment,.toast,.bag-drawer,.drawer-scrim,.return-rack{transition-duration:.01ms!important}.ticker-track{animation:none}}
+/* Keep the physical hanger visually connected to the garment, even in focus mode. */
+.garment img{margin-top:18px}
+.hanger-wrap{top:12px}
+.is-focused .garment.is-selected .hanger-wrap{top:84px;transform:translateX(-50%) scale(.8)}
+@media(max-width:600px){.garment img{margin-top:12px}.hanger-wrap{top:8px}.is-focused .garment.is-selected .hanger-wrap{top:43px;transform:translateX(-50%) scale(.86)}}
+/* Focused item stays physically below the rail, with a visible hook. */
+.is-focused .garment.is-selected{transform:translateX(-50%) translateY(25px) scale(1.17)}
+.is-focused .garment.is-selected:hover{transform:translateX(-50%) translateY(22px) scale(1.19)}
+.is-focused .garment.is-selected .hanger-wrap{top:2px;transform:translateX(-50%) scale(.85)}
+@media(max-width:600px){.is-focused .garment.is-selected{transform:translateX(-50%) translateY(6px) scale(1.08)}.is-focused .garment.is-selected:hover{transform:translateX(-50%) translateY(3px) scale(1.09)}.is-focused .garment.is-selected .hanger-wrap{top:6px;transform:translateX(-50%) scale(.86)}}
+
+/* Day 1 revision B: true rack browsing reads as narrow garment profiles,
+   not a row of front-facing product pictures. The profiles are CSS approximations
+   until actual side photos or 3D garment assets are provided. */
+.rack-items { perspective:1500px; }
+.garment { transform-origin:center 9%; transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(79deg) rotateZ(var(--hang-tilt)); filter:drop-shadow(5px 12px 6px #17141032); opacity:1; }
+.garment:hover { transform:translateX(calc(-50% + var(--rack-x))) translateY(-9px) rotateY(65deg) rotateZ(1.6deg) scale(1.06); }
+.garment img { backface-visibility:visible; transition:opacity .45s ease; }
+.garment-volume { position:absolute; z-index:3; left:23%; top:48px; width:54%; height:81%; pointer-events:none; opacity:1; transform:rotateY(-4deg); transition:opacity .25s ease; }
+.fabric-edge { position:absolute; top:0; left:19%; width:60%; height:100%; border-radius:24% 19% 13% 15%/9% 12% 7% 8%; background:linear-gradient(90deg,#1118 0%,transparent 14%,#fff6 29%,transparent 46%,#0005 82%,#1116),var(--fabric); box-shadow:inset 8px 0 11px #0003,inset -8px 0 9px #0002,5px 10px 10px #0002; clip-path:polygon(29% 0,70% 1%,95% 10%,100% 30%,84% 95%,60% 100%,22% 98%,1% 39%,7% 11%); }
+.fabric-edge::after {content:'';position:absolute;inset:0;background:repeating-linear-gradient(82deg,transparent 0 15px,#fff2 16px 17px,transparent 18px 28px);opacity:.38}
+.fabric-seam {position:absolute;left:54%;top:8%;height:85%;border-left:2px solid #1114;transform:skew(-5deg);filter:blur(.4px)}
+.hanger-wrap { transition:transform .75s cubic-bezier(.2,.75,.2,1),opacity .4s; }
+.is-focused .garment {transform:translateX(calc(-50% + var(--focus-x))) translateY(var(--focus-y)) rotateY(68deg) scale(.73);opacity:var(--focus-opacity)}
+.is-focused .garment.is-selected {transform:translateX(-50%) translateY(25px) rotateY(0deg) scale(1.17);animation:revealGarment 840ms cubic-bezier(.18,.77,.19,1) both; }
+.is-focused .garment.is-selected:hover {transform:translateX(-50%) translateY(22px) rotateY(0deg) scale(1.19)}
+.is-focused .garment.is-selected .garment-volume {opacity:0;}
+.is-focused .garment:not(.is-selected) .garment-volume {opacity:.5;}
+@keyframes revealGarment {0%{transform:translateX(-50%) translateY(0) rotateY(77deg) scale(.92)}55%{transform:translateX(-50%) translateY(33px) rotateY(-9deg) scale(1.1)}100%{transform:translateX(-50%) translateY(25px) rotateY(0) scale(1.17)}}
+@media(max-width:600px){.garment{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(78deg) rotateZ(var(--hang-tilt))}.garment:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(-6px) rotateY(65deg)}.is-focused .garment{transform:translateX(calc(-50% + var(--focus-x))) translateY(12px) rotateY(70deg) scale(.7)}.is-focused .garment.is-selected{transform:translateX(-50%) translateY(6px) rotateY(0) scale(1.08);animation:revealGarmentMobile 840ms cubic-bezier(.18,.77,.19,1) both}.is-focused .garment.is-selected:hover{transform:translateX(-50%) translateY(3px) scale(1.09)}@keyframes revealGarmentMobile{0%{transform:translateX(-50%) translateY(0) rotateY(78deg) scale(.84)}55%{transform:translateX(-50%) translateY(13px) rotateY(-7deg) scale(1)}100%{transform:translateX(-50%) translateY(6px) rotateY(0) scale(1.08)}}}
+@media(prefers-reduced-motion:reduce){.is-focused .garment.is-selected{animation:none}}
+
+/* SALLY brand refresh: typography only, no rack interaction changes */
+.brand{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(29px,3vw,38px);font-weight:500;letter-spacing:-.065em;color:#24251f}
+.brand-flower{margin-left:2px;font-family:Arial,sans-serif}
+.product-name.product-slogan{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;letter-spacing:-.035em;text-transform:none;font-size:clamp(23px,2.9vw,39px);line-height:1.25}
+
+/* SALLY motion repair — 2026-10-27
+   Each garment owns one transition. No keyframes force every new selection to
+   start at the centre (which previously made a garment appear stationary). */
+.rack-items{perspective:1700px;overflow:visible}
+.garment{transition:transform 980ms cubic-bezier(.16,.79,.22,1),opacity 660ms ease,filter 660ms ease;backface-visibility:visible;transform-origin:50% 9%;}
+.garment:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(-5px) rotateY(74deg) rotateZ(var(--hang-tilt));}
+.is-focused .garment{transform:translateX(calc(-50% + var(--focus-x))) translateY(var(--focus-y)) rotateY(73deg) scale(.72);pointer-events:none}
+.is-focused .garment.is-selected{animation:none!important;transform:translateX(-50%) translateY(25px) rotateY(0deg) scale(1.17);opacity:1;filter:drop-shadow(12px 25px 15px #0002);pointer-events:auto}
+.is-focused .garment.is-selected:hover{transform:translateX(-50%) translateY(22px) rotateY(0deg) scale(1.19)}
+/* Keep all five garments in the transition system, including end garments. */
+.garment{visibility:visible}
+/* Quiet reference-led art direction: clothing, not loud lettering, is hero. */
+.intro .eyebrow{font-weight:500;letter-spacing:.16em}.intro p{font-family:Georgia,serif;font-style:italic;font-weight:400;letter-spacing:.01em}
+.product-name.product-slogan{font-weight:400!important;font-size:clamp(20px,2.4vw,32px)!important;letter-spacing:.005em!important}
+@media(max-width:600px){.is-focused .garment{transform:translateX(calc(-50% + var(--focus-x))) translateY(12px) rotateY(73deg) scale(.7)}.is-focused .garment.is-selected{animation:none!important;transform:translateX(-50%) translateY(6px) rotateY(0deg) scale(1.08)}.is-focused .garment.is-selected:hover{transform:translateX(-50%) translateY(3px) rotateY(0deg) scale(1.09)}}
+@media(prefers-reduced-motion:reduce){.garment{transition-duration:.01ms!important}}
+
+/* SALLY rail color: satin black, no motion or geometry modifications. */
+.rail{background:linear-gradient(180deg,#555657 0%,#242526 34%,#0d0e0f 57%,#343638 78%,#111213 100%);box-shadow:inset 0 1px 1px #8b8d8e77,0 4px 8px #00000024}
+.rail::before,.rail::after{background:linear-gradient(90deg,#090909,#3e4042 42%,#101112 80%)}
+.rail-shadow{background:#1118}
+
+/* SALLY reference correction — only the upper black hanging rod is visible.
+   Garments conceal any lower rack structure; no bottom bar or feet are rendered. */
+.rail::before,.rail::after{content:none!important;display:none!important}
+.rail-shadow{display:none!important}
+.rack-scene::after,.rack-scene::before{content:none!important}
+
+/* Confirmed user correction: black refers to actual hanger-bearing rod only, NOT header divider. */
+.rack-scene > .rail{background:linear-gradient(180deg,#636466 0%,#292a2b 30%,#08090a 58%,#303133 78%,#101112 100%)!important;box-shadow:inset 0 1px 1px #ffffff45,0 4px 8px #0003!important}
+/* Keep the page-top divider unchanged; hide rack legs/bottom rod. */
+
+/* Day-one recovery: preserve approved garment motion, add real front/back & own details. */
+.garment img{transition:opacity 230ms ease;}
+.garment img.switching{opacity:.16}
+.details-open{border:1px solid #aaa99e;background:transparent;padding:11px 13px;color:#393933;font-size:10px;letter-spacing:.08em}
+.detail-panel{position:absolute;right:clamp(18px,3vw,56px);top:185px;width:min(290px,27vw);max-height:435px;overflow:auto;z-index:7;border:1px solid #d6d5cc;background:#f9f8f4f0;box-shadow:0 20px 60px #1b19131a;backdrop-filter:blur(12px);padding:22px;opacity:0;pointer-events:none;transform:translateX(22px);transition:opacity .4s ease,transform .4s ease;text-align:left;direction:ltr}
+.detail-panel.is-visible{opacity:1;pointer-events:auto;transform:translateX(0)}
+.detail-head{display:flex;justify-content:space-between;align-items:center;font-size:9px;color:#87867e;letter-spacing:.16em;font-weight:700}.detail-head button{border:0;background:transparent;font-size:16px}
+.detail-brand{font-size:10px;letter-spacing:.13em;color:#818079;text-transform:uppercase;margin:22px 0 6px}.detail-panel h2{font-size:18px;line-height:1.2;letter-spacing:-.025em;font-weight:600;margin:0 0 14px}.detail-price{font-size:13px;font-weight:600;color:#33332f}.detail-separator{height:1px;background:#e2e0d6;margin:17px 0}.detail-panel>strong{font-size:10px;letter-spacing:.13em}.detail-description{font-size:12px;line-height:1.8;color:#57564e;margin:8px 0}.detail-attribute{display:flex;justify-content:space-between;gap:12px;font-size:10px;margin-bottom:14px;color:#727168}.detail-attribute strong{font-size:10px;color:#333;font-weight:500;text-align:right;max-width:155px}.detail-disclaimer{font-size:9px;color:#908d83;line-height:1.65;margin:17px 0 0}.size-select button[hidden]{display:none}
+@media(max-width:1000px){.detail-panel{right:15px;top:190px;width:235px;padding:15px}.detail-panel h2{font-size:15px}}
+@media(max-width:700px){.detail-panel{position:fixed;top:auto;right:0;left:0;bottom:0;width:100vw;max-height:45dvh;transform:translateY(100%);border-radius:18px 18px 0 0;z-index:25;padding:22px 25px}.detail-panel.is-visible{transform:translateY(0)}.product-info.is-open .product-controls{height:auto;min-height:70px;overflow:visible}.mainstage{min-height:710px}}
+
+
+/* SALLY visual clarity + Toman catalog patch — preserves the approved motion transforms. */
+/* Reserve a real image zone. The text is always below the garment image, never under it. */
+.rack-scene{
+  height:clamp(660px,75vh,760px);
+  min-height:660px;
+  overflow:hidden;
+}
+.product-info{
+  flex:none;
+  position:relative;
+  z-index:9;
+  margin:0 auto;
+  min-height:165px;
+  padding:24px 26px 18px;
+  max-width:960px;
+  border-top:1px solid #cbc9c1;
+  background:#efeee9;
+}
+.product-name{
+  margin-top:12px;
+  line-height:1.15;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.product-price{
+  margin:12px auto 4px;
+  font-size:14px;
+  line-height:1.6;
+  color:#30312f;
+  font-weight:700;
+  text-align:center;
+}
+.product-price:empty{display:none}
+/* Light-gray garments need more separation from the off-white photo stage. */
+.rack-app[data-active-product="wash-hoodie"] .is-focused .garment.is-selected::before,
+.rack-app[data-active-product="utility-vest"] .is-focused .garment.is-selected::before,
+.rack-app[data-active-product="stone-sweat"] .is-focused .garment.is-selected::before{
+  content:"";
+  display:block;
+  position:absolute;
+  z-index:0;
+  inset:10% -10% 3%;
+  pointer-events:none;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 50% 49%,rgba(150,156,157,.44) 0%,rgba(176,181,180,.28) 43%,rgba(188,190,188,0) 73%);
+}
+.rack-app[data-active-product="wash-hoodie"] .is-focused .garment.is-selected img,
+.rack-app[data-active-product="utility-vest"] .is-focused .garment.is-selected img,
+.rack-app[data-active-product="stone-sweat"] .is-focused .garment.is-selected img{
+  filter:drop-shadow(0 0 1px rgba(105,110,112,.42)) drop-shadow(8px 14px 12px rgba(110,115,115,.12));
+}
+.bag-line-price{font-size:11px!important;color:#252823!important;font-weight:700}
+.bag-subtotal{padding:14px 0 20px;border-top:1px solid #d6d3c9;font-weight:700;font-size:13px;text-align:right;direction:ltr}
+.bag-subtotal:empty{display:none}
+@media(max-width:960px){
+  .rack-scene{height:clamp(560px,69vh,700px);min-height:560px;margin-top:50px}
+  .product-info{margin:0 auto;padding:21px 20px 15px;min-height:154px;}
+}
+@media(max-width:600px){
+  .rack-scene{height:clamp(460px,62vh,570px);min-height:460px;margin-top:61px}
+  .product-info{margin:0 auto;padding:20px 18px 14px;min-height:142px;width:calc(100% - 28px)}
+  .product-name{font-size:clamp(20px,5vw,28px);margin-top:9px}
+  .product-price{font-size:12px;margin:9px auto 3px}
+}
+
+
+/* SALLY — reference-based, correct rail persistence & hover driven browsing (2026-10-27). */
+/* The BLACK rack rod is always physically present. When focused, it merely recedes. */
+.rack-scene > .rail{opacity:1;filter:none;transition:opacity .55s ease,filter .55s ease;z-index:1}
+.rack-app.is-focused .rack-scene > .rail{opacity:.40;filter:blur(5px)}
+.rack-items{z-index:2;overflow:visible}
+/* Keep all background garments legible as shapes while softened behind the featured item. */
+.is-focused .garment:not(.is-selected){visibility:visible!important;pointer-events:none;filter:blur(var(--focus-blur)) saturate(.7) drop-shadow(6px 10px 8px #00000018)}
+.is-focused .garment.is-selected{z-index:130!important;filter:drop-shadow(12px 23px 13px #00000028)}
+/* In the rack overview, overlap items so the eight garments read as a dense real clothing rail. */
+.rack-app:not(.is-focused) .garment:not(.is-selected){opacity:clamp(.61,var(--rack-opacity),1)}
+/* Colorway information lives on a small physical swing tag, not along the bottom of the page. */
+.tone-select{display:none!important}
+.garment-tag{position:absolute;z-index:5;top:31%;right:3%;width:84px;display:flex;align-items:center;flex-direction:column;transform:rotate(-10deg);transform-origin:10% 0;pointer-events:none;transition:opacity .3s,transform .6s;opacity:.7}
+.tag-string{width:1px;height:19px;background:#9b8872;transform:rotate(-21deg);transform-origin:top}
+.tag-card{position:relative;display:flex;align-items:center;justify-content:center;gap:5px;min-height:33px;max-width:90px;padding:4px 7px;background:#eee5d6;border:1px solid #b3a89c;box-shadow:2px 3px 5px #1b191524;border-radius:2px}
+.tag-card::before{content:'';position:absolute;top:2px;left:8px;width:3px;height:3px;border-radius:50%;background:#a59b8c}
+.tag-swatch{width:10px;height:10px;flex:none;background:var(--tag-color);border:1px solid #ffffff88;box-shadow:0 0 0 1px #0003;border-radius:1px}
+.tag-card b{font-family:Arial,sans-serif;font-size:7px;font-weight:600;line-height:1.15;text-transform:uppercase;letter-spacing:.01em;color:#51493c;max-width:59px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.is-focused .garment:not(.is-selected) .garment-tag{opacity:0}
+.is-focused .garment.is-selected .garment-tag{opacity:1;transform:rotate(-5deg)}
+/* Preserve the distinct editorial title block below the actual image area. */
+.product-info{z-index:10}
+.product-info .product-name{font-family:Georgia,'Times New Roman',serif;font-weight:500;letter-spacing:-.025em}
+/* Slightly reduce visual dominance of informational text. */
+.product-info .product-meta{font-weight:500}
+@media (hover:hover) and (pointer:fine){.rack-scene{cursor:crosshair}.rack-app:not(.bag-is-open) .garment{cursor:pointer}}
+@media(max-width:700px){.garment-tag{right:3%;top:29%;width:58px}.tag-card{padding:3px 4px;min-height:25px}.tag-card b{font-size:5.5px;max-width:34px}.tag-swatch{width:7px;height:7px}}
+@media(prefers-reduced-motion:reduce){.rack-scene > .rail,.garment-tag{transition-duration:0.01ms!important}}
+
+
+/* SALLY v4 — two distinct selection stages based on reference footage. */
+/* A small studio rack of side-angled garments remains visible on hover. */
+.rack-scene{height:clamp(510px,59vh,570px);min-height:510px;margin-top:56px;overflow:visible}
+.product-info{margin:0 auto;min-height:130px;padding:13px 22px 10px;max-width:960px}
+.product-name{margin:8px auto 5px;line-height:1.12;font-size:clamp(20px,2.5vw,31px)}
+.product-price{margin:6px auto 2px;font-size:13px}
+.photo-notice{margin:6px 0 0}
+.scene-navigation{margin:3px auto 13px}
+.mainstage{min-height:0}
+.rack-app:not(.is-focused) .garment{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(73deg) rotateZ(var(--hang-tilt));filter:drop-shadow(5px 10px 7px #17141023);opacity:var(--rack-opacity);pointer-events:auto}
+/* Once the user hovers one garment, ONLY that garment rotates and travels forward. */
+.rack-app.is-preview .garment.is-selected{transform:translateX(-50%) translateY(0px) rotateY(0deg) rotateZ(0deg) scale(1.10);filter:drop-shadow(9px 15px 13px #18181822);opacity:1;z-index:180!important;pointer-events:auto}
+.rack-app.is-preview .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(73deg) rotateZ(var(--hang-tilt));filter:drop-shadow(5px 10px 7px #17141025)!important;opacity:clamp(.60,var(--rack-opacity),1);pointer-events:auto}
+.rack-app.is-preview .rack-scene > .rail{filter:none;opacity:1}
+.rack-app.is-preview .garment.is-selected .garment-volume{opacity:0}
+.rack-app.is-preview .garment.is-selected .garment-tag{opacity:1}
+/* Click is the only event that activates depth blur; neighboring garments STAY ANGLED. */
+.rack-app.is-focused .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(73deg) rotateZ(var(--hang-tilt)) scale(.96);filter:blur(4px) saturate(.6) drop-shadow(4px 9px 6px #1b17141b)!important;opacity:.45!important;visibility:visible!important;pointer-events:none}
+.rack-app.is-focused .garment.is-selected{animation:none!important;transform:translateX(-50%) translateY(0px) rotateY(0deg) scale(1.10);filter:drop-shadow(9px 19px 14px #1716122b)!important;opacity:1;pointer-events:auto;z-index:180!important}
+.rack-app.is-focused .garment.is-selected:hover{transform:translateX(-50%) translateY(-2px) rotateY(0deg) scale(1.11)}
+.rack-app.is-focused .rack-scene > .rail{filter:blur(4px);opacity:.44}
+/* Neutralize the old 'hover any garment' trick; hover is now state-driven. */
+.rack-app:not(.is-focused):not(.is-preview) .garment:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(73deg) rotateZ(var(--hang-tilt));filter:drop-shadow(5px 10px 7px #17141023)}
+.rack-app.is-preview .garment.is-selected:hover{transform:translateX(-50%) translateY(0) rotateY(0deg) scale(1.10)}
+/* Cut the large empty area below the garments without overlapping the editorial title. */
+@media(max-width:960px){.rack-scene{height:clamp(490px,62vh,560px);min-height:490px;margin-top:50px}.product-info{min-height:118px;padding:12px 20px 9px}}
+@media(max-width:700px){
+ .rack-scene{height:clamp(390px,54vh,470px);min-height:390px;margin-top:49px}
+ .product-info{width:calc(100% - 28px);padding:12px 12px 10px;min-height:110px}
+ .product-name{font-size:clamp(19px,5vw,27px)}
+ .rack-app:not(.is-focused) .garment{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(76deg) rotateZ(var(--hang-tilt))}
+ .rack-app.is-focused .garment.is-selected{transform:translateX(-50%) translateY(1px) rotateY(0deg) scale(1.06)}
+ .rack-app.is-focused .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(76deg) rotateZ(var(--hang-tilt)) scale(.87)}
+ .rack-app.is-preview .garment.is-selected{transform:translateX(-50%) translateY(1px) rotateY(0deg) scale(1.06)}
+ .rack-app.is-preview .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(76deg) rotateZ(var(--hang-tilt))}
+ .scene-navigation{margin:3px auto 8px}
+}
+@media(prefers-reduced-motion:reduce){.garment,.rack-scene>.rail{animation:none!important;transition-duration:.01ms!important}}
+
+
+/* Final geometry and spacing corrections for the two-stage interaction. */
+/* Do not simulate extra vertical padded blocks behind a photographed side profile. */
+.rack-app:not(.is-focused) .garment-volume,.rack-app.is-focused .garment:not(.is-selected) .garment-volume{opacity:0!important}
+.rack-app:not(.is-focused) .garment{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(66deg) rotateZ(var(--hang-tilt));}
+.rack-app.is-preview .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(66deg) rotateZ(var(--hang-tilt))}
+.rack-app.is-focused .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(66deg) rotateZ(var(--hang-tilt)) scale(.96);filter:blur(3px) saturate(.65) drop-shadow(4px 9px 6px #1b17141b)!important;opacity:.52!important}
+.rack-app:not(.is-focused):not(.is-preview) .garment:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(66deg) rotateZ(var(--hang-tilt))}
+/* Separate the garment photo from the editorial caption without oversized whitespace. */
+@media(min-width:701px){.rack-scene{height:clamp(480px,56vh,530px);min-height:480px}}
+@media(max-width:700px){
+ .rack-app:not(.is-focused) .garment{transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(70deg) rotateZ(var(--hang-tilt))}
+ .rack-app.is-preview .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(70deg) rotateZ(var(--hang-tilt))}
+ .rack-app.is-focused .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) translateY(var(--rack-y)) rotateY(70deg) rotateZ(var(--hang-tilt)) scale(.87)}
+}
+/* Keep desktop detail panel above the product title strip. */
+@media(min-width:701px){.detail-panel{top:clamp(177px,22vh,214px);max-height:370px;overflow-y:auto}}
+
+/* Pointer fidelity: preview garment rotates in its own hanger slot. A click brings it to center. */
+.rack-app.is-preview .garment.is-selected,
+.rack-app.is-preview .garment.is-selected:hover{
+ transform:translateX(calc(-50% + var(--rack-x))) translateY(-8px) rotateY(0deg) rotateZ(0deg) scale(1.08);
+}
+@media(max-width:700px){
+ .rack-app.is-preview .garment.is-selected,
+ .rack-app.is-preview .garment.is-selected:hover{transform:translateX(calc(-50% + var(--rack-x))) translateY(-5px) rotateY(0deg) scale(1.05)}
+}
+
+/* SALLY Day 1 polish: details within one panel, no internal scrollbar. Rack transforms unchanged. */
+.intro,.scene-head,.photo-notice,.detail-brand,.detail-disclaimer{display:none!important}
+.detail-panel{width:clamp(255px,25.5vw,350px);top:clamp(115px,17vh,160px);max-height:none;overflow:hidden;padding:clamp(12px,1.4vw,18px);box-shadow:0 15px 42px #19181422}
+.detail-head{margin-bottom:9px}
+.detail-panel h2{font-size:clamp(14px,1.25vw,18px);line-height:1.16;margin:0 0 9px;overflow-wrap:anywhere;font-weight:650}
+.detail-price{font-size:12px}
+.detail-separator{margin:10px 0}
+.detail-panel>strong{font-size:9px}
+.detail-description{font-size:11px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:6px 0}
+.detail-attribute{margin-bottom:8px;font-size:9px;gap:8px}
+.detail-attribute strong{font-size:9px;max-width:65%;overflow-wrap:anywhere;line-height:1.35}
+@media(min-width:701px){.detail-panel{top:clamp(115px,17vh,160px);max-height:none;overflow:hidden}}
+@media(min-width:701px) and (max-width:1050px){.detail-panel{width:245px;padding:12px}.detail-panel h2{font-size:14px}.detail-description{-webkit-line-clamp:2;font-size:10px}}
+@media(max-width:700px){.detail-panel{top:auto;bottom:0;left:0;right:0;width:100vw;max-height:unset;overflow:hidden;border-radius:16px 16px 0 0;padding:14px 18px}.detail-panel h2{font-size:15px}.detail-description{font-size:10px}.detail-attribute{margin-bottom:6px}}
+
+/* SALLY Day 2: very small cart quantity controls; rack motion untouched */
+.bag-quantity{display:inline-flex!important;align-items:center;gap:10px!important;margin-top:2px}
+.bag-quantity button{display:grid;place-items:center;width:25px;height:25px;min-width:25px;border-radius:50%;border:1px solid #c5c3b9;background:#faf9f6;color:#222;font-size:17px}
+.bag-quantity b{font-size:12px;min-width:15px;text-align:center;font-weight:700}
+.bag-line-remote{grid-template-columns:66px 1fr 22px}
+.bag-line-remote img{max-width:62px}
+
+/* Checkout lives inside the existing cart drawer, never changes rack motion. */
+.start-checkout{border:0;background:#25251f;color:#fff;padding:13px 15px;margin:9px 0;font-size:12px;font-weight:700;display:flex;justify-content:space-between;direction:ltr;align-items:center}
+.start-checkout[hidden],.checkout-section[hidden],.checkout-result[hidden]{display:none!important}
+.checkout-section{direction:ltr;text-align:left;overflow-y:auto;min-height:0;flex:1;padding-top:8px}
+.checkout-section h3{font-size:22px;margin:4px 0 8px}
+.checkout-section>p{font-size:11px;color:#777367;line-height:1.6}
+.checkout-section form{display:grid;gap:10px}
+.checkout-section label{font-size:11px;color:#55534d;display:grid;gap:5px}
+.checkout-section input,.checkout-section textarea{width:100%;padding:10px 11px;background:#fff;border:1px solid #d0cec4;border-radius:4px;font:inherit;font-size:13px;direction:ltr;resize:vertical;color:#25241f}
+.checkout-section input:focus,.checkout-section textarea:focus{outline:2px solid #a4ae66;outline-offset:1px}
+.checkout-actions{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.checkout-actions button{padding:12px 10px;border:0;background:#292a24;color:#fff;font-weight:700;font-size:11px}
+.checkout-actions button+button{background:#e5e2d9;color:#292a24}
+.checkout-actions button[disabled]{opacity:.6;cursor:wait}
+.checkout-error{color:#a42c2c!important;min-height:1em}
+.checkout-result{padding:18px 12px;text-align:center;background:#e9ecdf;line-height:2;border-radius:6px;font-size:12px}
+.bag-drawer.is-checkout .bag-lines,.bag-drawer.is-checkout .drawer-note,.bag-drawer.is-checkout .bag-subtotal,.bag-drawer.is-checkout .bag-back,.bag-drawer.is-checkout .start-checkout{display:none!important}
+@media(max-width:700px){.checkout-section{padding-bottom:20px}.checkout-section form{gap:9px}}
+
+/* Account entry only; rack dynamics are unchanged. */
+.sally-account-link{color:#48483f;text-decoration:none;font-size:10px;font-weight:750;letter-spacing:.1em}.sally-account-link:hover{text-decoration:underline}
+
+/* Disabled stock controls remain visible but clearly unavailable. */
+.bag-quantity button:disabled{opacity:.32;cursor:not-allowed;background:#e7e6df}
+
+/* Keep the selected full photograph beside the copy in a compact composition. */
+.rack-app.is-landing .mainstage,
+.rack-app.is-landing .ticker{display:none!important}
+.landing-screen{display:none;position:relative;isolation:isolate;flex:1;min-height:calc(100dvh - 79px);overflow:hidden;background:#eeeee9;color:#20211d}
+.rack-app.is-landing .landing-screen{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);justify-content:center;align-items:stretch}
+.landing-grid{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(to right,transparent calc(25% - .5px),#c9c8be 25%,transparent calc(25% + .5px));mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent)}
+.landing-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:calc(100dvh - 79px);padding:clamp(24px,4vh,48px) clamp(18px,3vw,48px) 68px clamp(58px,6vw,108px)}
+.landing-topline{font-size:9px;font-weight:800;letter-spacing:.16em;color:#88877e}
+.landing-title-wrap{margin-top:auto;margin-bottom:auto;padding:4vh 0}
+.landing-overline{margin:0 0 22px;color:#858579;font-size:10px;font-weight:800;letter-spacing:.22em}
+.landing-title-wrap h1{margin:0;color:#20211d;font-size:clamp(54px,6vw,104px);line-height:.94;letter-spacing:-.075em;font-weight:800;text-transform:uppercase}
+.landing-title-wrap h1 em{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;letter-spacing:-.065em;color:#858d5b}
+.landing-description{max-width:350px;margin:28px 0 0;color:#77766d;font-size:13px;line-height:1.9;letter-spacing:.015em}
+.landing-bottomline{display:flex;align-items:flex-start;flex-direction:column;gap:12px;padding-top:18px;border-top:1px solid #d2d0c6;color:#77766d;font-size:9px;font-weight:800;letter-spacing:.15em}
+.landing-drag-hint{display:flex;align-items:center;gap:12px;color:#88877d}
+.landing-drag-hint b{font-size:18px;color:#858d5b}
+.landing-model{position:relative;z-index:1;min-width:0;margin:0;display:flex;align-items:center;justify-content:center;padding:18px clamp(28px,4vw,72px) 48px 0;transform:none}
+.landing-model img{display:block;width:100%;height:calc(100dvh - 145px);min-height:360px;max-height:1100px;object-fit:contain;object-position:right center;user-select:none}
+.discover-handle{position:absolute;z-index:10;left:0;top:50%;width:47px;height:174px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:12px 7px;border:0;border-radius:0 8px 8px 0;background:#252620;color:#f3f1e9;box-shadow:5px 9px 22px #16171020;touch-action:pan-y;cursor:ew-resize;transition:transform .35s ease,opacity .3s ease}
+.discover-handle-arrow{font-size:21px;line-height:1;color:#c6cf91}
+.discover-handle-text{writing-mode:vertical-rl;transform:rotate(180deg);font-size:8px;font-weight:800;letter-spacing:.2em;white-space:nowrap}
+.discover-handle:focus-visible{outline:3px solid #a4ad70;outline-offset:4px}
+.landing-footer{position:absolute;z-index:3;right:clamp(22px,5vw,76px);bottom:18px;left:clamp(58px,7.5vw,124px);display:flex;justify-content:space-between;gap:15px;color:#a09f95;font-size:8px;font-weight:700;letter-spacing:.15em;pointer-events:none}
+.discover-scrim{position:absolute;z-index:7;inset:0;background:#20211d52;opacity:0;pointer-events:none;transition:opacity .42s ease}
+.discover-panel{position:absolute;z-index:8;inset:0 auto 0 0;width:min(480px,88vw);display:flex;flex-direction:column;padding:clamp(28px,4vw,48px) clamp(25px,4vw,44px) 26px;background:#252620;color:#f1f0e9;box-shadow:22px 0 70px #15161030;transform:translateX(-103%);transition:transform .58s cubic-bezier(.2,.78,.19,1)}
+.rack-app.is-discover-open .discover-panel{transform:translateX(0)}
+.rack-app.is-discover-open .discover-scrim{opacity:1;pointer-events:auto}
+.rack-app.is-discover-open .discover-handle{opacity:0;pointer-events:none;transform:translate(-100%,-50%)}
+.discover-panel-top{display:flex;align-items:center;justify-content:space-between;color:#aaa99d;font-size:9px;font-weight:800;letter-spacing:.18em}
+.discover-panel-top button{width:34px;height:34px;border:1px solid #65665b;border-radius:50%;background:transparent;color:#f2f0e8;font-size:15px}
+.discover-panel-content{margin:auto 0;padding:28px 0}
+.discover-panel-kicker{margin:0 0 20px;color:#c3cb8e;font-size:9px;font-weight:800;letter-spacing:.22em}
+.discover-panel-content h2{margin:0;color:#f4f2eb;font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,5vw,54px);font-weight:400;line-height:1.05;letter-spacing:-.045em}
+.discover-panel-content h2 em{color:#c4cd91;font-style:italic}
+.discover-panel-description{max-width:345px;margin:25px 0 0;color:#c1c0b6;font-size:12px;line-height:2;letter-spacing:.015em}
+.discover-collection-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:17px 18px;border:0;background:#c5ce91;color:#252620;font-size:10px;font-weight:900;letter-spacing:.13em;text-align:left;transition:background .2s ease,transform .2s ease}
+.discover-collection-btn:hover{background:#d6dda9;transform:translateY(-2px)}
+.discover-collection-btn span{font-size:17px}
+.discover-panel-foot{margin-top:17px;color:#8d8e80;font-size:8px;font-weight:800;letter-spacing:.2em;text-align:center}
+@media(max-width:1100px) and (min-width:701px){
+ .rack-app.is-landing .landing-screen{grid-template-columns:minmax(0,.9fr) minmax(0,1fr)}
+ .landing-copy{padding-left:64px;padding-right:12px}
+ .landing-title-wrap h1{font-size:clamp(44px,6.2vw,69px)}
+ .landing-overline{font-size:8px;letter-spacing:.16em}
+ .landing-description{font-size:12px}
+ .landing-model{padding-right:24px;padding-left:6px}
+ .landing-footer{left:64px}
+}
+@media(max-width:700px){
+ .landing-screen{min-height:calc(100dvh - 64px)}
+ .rack-app.is-landing .landing-screen{grid-template-columns:minmax(0,1fr)}
+ .landing-copy{min-height:0;padding:28px 25px 24px 57px}
+ .landing-topline{font-size:7px;letter-spacing:.11em}
+ .landing-title-wrap{padding:30px 0 24px}
+ .landing-overline{font-size:8px;margin-bottom:17px}
+ .landing-title-wrap h1{font-size:clamp(48px,12.2vw,78px);line-height:.94}
+ .landing-description{max-width:285px;margin-top:21px;font-size:11px;line-height:1.8}
+ .landing-bottomline{font-size:8px;padding-top:14px;gap:8px}
+ .landing-drag-hint{font-size:7px}
+ .landing-model{padding:0 25px 60px 57px;transform:none}
+ .landing-model img{height:auto;min-height:0;max-height:620px;aspect-ratio:2333/3500;object-fit:contain}
+ .discover-handle{position:fixed;top:53%;width:39px;height:145px;gap:12px}
+ .discover-handle-text{font-size:7px}
+ .landing-footer{left:57px;right:18px;bottom:15px;font-size:6px;letter-spacing:.1em}
+ .discover-panel{position:fixed;inset:64px 0 0;width:100%;max-height:calc(100dvh - 64px);padding:25px 25px 20px}
+ .discover-scrim{position:fixed;inset:64px 0 0}
+ .discover-panel-content{padding:15px 0}
+ .discover-panel-content h2{font-size:clamp(38px,10vw,50px)}
+ .discover-panel-description{font-size:11px;line-height:1.85;margin-top:19px}
+}
+@media(prefers-reduced-motion:reduce){.discover-panel,.discover-scrim,.discover-handle,.discover-collection-btn{transition-duration:.01ms!important}}
+
+/* The hoodie keeps its original grey/white print. Only a soft garment-toned edge is added. */
+.garment[data-product-id="wash-hoodie"] img{filter:drop-shadow(0 0 1.15px rgba(103,113,119,.62)) drop-shadow(0 9px 12px rgba(105,113,118,.13))!important}
+
+/* Photograph inspection uses the unchanged image files, with their original backgrounds. */
+.photos-dialog{border:1px solid #dadbd2;background:#f5f5f0;color:#24261f;border-radius:14px;padding:0;width:min(860px,94vw);height:min(920px,92dvh);max-height:92dvh;overflow:hidden;box-shadow:0 30px 120px #1115}
+.photos-dialog[open]{display:flex;flex-direction:column}
+.photos-dialog::backdrop{background:#1c201bd9;backdrop-filter:blur(12px)}
+.photos-head{padding:20px 25px;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid #dcded3}
+.photos-head span{font-size:8px;letter-spacing:2px;color:#7e8572;font-weight:800}
+.photos-head h2{margin:7px 0 0;font-size:clamp(13px,2vw,19px);font-weight:650;letter-spacing:-.4px}
+.photos-head button{border:1px solid #c8ccbc;background:transparent;border-radius:50%;height:34px;width:34px;flex-shrink:0}
+.photos-stage{min-height:0;flex:1;display:flex;justify-content:center;align-items:center;background:#f0efed;padding:12px}
+.photos-stage img{width:100%;height:100%;object-fit:contain;display:block}
+.photos-switch{padding:17px 22px;display:flex;justify-content:center;gap:8px;border-top:1px solid #dcded3}
+.photos-switch button{padding:11px 22px;border:1px solid #c6cbba;background:transparent;color:#737b65;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:1px}
+.photos-switch button[aria-pressed="true"]{background:#282e22;color:#fff;border-color:#282e22}
+.add-to-bag:disabled{background:#d4d6cd;color:#767c6b;cursor:not-allowed}
+.product-info.is-open .product-controls{height:auto;min-height:74px;overflow:visible;padding:8px 0}
+.rack-app.is-discover-dragging .discover-panel{transform:translateX(calc(-100% + var(--discover-drag,0px)));transition:none}
+.rack-app.is-discover-dragging .discover-scrim{opacity:var(--discover-opacity,0);transition:none}
+@media(max-width:600px){.photos-head{padding:15px}.photos-switch{padding:12px}.photos-switch button{padding:11px 18px}.photos-stage{padding:4px}.photos-dialog{height:89dvh}.product-controls{gap:10px}}
+/* The approved black rod is visible again. Hook contact is the origin of each
+   garment, so its rack slot remains attached while scaling or turning. */
+.rack-scene>.rail{display:block!important;height:3px;z-index:1}
+.rack-app .rack-scene .garment{top:calc(var(--rail-y) + 1.5px - var(--hook-offset,25px));transform-origin:var(--hook-x,50%) var(--hook-offset,25px);user-select:none;-webkit-user-select:none}
+
+/* Side photographs retain their own hanger. Original garment PNGs remain
+   intact; a dedicated neckline aperture controls the front hanger overlap. */
+.rack-app .rack-scene .garment .garment-portrait,
+.rack-app .rack-scene .garment .garment-profile{position:absolute;left:0;top:18px;width:100%;height:100%;margin:0;transform-origin:50% 8%;transition:opacity 380ms ease,transform 520ms cubic-bezier(.2,.75,.2,1);backface-visibility:hidden;pointer-events:none;z-index:2}
+.rack-app .rack-scene .garment .garment-profile{overflow:visible;opacity:1;transform:rotateY(0deg)}
+.rack-app .rack-scene .garment .garment-portrait{top:var(--portrait-top,18px);opacity:0;transform:rotateY(-66deg)}
+.rack-app .rack-scene .garment .garment-front,
+.rack-app .rack-scene .garment .photographic-hanger{position:absolute;left:0;top:0;width:100%;height:100%;margin:0;opacity:1;transform:none;pointer-events:none}
+.rack-app .rack-scene .garment .photographic-hanger{overflow:visible;z-index:0}
+/* The photographed shoulders sit inside the neckline; front fabric occludes them. */
+.rack-app .rack-scene .garment[data-view="front"] .photographic-hanger{z-index:3}
+.rack-app .rack-scene .garment .garment-front{transition:opacity 230ms ease}
+.rack-app .rack-scene .garment img.garment-front.switching{opacity:.16}
+.rack-app .rack-scene .garment .garment-matte{z-index:1}
+.rack-app .rack-scene .garment[data-view="back"] .garment-matte{display:none}
+.rack-app .rack-scene .garment[data-view="front"] .garment-profile,
+.rack-app .rack-scene .garment[data-view="back"] .garment-profile{opacity:0;transform:rotateY(66deg)}
+.rack-app .rack-scene .garment[data-view="front"] .garment-portrait,
+.rack-app .rack-scene .garment[data-view="back"] .garment-portrait{opacity:1;transform:rotateY(0deg)}
+.rack-app .rack-scene .garment .garment-tag{opacity:0}
+.rack-app .rack-scene .garment[data-view="front"] .garment-tag,
+.rack-app .rack-scene .garment[data-view="back"] .garment-tag{opacity:1}
+.rack-app:not(.is-focused):not(.is-preview) .rack-scene .garment,
+.rack-app.is-preview .rack-scene .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) rotateZ(var(--hang-tilt)) scale(var(--rack-scale));opacity:1;filter:drop-shadow(4px 12px 7px #25231d22)}
+.rack-app.is-preview .rack-scene .garment.is-selected,
+.rack-app.is-preview .rack-scene .garment.is-selected:hover{transform:translateX(calc(-50% + var(--rack-x))) rotateZ(0deg) scale(1.06);filter:drop-shadow(10px 20px 11px #25231d22);opacity:1}
+.rack-app.is-focused .rack-scene .garment:not(.is-selected){transform:translateX(calc(-50% + var(--rack-x))) rotateZ(var(--hang-tilt)) scale(.93);opacity:.65;filter:blur(4px) saturate(.8) drop-shadow(4px 10px 7px #25231d18)!important}
+.rack-app.is-focused .rack-scene .garment.is-selected,
+.rack-app.is-focused .rack-scene .garment.is-selected:hover{transform:translateX(-50%) rotateZ(0deg) scale(1.14);animation:none;filter:drop-shadow(12px 23px 13px #25231d28);opacity:1}
+.rack-app .rack-scene .garment-volume{display:none}
+@media(max-width:700px){
+ .rack-app .rack-scene .garment .garment-profile{top:12px}
+ .rack-app.is-focused .rack-scene .garment.is-selected,.rack-app.is-focused .rack-scene .garment.is-selected:hover{transform:translateX(-50%) scale(1.06)}
+ .rack-app.is-preview .rack-scene .garment.is-selected,.rack-app.is-preview .rack-scene .garment.is-selected:hover{transform:translateX(calc(-50% + var(--rack-x))) scale(1.03)}
+}
+@media(prefers-reduced-motion:reduce){
+ .rack-app .rack-scene .garment .garment-portrait,.rack-app .rack-scene .garment .garment-profile{transition-duration:.01ms}
+}
+
+/* Keep checkout scrolling inside the drawer, including short viewports. */
+.bag-drawer{overflow:hidden;max-height:100dvh}
+.bag-drawer .drawer-top{flex-shrink:0}
+.bag-drawer .checkout-section{overscroll-behavior:contain}
+html:has(.bag-is-open),body:has(.bag-is-open){overflow:hidden}

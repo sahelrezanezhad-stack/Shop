@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-30",
+  "scope": "Static browser UI; .NET backend not running",
+  "view_switches": [
+    {
+      "id": "label-jacket",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "label-jacket",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "label-jacket",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "suede-jacket",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "suede-jacket",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "suede-jacket",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "black-puffer",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "black-puffer",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "black-puffer",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "wash-hoodie",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "wash-hoodie",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "wash-hoodie",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "floral-overshirt",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "floral-overshirt",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "floral-overshirt",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "camp-knit",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "camp-knit",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "camp-knit",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "utility-vest",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "utility-vest",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "utility-vest",
+      "view": "front",
+      "passed": true
+    },
+    {
+      "id": "stone-sweat",
+      "view": "side",
+      "passed": true
+    },
+    {
+      "id": "stone-sweat",
+      "view": "back",
+      "passed": true
+    },
+    {
+      "id": "stone-sweat",
+      "view": "front",
+      "passed": true
+    }
+  ],
+  "passed": [
+    "Idle rack references eight correct side PNGs",
+    "Real pointer movement previews one front in its own slot",
+    "Drag ending over rack does not create an unintended focused selection",
+    "Focused SIDE displays supplied side photograph on the main stage",
+    "Keyboard SIDE to BACK completes after image loading",
+    "390px iframe coordinate clicks select first and last garment correctly",
+    "Mobile detail panel stays initially closed",
+    "Mobile document width equals viewport width",
+    "All 16 original PNGs are byte-identical to supplied ZIP",
+    "All 24 hanging photograph SHA256 values match input manifest",
+    "Hoodie matte stops dark rear garments showing through transparent paint areas",
+    "node --check rack.js"
+  ],
+  "not_verified": [
+    "Final human acceptance of eight clip outlines, hanger placement and movement",
+    "Physical touch devices",
+    "Alternate real colour variants",
+    "C# and Razor compilation",
+    "SQL compatibility and transactions",
+    "SMTP delivery"
+  ],
+  "release_ready": false
+}

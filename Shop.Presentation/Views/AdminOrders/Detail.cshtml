@@ -1,0 +1,8 @@
+@model Shop.Application.Orders.ManagedOrder
+@{ ViewData["Title"] = $"Order #{Model.Id}"; Layout = "_AdminLayout"; }
+<a href="/admin/orders">← Orders</a><h1>Order #@Model.Id</h1>
+<section class="admin-card"><span class="status">@Model.Status</span><p>@Model.CreatedUtc.ToString("yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture) UTC</p><h2>@Model.TotalToman.ToString("N0") TOMAN</h2>
+<h2>Delivery</h2><p>@Model.CustomerName · @Model.Phone</p><p>@Model.Email</p><p>@Model.City · @Model.Address</p><p>@Model.PostalCode</p>
+<table><thead><tr><th>Product</th><th>Size</th><th>Quantity</th><th>Unit price (TOMAN)</th></tr></thead><tbody>@foreach(var line in Model.Lines){<tr><td>@line.Name</td><td>@line.Size</td><td>@line.Quantity</td><td>@line.UnitPriceToman.ToString("N0")</td></tr>}</tbody></table>
+@if(Model.CanCancel){<h2>Cancel unpaid order</h2><p class="admin-muted">Cancelling restores the reserved quantities to size inventory. The order remains in the order history.</p><form action="/admin/orders/@Model.Id/cancel" method="post">@Html.AntiForgeryToken()<button type="submit" class="btn">CANCEL UNPAID ORDER</button></form>}
+</section>
